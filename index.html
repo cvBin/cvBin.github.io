@@ -189,16 +189,17 @@
                 radial-gradient(circle at 80% 20%, rgba(8, 145, 178, 0.15) 0%, transparent 50%);
         }
 
-        .hero-content {
-            width: 1200px;
-            height: 534px;
-            padding: 40px 60px;
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
+.hero-content {
+    width: 1200px;
+    height: 534px;
+    padding: 40px 80px 40px 60px;  /* 右侧padding从60px改为80px */
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
 
         .hero-text {
             width: 540px;
@@ -260,22 +261,22 @@
             font-size: 12px;
         }
 
-        .hero-image {
-            width: 500px;
-            flex-shrink: 0;
-        }
+/* 调整hero-image宽度 */
+.hero-image {
+    width: 480px;  /* 从500px改为480px */
+    flex-shrink: 0;
+}
 
-        /* 软件预览窗口 */
-        .software-preview {
-            width: 500px;
-            height: 420px;
-            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
-            border-radius: 12px;
-            padding: 12px;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-            overflow: hidden;
-        }
+.software-preview {
+    width: 480px;  /* 从500px改为480px */
+    height: 420px;
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+}
 
         .preview-header {
             display: flex;
