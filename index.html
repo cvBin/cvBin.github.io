@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=1200, initial-scale=0.5">
     <title>OptiCalib - 专业多镜头相机标定软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,7 +28,7 @@
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
-            overflow-x: hidden;
+            min-width: 1200px;
         }
 
         /* 导航栏 */
@@ -36,6 +36,7 @@
             position: fixed;
             top: 0;
             width: 100%;
+            min-width: 1200px;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
@@ -100,16 +101,6 @@
             border-radius: 50px;
         }
 
-        /* 移动端菜单按钮 */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark);
-        }
-
         /* 按钮 */
         .btn {
             display: inline-flex;
@@ -165,7 +156,6 @@
         .btn-group {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
         }
 
         /* Hero 区域 */
@@ -332,21 +322,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .preview-item-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(8, 145, 178, 0.3) 100%);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .preview-item-icon i {
-            color: #60a5fa;
-            font-size: 0.8rem;
-        }
-
         .preview-item-title {
             color: rgba(255,255,255,0.9);
             font-size: 0.85rem;
@@ -382,6 +357,7 @@
             font-size: 0.65rem;
             color: white;
             font-weight: 600;
+            flex-shrink: 0;
         }
 
         /* 通用区块 */
@@ -912,8 +888,7 @@
         }
 
         .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-group textarea {
             width: 100%;
             padding: 0.875rem 1.25rem;
             border: none;
@@ -977,8 +952,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
         }
 
         .footer-logo {
@@ -1121,7 +1094,7 @@
             color: white;
         }
 
-        /* 管理员登录弹窗 */
+        /* 弹窗样式 */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -1145,7 +1118,7 @@
             border-radius: 20px;
             padding: 2.5rem;
             width: 90%;
-            max-width: 420px;
+            max-width: 500px;
             box-shadow: 0 25px 80px rgba(0,0,0,0.3);
             animation: modalIn 0.3s ease;
             position: relative;
@@ -1177,6 +1150,7 @@
 
         .modal-header h3 {
             font-size: 1.35rem;
+            color: var(--dark);
         }
 
         .modal-header p {
@@ -1185,51 +1159,13 @@
             margin-top: 0.4rem;
         }
 
-        .modal-form .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .modal-form input,
-        .modal-form textarea,
-        .modal-form select {
-            width: 100%;
-            padding: 0.875rem 1.25rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            outline: none;
-            transition: all 0.3s;
-            background: white;
-            color: var(--dark);
-        }
-
-        .modal-form input:focus,
-        .modal-form textarea:focus,
-        .modal-form select:focus {
-            border-color: var(--primary);
-        }
-
-        .modal-form label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: var(--dark);
-        }
-
-        .modal-form .btn {
-            width: 100%;
-            justify-content: center;
-            margin-top: 0.5rem;
-        }
-
         .modal-close {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: none;
+            background: var(--light);
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             cursor: pointer;
             color: var(--gray);
             width: 36px;
@@ -1242,285 +1178,170 @@
         }
 
         .modal-close:hover {
-            background: var(--light);
+            background: #e2e8f0;
             color: var(--dark);
         }
 
-        /* 后台管理面板 */
-        .admin-panel {
-            max-width: 500px;
+        /* 后台管理表单样式 - 修复输入框可见性 */
+        .admin-form-group {
+            margin-bottom: 1.25rem;
         }
 
-        .admin-panel .modal-header {
-            margin-bottom: 1rem;
-        }
-
-        .admin-tabs {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--light);
-            padding-bottom: 0.5rem;
-        }
-
-        .admin-tab {
-            padding: 0.5rem 1rem;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--gray);
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .admin-tab.active {
-            background: var(--primary);
-            color: white;
-        }
-
-        .admin-tab:hover:not(.active) {
-            background: var(--light);
-        }
-
-        .admin-tab-content {
-            display: none;
-        }
-
-        .admin-tab-content.active {
+        .admin-form-group label {
             display: block;
-        }
-
-        .admin-section {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--light);
-        }
-
-        .admin-section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .admin-section h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .admin-section h4 i {
+        .admin-form-group label i {
+            margin-right: 0.5rem;
             color: var(--primary);
         }
 
+        .admin-form-group input,
+        .admin-form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s;
+            background: white;
+            color: var(--dark);
+        }
+
+        .admin-form-group input:focus,
+        .admin-form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .admin-form-group input::placeholder,
+        .admin-form-group textarea::placeholder {
+            color: #a0aec0;
+        }
+
+        .admin-form-group .input-hint {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 0.35rem;
+        }
+
+        /* 二维码上传区域 */
+        .qr-upload-area {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .qr-preview {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .qr-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .qr-upload-btn {
+            flex: 1;
+        }
+
+        .qr-upload-btn input[type="file"] {
+            display: none;
+        }
+
+        .qr-upload-btn label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--light);
+            border: 2px dashed #cbd5e1;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--gray);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .qr-upload-btn label:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(37, 99, 235, 0.05);
+        }
+
+        /* 保存提示 */
         .save-notice {
             background: rgba(16, 185, 129, 0.1);
             color: #059669;
             padding: 0.75rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
             display: none;
             align-items: center;
             gap: 0.5rem;
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
 
         .save-notice.show {
             display: flex;
         }
 
-        /* 响应式 */
-        @media (max-width: 1024px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .modes-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .boards-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .accuracy-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        /* 统计信息 */
+        .stats-box {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
         }
 
-        @media (max-width: 768px) {
-            nav {
-                padding: 0.75rem 4%;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1.5rem;
-                gap: 1rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                display: none;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero {
-                padding: 90px 4% 50px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .hero-text .subtitle {
-                font-size: 1rem;
-            }
-
-            .hero-features {
-                justify-content: center;
-            }
-
-            .hero-image {
-                display: block;
-                max-width: 350px;
-                margin: 0 auto;
-            }
-
-            .btn-group {
-                justify-content: center;
-            }
-
-            .btn-large {
-                padding: 0.875rem 1.5rem;
-                font-size: 0.95rem;
-            }
-
-            section {
-                padding: 50px 4%;
-            }
-
-            .section-header h2 {
-                font-size: 1.6rem;
-            }
-
-            .overview-highlights {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .modes-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .boards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .models-container {
-                grid-template-columns: 1fr;
-            }
-
-            .accuracy-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links {
-                margin-top: 0.5rem;
-            }
-
-            .footer-links a {
-                margin: 0 0.6rem;
-            }
-
-            .language-switcher {
-                bottom: 65px;
-                left: 15px;
-            }
-
-            .visitor-counter {
-                bottom: 15px;
-                left: 15px;
-                font-size: 0.75rem;
-                padding: 0.4rem 0.8rem;
-            }
-
-            #backToTop {
-                bottom: 15px;
-                right: 15px;
-                width: 40px;
-                height: 40px;
-            }
-
-            .admin-trigger {
-                bottom: 65px;
-                right: 15px;
-                width: 35px;
-                height: 35px;
-            }
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.75rem;
-            }
+        .stats-row:last-child {
+            border-bottom: none;
+        }
 
-            .overview-highlights {
-                grid-template-columns: 1fr;
-            }
+        .stats-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
 
-            .modes-grid {
-                grid-template-columns: 1fr;
-            }
+        .stats-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
 
-            .boards-grid {
-                grid-template-columns: 1fr;
-            }
+        /* 登录表单 */
+        .login-form .admin-form-group input {
+            text-align: center;
+        }
 
-            .download-box {
-                padding: 1.75rem;
-            }
-
-            .modal {
-                padding: 1.75rem;
-                margin: 1rem;
-            }
+        /* 分隔线 */
+        .divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 1.5rem 0;
         }
 
         /* 动画 */
@@ -1543,16 +1364,13 @@
             <div class="logo-icon"><i class="fas fa-camera"></i></div>
             <span class="logo-text">OptiCalib</span>
         </a>
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav-links">
             <li><a href="#home" data-en="Home" data-zh="首页">首页</a></li>
             <li><a href="#features" data-en="Features" data-zh="功能">功能</a></li>
             <li><a href="#download" data-en="Download" data-zh="下载">下载</a></li>
             <li><a href="#contact" data-en="Contact" data-zh="联系">联系</a></li>
             <li><a href="#download" class="nav-download" data-en="Download Now" data-zh="立即下载">立即下载</a></li>
         </ul>
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
-        </button>
     </nav>
 
     <!-- Hero 区域 -->
@@ -1592,7 +1410,7 @@
                     </div>
                     <div class="preview-scroll-container">
                         <div class="preview-scroll-content">
-                            <!-- 工作流程滚动内容 - 基于使用手册 -->
+                            <!-- 工作流程滚动内容 -->
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">1</div>
@@ -1989,10 +1807,7 @@
             </div>
             <h3>OptiCalib for Windows</h3>
             
-            <a href="https://your-download-link.com/OptiCalib-Setup.exe" 
-               class="download-btn" 
-               id="downloadBtn"
-               download>
+            <a href="#" class="download-btn" id="downloadBtn">
                 <i class="fas fa-download"></i> <span data-en="Download Installer" data-zh="下载安装包">下载安装包</span>
             </a>
             
@@ -2029,10 +1844,9 @@
                 <h3 data-en="WeChat" data-zh="微信">微信</h3>
                 <p data-en="Scan to add friend" data-zh="扫码添加好友">扫码添加好友</p>
                 <div class="wechat-qr">
-                    <!-- 默认加载 wechat.png -->
-                    <img id="wechatQRImage" src="wechat.png" alt="微信二维码" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none; text-align:center; color:#999; font-size:0.75rem; padding:1rem;">
-                        <i class="fas fa-qrcode" style="font-size:2rem; margin-bottom:0.5rem; display:block;"></i>
+                    <img id="wechatQRImage" src="wechat.png" alt="微信二维码" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; text-align:center; color:#999; font-size:0.75rem; padding:1rem; flex-direction:column; align-items:center; justify-content:center; height:100%;">
+                        <i class="fas fa-qrcode" style="font-size:2rem; margin-bottom:0.5rem;"></i>
                         请放置 wechat.png
                     </div>
                 </div>
@@ -2045,7 +1859,7 @@
                 </div>
                 <h3 data-en="Phone" data-zh="电话">电话</h3>
                 <p data-en="Technical Cooperation" data-zh="技术合作">技术合作</p>
-                <span class="contact-value" id="displayPhone">+86 138-0000-0000</span>
+                <span class="contact-value" id="displayPhone">13333899545</span>
             </div>
         </div>
     </section>
@@ -2098,7 +1912,7 @@
         </div>
     </footer>
 
-    <!-- 访问计数器 - 底部左下角 -->
+    <!-- 访问计数器 -->
     <div class="visitor-counter">
         <i class="fas fa-eye"></i>
         <span id="visitorCount">0</span>
@@ -2114,28 +1928,30 @@
     <!-- 回到顶部 -->
     <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- 管理员登录按钮 -->
+    <!-- 管理员按钮 -->
     <button class="admin-trigger" id="adminTrigger" title="管理员登录">
         <i class="fas fa-cog"></i>
     </button>
 
-    <!-- 管理员登录弹窗 -->
+    <!-- 登录弹窗 -->
     <div class="modal-overlay" id="loginModal">
-        <div class="modal">
+        <div class="modal" style="max-width: 400px;">
             <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
             <div class="modal-header">
                 <i class="fas fa-user-shield"></i>
                 <h3 data-en="Admin Login" data-zh="管理员登录">管理员登录</h3>
                 <p data-en="Enter credentials to manage content" data-zh="输入凭据以管理网站内容">输入凭据以管理网站内容</p>
             </div>
-            <form class="modal-form" id="adminLoginForm">
-                <div class="form-group">
-                    <input type="text" id="adminUser" placeholder="用户名 / Username" required>
+            <form class="login-form" id="adminLoginForm">
+                <div class="admin-form-group">
+                    <label><i class="fas fa-user"></i> <span data-en="Username" data-zh="用户名">用户名</span></label>
+                    <input type="text" id="adminUser" placeholder="请输入用户名" required>
                 </div>
-                <div class="form-group">
-                    <input type="password" id="adminPass" placeholder="密码 / Password" required>
+                <div class="admin-form-group">
+                    <label><i class="fas fa-lock"></i> <span data-en="Password" data-zh="密码">密码</span></label>
+                    <input type="password" id="adminPass" placeholder="请输入密码" required>
                 </div>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
                     <i class="fas fa-sign-in-alt"></i>
                     <span data-en="Login" data-zh="登录">登录</span>
                 </button>
@@ -2145,11 +1961,12 @@
 
     <!-- 后台管理面板 -->
     <div class="modal-overlay" id="adminPanel">
-        <div class="modal admin-panel">
+        <div class="modal">
             <button class="modal-close" onclick="closeModal('adminPanel')">&times;</button>
             <div class="modal-header">
                 <i class="fas fa-tools"></i>
                 <h3 data-en="Admin Panel" data-zh="后台管理">后台管理</h3>
+                <p data-en="Edit website content" data-zh="编辑网站内容">编辑网站内容</p>
             </div>
 
             <!-- 保存提示 -->
@@ -2158,133 +1975,130 @@
                 <span data-en="Changes saved successfully!" data-zh="修改已保存成功！">修改已保存成功！</span>
             </div>
 
-            <!-- 管理选项卡 -->
-            <div class="admin-tabs">
-                <button class="admin-tab active" onclick="switchAdminTab('basic')">
-                    <i class="fas fa-info-circle"></i> <span data-en="Basic" data-zh="基本">基本</span>
-                </button>
-                <button class="admin-tab" onclick="switchAdminTab('contact')">
-                    <i class="fas fa-address-book"></i> <span data-en="Contact" data-zh="联系">联系</span>
-                </button>
-                <button class="admin-tab" onclick="switchAdminTab('download')">
-                    <i class="fas fa-download"></i> <span data-en="Download" data-zh="下载">下载</span>
-                </button>
+            <!-- 软件版本 -->
+            <div class="admin-form-group">
+                <label><i class="fas fa-code-branch"></i> <span data-en="Software Version" data-zh="软件版本">软件版本</span></label>
+                <input type="text" id="adminVersion" placeholder="例如: V1.8.2" value="V1.8.2">
+                <div class="input-hint" data-en="Displayed in header and footer" data-zh="显示在页面顶部和底部">显示在页面顶部和底部</div>
             </div>
 
-            <!-- 基本信息 -->
-            <div class="admin-tab-content active" id="tab-basic">
-                <div class="admin-section">
-                    <h4><i class="fas fa-code-branch"></i> <span data-en="Software Version" data-zh="软件版本">软件版本</span></h4>
-                    <div class="form-group">
-                        <input type="text" id="adminVersion" placeholder="例如: V1.8.2">
-                    </div>
-                </div>
-                <button class="btn btn-primary" onclick="saveBasicSettings()">
-                    <i class="fas fa-save"></i> <span data-en="Save Changes" data-zh="保存修改">保存修改</span>
-                </button>
+            <!-- 下载地址 -->
+            <div class="admin-form-group">
+                <label><i class="fas fa-download"></i> <span data-en="Download URL" data-zh="下载地址">下载地址</span></label>
+                <input type="url" id="adminDownloadUrl" placeholder="https://example.com/download.exe">
+                <div class="input-hint" data-en="Software download link" data-zh="软件安装包下载链接">软件安装包下载链接</div>
             </div>
 
-            <!-- 联系信息 -->
-            <div class="admin-tab-content" id="tab-contact">
-                <div class="admin-section">
-                    <h4><i class="fas fa-envelope"></i> <span data-en="Email Address" data-zh="邮箱地址">邮箱地址</span></h4>
-                    <div class="form-group">
-                        <input type="email" id="adminEmail" placeholder="opticalib@outlook.com">
+            <!-- 联系电话 -->
+            <div class="admin-form-group">
+                <label><i class="fas fa-phone"></i> <span data-en="Phone Number" data-zh="联系电话">联系电话</span></label>
+                <input type="text" id="adminPhone" placeholder="13333899545" value="13333899545">
+            </div>
+
+            <!-- 反馈邮箱 -->
+            <div class="admin-form-group">
+                <label><i class="fas fa-envelope"></i> <span data-en="Feedback Email" data-zh="反馈接收邮箱">反馈接收邮箱</span></label>
+                <input type="email" id="adminFeedbackEmail" placeholder="opticalib@outlook.com" value="opticalib@outlook.com">
+                <div class="input-hint" data-en="Email to receive user feedback" data-zh="用于接收用户意见反馈的邮箱">用于接收用户意见反馈的邮箱</div>
+            </div>
+
+            <!-- 微信二维码 -->
+            <div class="admin-form-group">
+                <label><i class="fab fa-weixin"></i> <span data-en="WeChat QR Code" data-zh="微信二维码">微信二维码</span></label>
+                <div class="qr-upload-area">
+                    <div class="qr-preview">
+                        <img id="adminQRPreview" src="wechat.png" alt="预览" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCBmaWxsPSIjZjFmNWY5IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2EwYWVjMCIgZm9udC1zaXplPSIxMiI+5peg5Zu+54mHPC90ZXh0Pjwvc3ZnPg=='">
                     </div>
-                </div>
-                <div class="admin-section">
-                    <h4><i class="fas fa-phone"></i> <span data-en="Phone Number" data-zh="联系电话">联系电话</span></h4>
-                    <div class="form-group">
-                        <input type="text" id="adminPhone" placeholder="+86 138-0000-0000">
-                    </div>
-                </div>
-                <div class="admin-section">
-                    <h4><i class="fab fa-weixin"></i> <span data-en="WeChat QR Code" data-zh="微信二维码">微信二维码</span></h4>
-                    <div class="form-group">
-                        <label data-en="Upload new QR code image:" data-zh="上传新的二维码图片：">上传新的二维码图片：</label>
+                    <div class="qr-upload-btn">
                         <input type="file" id="adminQRUpload" accept="image/*" onchange="previewQR(event)">
-                    </div>
-                    <div style="text-align:center; margin-top:0.5rem;">
-                        <img id="adminQRPreview" src="wechat.png" alt="预览" style="max-width:120px; border-radius:8px; border:2px solid #e2e8f0;">
+                        <label for="adminQRUpload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span data-en="Upload Image" data-zh="上传图片">上传图片</span>
+                        </label>
                     </div>
                 </div>
-                <button class="btn btn-primary" onclick="saveContactSettings()">
-                    <i class="fas fa-save"></i> <span data-en="Save Changes" data-zh="保存修改">保存修改</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- 统计信息 -->
+            <div class="stats-box">
+                <div class="stats-row">
+                    <span class="stats-label" data-en="Total Visits" data-zh="总访问量">总访问量</span>
+                    <span class="stats-value" id="adminVisitCount">0</span>
+                </div>
+                <div class="stats-row">
+                    <span class="stats-label" data-en="Total Downloads" data-zh="总下载量">总下载量</span>
+                    <span class="stats-value" id="adminDownloadCount">0</span>
+                </div>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                <button class="btn btn-primary" onclick="saveAllSettings()" style="flex: 1; justify-content: center;">
+                    <i class="fas fa-save"></i>
+                    <span data-en="Save All" data-zh="保存修改">保存修改</span>
+                </button>
+                <button class="btn btn-outline" onclick="resetStatistics()" style="justify-content: center;">
+                    <i class="fas fa-redo"></i>
+                    <span data-en="Reset Stats" data-zh="重置统计">重置统计</span>
                 </button>
             </div>
 
-            <!-- 下载设置 -->
-            <div class="admin-tab-content" id="tab-download">
-                <div class="admin-section">
-                    <h4><i class="fas fa-link"></i> <span data-en="Download URL" data-zh="下载链接">下载链接</span></h4>
-                    <div class="form-group">
-                        <input type="url" id="adminDownloadUrl" placeholder="https://your-download-link.com/OptiCalib-Setup.exe">
-                    </div>
-                </div>
-                <div class="admin-section">
-                    <h4><i class="fas fa-chart-line"></i> <span data-en="Statistics" data-zh="统计数据">统计数据</span></h4>
-                    <p style="color:var(--gray); font-size:0.9rem;">
-                        <span data-en="Total Visits:" data-zh="总访问量：">总访问量：</span><strong id="adminVisitCount">0</strong><br>
-                        <span data-en="Total Downloads:" data-zh="总下载量：">总下载量：</span><strong id="adminDownloadCount">0</strong>
-                    </p>
-                    <button class="btn btn-outline" onclick="resetStatistics()" style="margin-top:0.75rem; padding:0.5rem 1rem; font-size:0.85rem;">
-                        <i class="fas fa-redo"></i> <span data-en="Reset Statistics" data-zh="重置统计">重置统计</span>
-                    </button>
-                </div>
-                <button class="btn btn-primary" onclick="saveDownloadSettings()">
-                    <i class="fas fa-save"></i> <span data-en="Save Changes" data-zh="保存修改">保存修改</span>
-                </button>
-            </div>
+            <div class="divider"></div>
 
             <!-- 退出登录 -->
-            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--light); text-align:center;">
-                <button class="btn btn-outline" onclick="adminLogout()" style="padding:0.5rem 1.5rem;">
-                    <i class="fas fa-sign-out-alt"></i> <span data-en="Logout" data-zh="退出登录">退出登录</span>
+            <div style="text-align: center;">
+                <button class="btn btn-outline" onclick="adminLogout()" style="padding: 0.5rem 1.5rem;">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span data-en="Logout" data-zh="退出登录">退出登录</span>
                 </button>
             </div>
         </div>
     </div>
 
     <script>
-        // ============ 配置数据存储 ============
+        // ============ 默认配置 ============
         const defaultConfig = {
             version: 'V1.8.2',
-            email: 'opticalib@outlook.com',
-            phone: '+86 138-0000-0000',
-            downloadUrl: 'https://your-download-link.com/OptiCalib-Setup.exe',
+            downloadUrl: '',
+            phone: '13333899545',
+            feedbackEmail: 'opticalib@outlook.com',
             wechatQR: 'wechat.png'
         };
 
         function getConfig() {
             const saved = localStorage.getItem('opticalib_config');
-            return saved ? JSON.parse(saved) : defaultConfig;
+            return saved ? { ...defaultConfig, ...JSON.parse(saved) } : defaultConfig;
         }
 
         function saveConfig(config) {
             localStorage.setItem('opticalib_config', JSON.stringify(config));
         }
 
-        // ============ 初始化配置 ============
+        // ============ 初始化配置到页面 ============
         function initializeConfig() {
             const config = getConfig();
             
-            // 更新版本号
+            // 版本号
             document.getElementById('displayVersion').textContent = config.version;
             document.getElementById('footerVersion').textContent = 'Version ' + config.version;
             
-            // 更新邮箱
-            const emailEl = document.getElementById('displayEmail');
-            emailEl.textContent = config.email;
-            emailEl.href = 'mailto:' + config.email;
-            
-            // 更新电话
+            // 电话
             document.getElementById('displayPhone').textContent = config.phone;
             
-            // 更新下载链接
-            document.getElementById('downloadBtn').href = config.downloadUrl;
+            // 下载链接
+            if (config.downloadUrl) {
+                document.getElementById('downloadBtn').href = config.downloadUrl;
+            }
             
-            // 更新微信二维码
-            if (config.wechatQR && config.wechatQR !== 'wechat.png') {
+            // 反馈邮箱
+            const emailEl = document.getElementById('displayEmail');
+            emailEl.textContent = config.feedbackEmail;
+            emailEl.href = 'mailto:' + config.feedbackEmail;
+            
+            // 微信二维码
+            if (config.wechatQR && config.wechatQR.startsWith('data:')) {
                 document.getElementById('wechatQRImage').src = config.wechatQR;
             }
         }
@@ -2295,7 +2109,6 @@
         // ============ 访问计数器 ============
         function updateVisitorCount() {
             let count = parseInt(localStorage.getItem('visitorCount') || '0');
-            // 检查是否是新会话
             if (!sessionStorage.getItem('visited')) {
                 count++;
                 localStorage.setItem('visitorCount', count);
@@ -2306,7 +2119,12 @@
         updateVisitorCount();
 
         // ============ 下载计数器 ============
-        document.getElementById('downloadBtn').addEventListener('click', function() {
+        document.getElementById('downloadBtn').addEventListener('click', function(e) {
+            if (!this.href || this.href === '#' || this.href === window.location.href + '#') {
+                e.preventDefault();
+                alert(currentLang === 'zh' ? '下载链接尚未配置，请联系管理员' : 'Download link not configured. Please contact admin.');
+                return;
+            }
             let downloads = parseInt(localStorage.getItem('downloadCount') || '0') + 1;
             localStorage.setItem('downloadCount', downloads);
         });
@@ -2334,22 +2152,6 @@
             document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         }
         switchLanguage(currentLang);
-
-        // ============ 移动端菜单 ============
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('navLinks').classList.toggle('active');
-            this.querySelector('i').classList.toggle('fa-bars');
-            this.querySelector('i').classList.toggle('fa-times');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-                const menuBtn = document.getElementById('mobileMenuBtn');
-                menuBtn.querySelector('i').classList.add('fa-bars');
-                menuBtn.querySelector('i').classList.remove('fa-times');
-            });
-        });
 
         // ============ 滚动动画 ============
         const observer = new IntersectionObserver((entries) => {
@@ -2421,7 +2223,6 @@
             const user = document.getElementById('adminUser').value;
             const pass = document.getElementById('adminPass').value;
             
-            // 默认账号密码（实际使用请修改）
             if (user === 'admin' && pass === 'opticalib2025') {
                 isAdminLoggedIn = true;
                 sessionStorage.setItem('adminLoggedIn', 'true');
@@ -2443,31 +2244,22 @@
         function openAdminPanel() {
             const config = getConfig();
             
-            // 填充当前配置
-            document.getElementById('adminVersion').value = config.version;
-            document.getElementById('adminEmail').value = config.email;
-            document.getElementById('adminPhone').value = config.phone;
-            document.getElementById('adminDownloadUrl').value = config.downloadUrl;
-            
-            // 统计数据
-            document.getElementById('adminVisitCount').textContent = localStorage.getItem('visitorCount') || '0';
-            document.getElementById('adminDownloadCount').textContent = localStorage.getItem('downloadCount') || '0';
+            // 填充表单
+            document.getElementById('adminVersion').value = config.version || '';
+            document.getElementById('adminDownloadUrl').value = config.downloadUrl || '';
+            document.getElementById('adminPhone').value = config.phone || '';
+            document.getElementById('adminFeedbackEmail').value = config.feedbackEmail || '';
             
             // 二维码预览
             if (config.wechatQR) {
                 document.getElementById('adminQRPreview').src = config.wechatQR;
             }
             
-            openModal('adminPanel');
-        }
-
-        // ============ 管理选项卡切换 ============
-        function switchAdminTab(tab) {
-            document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+            // 统计数据
+            document.getElementById('adminVisitCount').textContent = localStorage.getItem('visitorCount') || '0';
+            document.getElementById('adminDownloadCount').textContent = localStorage.getItem('downloadCount') || '0';
             
-            event.target.closest('.admin-tab').classList.add('active');
-            document.getElementById('tab-' + tab).classList.add('active');
+            openModal('adminPanel');
         }
 
         // ============ 保存设置 ============
@@ -2477,33 +2269,20 @@
             setTimeout(() => notice.classList.remove('show'), 3000);
         }
 
-        function saveBasicSettings() {
+        function saveAllSettings() {
             const config = getConfig();
-            config.version = document.getElementById('adminVersion').value || config.version;
-            saveConfig(config);
-            initializeConfig();
-            showSaveNotice();
-        }
-
-        function saveContactSettings() {
-            const config = getConfig();
-            config.email = document.getElementById('adminEmail').value || config.email;
-            config.phone = document.getElementById('adminPhone').value || config.phone;
             
-            // 如果有新上传的二维码
+            config.version = document.getElementById('adminVersion').value || defaultConfig.version;
+            config.downloadUrl = document.getElementById('adminDownloadUrl').value || '';
+            config.phone = document.getElementById('adminPhone').value || defaultConfig.phone;
+            config.feedbackEmail = document.getElementById('adminFeedbackEmail').value || defaultConfig.feedbackEmail;
+            
+            // 二维码
             const preview = document.getElementById('adminQRPreview');
             if (preview.src && preview.src.startsWith('data:')) {
                 config.wechatQR = preview.src;
             }
             
-            saveConfig(config);
-            initializeConfig();
-            showSaveNotice();
-        }
-
-        function saveDownloadSettings() {
-            const config = getConfig();
-            config.downloadUrl = document.getElementById('adminDownloadUrl').value || config.downloadUrl;
             saveConfig(config);
             initializeConfig();
             showSaveNotice();
@@ -2521,7 +2300,7 @@
         }
 
         function resetStatistics() {
-            if (confirm(currentLang === 'zh' ? '确定要重置所有统计数据吗？' : 'Are you sure you want to reset all statistics?')) {
+            if (confirm(currentLang === 'zh' ? '确定要重置所有统计数据吗？' : 'Reset all statistics?')) {
                 localStorage.setItem('visitorCount', '0');
                 localStorage.setItem('downloadCount', '0');
                 document.getElementById('adminVisitCount').textContent = '0';
@@ -2535,18 +2314,19 @@
         document.getElementById('feedbackForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            const config = getConfig();
             const name = document.getElementById('userName').value;
             const email = document.getElementById('userEmail').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            const config = getConfig();
-            const mailtoLink = `mailto:${config.email}?subject=${encodeURIComponent('[OptiCalib Feedback] ' + subject)}&body=${encodeURIComponent(`姓名/Name: ${name}\n邮箱/Email: ${email}\n\n消息/Message:\n${message}`)}`;
+            const targetEmail = config.feedbackEmail || 'opticalib@outlook.com';
+            const mailtoLink = `mailto:${targetEmail}?subject=${encodeURIComponent('[OptiCalib Feedback] ' + subject)}&body=${encodeURIComponent(`姓名/Name: ${name}\n邮箱/Email: ${email}\n\n消息/Message:\n${message}`)}`;
             
             window.location.href = mailtoLink;
             
             setTimeout(() => {
-                alert(currentLang === 'zh' ? '感谢您的反馈！正在打开邮件客户端...' : 'Thank you for your feedback! Opening email client...');
+                alert(currentLang === 'zh' ? '感谢您的反馈！正在打开邮件客户端...' : 'Thank you! Opening email client...');
                 this.reset();
             }, 500);
         });
