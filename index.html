@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=1200, initial-scale=0.3">
     <title>OptiCalib - 专业多镜头相机标定软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,7 +45,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 0.75rem 5%;
+            padding: 15px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -55,8 +55,8 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 1.35rem;
+            gap: 8px;
+            font-size: 22px;
             font-weight: 700;
             text-decoration: none;
         }
@@ -70,7 +70,7 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1rem;
+            font-size: 16px;
         }
 
         .logo-text {
@@ -82,7 +82,7 @@
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 24px;
             list-style: none;
             align-items: center;
         }
@@ -91,7 +91,7 @@
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 15px;
             transition: color 0.3s;
         }
 
@@ -102,7 +102,7 @@
         .nav-download {
             background: var(--gradient);
             color: white !important;
-            padding: 0.5rem 1.25rem;
+            padding: 8px 20px;
             border-radius: 50px;
         }
 
@@ -110,15 +110,15 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
+            gap: 8px;
+            padding: 14px 28px;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            font-size: 1rem;
+            font-size: 16px;
         }
 
         .btn-primary {
@@ -154,21 +154,21 @@
         }
 
         .btn-large {
-            padding: 1rem 2rem;
-            font-size: 1.05rem;
+            padding: 16px 32px;
+            font-size: 17px;
         }
 
         .btn-group {
             display: flex;
-            gap: 1rem;
+            gap: 16px;
         }
 
-        /* Hero 区域 */
+        /* Hero 区域 - 固定像素值 */
         .hero {
-            min-height: 100vh;
+            min-height: 700px;
             display: flex;
             align-items: center;
-            padding: 100px 5% 60px;
+            padding: 100px 60px 60px 60px;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             position: relative;
             overflow: hidden;
@@ -187,11 +187,12 @@
         }
 
         .hero-content {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 48px;
             align-items: center;
             position: relative;
             z-index: 1;
@@ -204,20 +205,20 @@
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
             background: rgba(16, 185, 129, 0.2);
             color: #34d399;
-            padding: 0.5rem 1rem;
+            padding: 8px 16px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 14px;
             font-weight: 500;
-            margin-bottom: 1.25rem;
+            margin-bottom: 20px;
         }
 
         .hero-text h1 {
-            font-size: 2.75rem;
+            font-size: 44px;
             font-weight: 700;
-            margin-bottom: 1.25rem;
+            margin-bottom: 20px;
             line-height: 1.15;
         }
 
@@ -229,25 +230,25 @@
         }
 
         .hero-text .subtitle {
-            font-size: 1.1rem;
+            font-size: 18px;
             color: rgba(255,255,255,0.8);
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
             line-height: 1.7;
         }
 
         .hero-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 16px;
+            margin-bottom: 32px;
         }
 
         .hero-feature {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
             color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
+            font-size: 14px;
         }
 
         .hero-feature i {
@@ -262,7 +263,7 @@
         .software-preview {
             background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
             border-radius: 16px;
-            padding: 1.25rem;
+            padding: 20px;
             box-shadow: 0 25px 80px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.1);
             overflow: hidden;
@@ -271,9 +272,9 @@
         .preview-header {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
+            gap: 8px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
@@ -290,7 +291,7 @@
         .preview-title {
             margin-left: auto;
             color: rgba(255,255,255,0.5);
-            font-size: 0.75rem;
+            font-size: 12px;
         }
 
         .preview-scroll-container {
@@ -315,39 +316,39 @@
         }
 
         .preview-item {
-            padding: 1rem;
+            padding: 16px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .preview-item-header {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.5rem;
+            gap: 10px;
+            margin-bottom: 8px;
         }
 
         .preview-item-title {
             color: rgba(255,255,255,0.9);
-            font-size: 0.85rem;
+            font-size: 14px;
             font-weight: 500;
         }
 
         .preview-item-desc {
             color: rgba(255,255,255,0.5);
-            font-size: 0.75rem;
+            font-size: 12px;
             line-height: 1.5;
         }
 
         .preview-item-status {
             display: inline-flex;
             align-items: center;
-            gap: 0.3rem;
+            gap: 5px;
             background: rgba(16, 185, 129, 0.2);
             color: #34d399;
-            padding: 0.2rem 0.6rem;
+            padding: 3px 10px;
             border-radius: 50px;
-            font-size: 0.7rem;
-            margin-top: 0.4rem;
+            font-size: 11px;
+            margin-top: 6px;
         }
 
         .preview-step-num {
@@ -358,44 +359,44 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.65rem;
+            font-size: 10px;
             color: white;
             font-weight: 600;
             flex-shrink: 0;
         }
 
-        /* 通用区块 */
+        /* 通用区块 - 固定像素值 */
         section {
-            padding: 70px 5%;
+            padding: 80px 60px;
             min-width: 1200px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 40px;
         }
 
         .section-header h2 {
-            font-size: 2rem;
-            margin-bottom: 0.6rem;
+            font-size: 32px;
+            margin-bottom: 10px;
         }
 
         .section-header p {
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
-            font-size: 1rem;
+            font-size: 16px;
         }
 
         .section-tag {
             display: inline-block;
             background: rgba(37, 99, 235, 0.1);
             color: var(--primary);
-            padding: 0.4rem 0.9rem;
+            padding: 6px 14px;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
 
         /* 软件概述 */
@@ -410,39 +411,39 @@
         }
 
         .overview-text {
-            font-size: 1.1rem;
+            font-size: 18px;
             color: var(--gray);
             line-height: 1.8;
-            margin-bottom: 2rem;
+            margin-bottom: 32px;
         }
 
         .overview-highlights {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 24px;
+            margin-top: 32px;
         }
 
         .highlight-item {
             background: var(--light);
-            padding: 1.5rem;
+            padding: 24px;
             border-radius: 12px;
             text-align: center;
         }
 
         .highlight-item i {
-            font-size: 2rem;
+            font-size: 32px;
             color: var(--primary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
 
         .highlight-item h4 {
-            font-size: 1rem;
-            margin-bottom: 0.4rem;
+            font-size: 16px;
+            margin-bottom: 6px;
         }
 
         .highlight-item p {
-            font-size: 0.85rem;
+            font-size: 14px;
             color: var(--gray);
         }
 
@@ -454,7 +455,7 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 24px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -462,7 +463,7 @@
         .feature-card {
             background: white;
             border-radius: 14px;
-            padding: 1.75rem;
+            padding: 28px;
             transition: all 0.3s;
             border: 1px solid rgba(0,0,0,0.05);
         }
@@ -480,22 +481,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .feature-icon i {
-            font-size: 1.25rem;
+            font-size: 20px;
             color: white;
         }
 
         .feature-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         .feature-card p {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 14px;
             line-height: 1.6;
         }
 
@@ -516,7 +517,7 @@
         .modes-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
+            gap: 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -524,7 +525,7 @@
         .mode-card {
             background: rgba(255,255,255,0.05);
             border-radius: 14px;
-            padding: 1.5rem;
+            padding: 24px;
             text-align: center;
             transition: all 0.3s;
             border: 1px solid rgba(255,255,255,0.1);
@@ -536,18 +537,18 @@
         }
 
         .mode-card i {
-            font-size: 2rem;
+            font-size: 32px;
             color: var(--secondary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
 
         .mode-card h4 {
-            font-size: 1rem;
-            margin-bottom: 0.4rem;
+            font-size: 16px;
+            margin-bottom: 6px;
         }
 
         .mode-card p {
-            font-size: 0.8rem;
+            font-size: 13px;
             color: rgba(255,255,255,0.6);
         }
 
@@ -559,7 +560,7 @@
         .boards-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 1.25rem;
+            gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -567,7 +568,7 @@
         .board-card {
             background: var(--light);
             border-radius: 12px;
-            padding: 1.5rem 1rem;
+            padding: 24px 16px;
             text-align: center;
             transition: all 0.3s;
         }
@@ -585,16 +586,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 16px;
         }
 
         .board-icon i {
-            font-size: 1.5rem;
+            font-size: 24px;
             color: white;
         }
 
         .board-card h4 {
-            font-size: 0.95rem;
+            font-size: 15px;
         }
 
         /* 畸变模型 */
@@ -607,15 +608,15 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            gap: 24px;
         }
 
         .model-card {
             background: white;
             border-radius: 14px;
-            padding: 1.75rem;
+            padding: 28px;
             display: flex;
-            gap: 1.25rem;
+            gap: 20px;
             align-items: flex-start;
             transition: all 0.3s;
         }
@@ -636,17 +637,17 @@
         }
 
         .model-icon i {
-            font-size: 1.25rem;
+            font-size: 20px;
             color: white;
         }
 
         .model-info h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.4rem;
+            font-size: 17px;
+            margin-bottom: 6px;
         }
 
         .model-info p {
-            font-size: 0.85rem;
+            font-size: 14px;
             color: var(--gray);
         }
 
@@ -658,7 +659,7 @@
         .accuracy-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
+            gap: 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -666,7 +667,7 @@
         .accuracy-card {
             background: var(--light);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 24px;
             text-align: center;
             transition: all 0.3s;
         }
@@ -677,24 +678,24 @@
         }
 
         .accuracy-card i {
-            font-size: 2rem;
+            font-size: 32px;
             color: var(--primary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
 
         .accuracy-card h4 {
-            font-size: 1rem;
-            margin-bottom: 0.4rem;
+            font-size: 16px;
+            margin-bottom: 6px;
         }
 
         .accuracy-card p {
-            font-size: 0.85rem;
+            font-size: 14px;
             color: var(--gray);
         }
 
         /* 下载 */
         .download {
-            padding: 70px 5%;
+            padding: 80px 60px;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
             text-align: center;
@@ -712,7 +713,7 @@
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 40px;
             max-width: 480px;
             margin: 0 auto;
         }
@@ -725,30 +726,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.25rem;
+            margin: 0 auto 20px;
         }
 
         .download-icon i {
-            font-size: 2.25rem;
+            font-size: 36px;
             color: white;
         }
 
         .download-box h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.25rem;
+            font-size: 22px;
+            margin-bottom: 20px;
         }
 
         .download-btn {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
-            padding: 1rem 2.25rem;
+            padding: 16px 36px;
             border-radius: 50px;
-            font-size: 1.05rem;
+            font-size: 17px;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
             transition: all 0.3s;
             box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
         }
@@ -759,18 +760,18 @@
         }
 
         .system-req {
-            margin-top: 1.5rem;
-            padding-top: 1.25rem;
+            margin-top: 24px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.5);
-            font-size: 0.8rem;
+            font-size: 13px;
         }
 
         .system-req span {
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
-            margin: 0 0.6rem;
+            gap: 6px;
+            margin: 0 10px;
         }
 
         /* 联系方式 */
@@ -781,7 +782,7 @@
         .contact-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 24px;
             max-width: 950px;
             margin: 0 auto;
         }
@@ -789,7 +790,7 @@
         .contact-card {
             background: white;
             border-radius: 14px;
-            padding: 1.75rem;
+            padding: 28px;
             text-align: center;
             transition: all 0.3s;
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
@@ -808,37 +809,37 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 16px;
         }
 
         .contact-icon i {
-            font-size: 1.35rem;
+            font-size: 22px;
             color: white;
         }
 
         .contact-card h3 {
-            font-size: 1.05rem;
-            margin-bottom: 0.4rem;
+            font-size: 17px;
+            margin-bottom: 6px;
         }
 
         .contact-card p {
             color: var(--gray);
-            font-size: 0.85rem;
-            margin-bottom: 0.6rem;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
 
         .contact-card a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 14px;
             word-break: break-all;
         }
 
         .contact-value {
             color: var(--dark);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 16px;
         }
 
         .wechat-qr {
@@ -846,7 +847,7 @@
             height: 130px;
             background: var(--light);
             border-radius: 10px;
-            margin: 0.75rem auto 0;
+            margin: 12px auto 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -864,7 +865,7 @@
         .feedback-section {
             background: var(--dark);
             color: white;
-            padding: 60px 5%;
+            padding: 80px 60px;
         }
 
         .feedback-section .section-header h2 {
@@ -883,23 +884,23 @@
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 16px;
+            margin-bottom: 16px;
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.875rem 1.25rem;
+            padding: 14px 20px;
             border: none;
             border-radius: 10px;
             background: rgba(255,255,255,0.1);
             color: white;
-            font-size: 0.95rem;
+            font-size: 15px;
             font-family: inherit;
             outline: none;
             transition: all 0.3s;
@@ -923,19 +924,19 @@
 
         .submit-btn {
             width: 100%;
-            padding: 1rem;
+            padding: 16px;
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             border: none;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 8px;
         }
 
         .submit-btn:hover {
@@ -947,7 +948,7 @@
         footer {
             background: #0a0f1a;
             color: rgba(255,255,255,0.6);
-            padding: 2rem 5%;
+            padding: 32px 60px;
             min-width: 1200px;
         }
 
@@ -962,8 +963,8 @@
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
+            gap: 8px;
+            font-size: 16px;
             font-weight: 700;
             color: white;
         }
@@ -971,14 +972,14 @@
         .footer-logo .logo-icon {
             width: 28px;
             height: 28px;
-            font-size: 0.8rem;
+            font-size: 12px;
         }
 
         .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            margin-left: 1.25rem;
-            font-size: 0.85rem;
+            margin-left: 20px;
+            font-size: 14px;
         }
 
         .footer-links a:hover {
@@ -986,10 +987,10 @@
         }
 
         .footer-bottom {
-            margin-top: 1.25rem;
-            padding-top: 1.25rem;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
+            font-size: 13px;
             text-align: center;
         }
 
@@ -1001,11 +1002,11 @@
             z-index: 998;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
+            gap: 8px;
+            font-size: 13px;
             color: white;
             background: rgba(15, 23, 42, 0.9);
-            padding: 0.5rem 1rem;
+            padding: 8px 16px;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
@@ -1021,19 +1022,19 @@
             left: 25px;
             z-index: 999;
             display: flex;
-            gap: 0.5rem;
+            gap: 8px;
             background: white;
-            padding: 0.5rem;
+            padding: 8px;
             border-radius: 50px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         .lang-btn {
-            padding: 0.5rem 1rem;
+            padding: 8px 16px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 14px;
             font-weight: 500;
             transition: all 0.3s;
             background: transparent;
@@ -1060,7 +1061,7 @@
             color: white;
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 18px;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
             opacity: 0;
             visibility: hidden;
@@ -1084,7 +1085,7 @@
             color: var(--primary);
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 16px;
             transition: all 0.3s;
             z-index: 998;
             opacity: 0.5;
@@ -1118,7 +1119,7 @@
         .modal {
             background: white;
             border-radius: 20px;
-            padding: 2rem;
+            padding: 32px;
             width: 90%;
             max-width: 600px;
             box-shadow: 0 25px 80px rgba(0,0,0,0.3);
@@ -1139,33 +1140,33 @@
 
         .modal-header {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
         }
 
         .modal-header i {
-            font-size: 2.5rem;
+            font-size: 40px;
             color: var(--primary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
 
         .modal-header h3 {
-            font-size: 1.25rem;
+            font-size: 20px;
             color: var(--dark);
         }
 
         .modal-header p {
             color: var(--gray);
-            font-size: 0.85rem;
-            margin-top: 0.3rem;
+            font-size: 14px;
+            margin-top: 5px;
         }
 
         .modal-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 16px;
+            right: 16px;
             background: var(--light);
             border: none;
-            font-size: 1.25rem;
+            font-size: 20px;
             cursor: pointer;
             color: var(--gray);
             width: 32px;
@@ -1186,35 +1187,35 @@
         .admin-form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 16px;
+            margin-bottom: 16px;
         }
 
         .admin-form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .admin-form-group label {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            margin-bottom: 0.4rem;
+            gap: 6px;
+            margin-bottom: 6px;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 14px;
             color: var(--dark);
         }
 
         .admin-form-group label i {
             color: var(--primary);
-            font-size: 0.9rem;
+            font-size: 14px;
         }
 
         .admin-form-group input {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 12px 16px;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 14px;
             font-family: inherit;
             outline: none;
             transition: all 0.3s;
@@ -1232,19 +1233,19 @@
         }
 
         .admin-form-group .hint {
-            font-size: 0.7rem;
+            font-size: 11px;
             color: var(--gray);
-            margin-top: 0.25rem;
+            margin-top: 4px;
         }
 
         .qr-section {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem;
+            gap: 16px;
+            padding: 16px;
             background: var(--light);
             border-radius: 10px;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .qr-preview {
@@ -1273,13 +1274,13 @@
         .qr-upload label {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1rem;
+            gap: 8px;
+            padding: 10px 16px;
             background: white;
             border: 2px dashed #cbd5e1;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 14px;
             color: var(--gray);
             transition: all 0.3s;
         }
@@ -1292,11 +1293,11 @@
         .stats-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            padding: 1rem;
+            gap: 16px;
+            padding: 16px;
             background: var(--light);
             border-radius: 10px;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .stat-item {
@@ -1304,13 +1305,13 @@
         }
 
         .stat-label {
-            font-size: 0.75rem;
+            font-size: 12px;
             color: var(--gray);
-            margin-bottom: 0.25rem;
+            margin-bottom: 4px;
         }
 
         .stat-value {
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: 700;
             color: var(--primary);
         }
@@ -1318,13 +1319,13 @@
         .save-notice {
             background: rgba(16, 185, 129, 0.1);
             color: #059669;
-            padding: 0.6rem 1rem;
+            padding: 10px 16px;
             border-radius: 8px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
+            font-size: 14px;
+            margin-bottom: 16px;
             display: none;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
             border: 1px solid rgba(16, 185, 129, 0.2);
         }
 
@@ -1334,21 +1335,21 @@
 
         .btn-row {
             display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
+            gap: 12px;
+            margin-top: 16px;
         }
 
         .btn-row .btn {
             flex: 1;
             justify-content: center;
-            padding: 0.75rem 1rem;
-            font-size: 0.9rem;
+            padding: 12px 16px;
+            font-size: 14px;
         }
 
         .divider {
             height: 1px;
             background: #e2e8f0;
-            margin: 1.25rem 0;
+            margin: 20px 0;
         }
 
         .fade-in {
@@ -1591,8 +1592,8 @@
             <h2 data-lang data-en="What is OptiCalib?" data-zh="OptiCalib 是什么？">OptiCalib 是什么？</h2>
         </div>
         <div class="overview-content">
-            <p class="overview-text" data-lang data-en="OptiCalib is a professional multi-lens camera calibration system that supports camera calibration in any scenario. It supports single/multi-lens, single/multi-calibration board, different resolution cameras, and independent/joint calibration. User-friendly, easy to operate, with controllable precision, featuring full automation, high efficiency, and high accuracy. Powerful visual calibration point correction function helps you identify and correct precision-affecting calibration points in time." data-zh="OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。">
-                OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。
+            <p class="overview-text" data-lang data-en="OptiCalib is a professional multi-lens camera calibration system that supports camera calibration in any scenario. It supports single/multi-lens, single/multi-calibration board, different resolution cameras, and independent/joint calibration. User-friendly, easy to operate, with controllable precision, featuring full automation, high efficiency, and high accuracy." data-zh="OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。">
+                OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。
             </p>
             <div class="overview-highlights">
                 <div class="highlight-item fade-in">
@@ -1635,17 +1636,17 @@
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-chess-board"></i></div>
                 <h3 data-lang data-en="Multiple Calibration Boards" data-zh="多种标定板支持">多种标定板支持</h3>
-                <p data-lang data-en="Support Chessboard, ChArUco, ArUco, Circle Grid. Single, multiple or mixed board modes." data-zh="支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。">支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。</p>
+                <p data-lang data-en="Support Chessboard, ChArUco, ArUco, Circle Grid and more board types." data-zh="支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。">支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-eye"></i></div>
                 <h3 data-lang data-en="Visual Correction" data-zh="可视化修正功能">可视化修正功能</h3>
-                <p data-lang data-en="Powerful visual calibration point correction with 6 interactive methods available." data-zh="强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。">强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。</p>
+                <p data-lang data-en="Powerful visual calibration point correction with 6 interactive methods." data-zh="强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。">强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
                 <h3 data-lang data-en="Multiple Distortion Models" data-zh="多种畸变模型">多种畸变模型</h3>
-                <p data-lang data-en="Support Brown/Conrady 18-param, Kannala-Brandt fisheye, MEI omnidirectional model." data-zh="支持Brown/Conrady模型、鱼眼Kannala-Brandt模型、MEI全向模型。">支持Brown/Conrady模型、鱼眼Kannala-Brandt模型、MEI全向模型。</p>
+                <p data-lang data-en="Support Brown/Conrady, Kannala-Brandt fisheye, MEI omnidirectional model." data-zh="支持Brown/Conrady模型、鱼眼Kannala-Brandt模型、MEI全向模型。">支持Brown/Conrady模型、鱼眼Kannala-Brandt模型、MEI全向模型。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
@@ -1845,8 +1846,8 @@
                 <p data-lang data-en="Scan to add friend" data-zh="扫码添加好友">扫码添加好友</p>
                 <div class="wechat-qr">
                     <img id="wechatQRImage" src="wechat.png" alt="WeChat QR" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div style="display:none; text-align:center; color:#999; font-size:0.7rem; padding:0.5rem; flex-direction:column; align-items:center; justify-content:center; height:100%;">
-                        <i class="fas fa-qrcode" style="font-size:1.5rem; margin-bottom:0.3rem;"></i>
+                    <div style="display:none; text-align:center; color:#999; font-size:11px; padding:8px; flex-direction:column; align-items:center; justify-content:center; height:100%;">
+                        <i class="fas fa-qrcode" style="font-size:24px; margin-bottom:5px;"></i>
                         wechat.png
                     </div>
                 </div>
@@ -1971,7 +1972,6 @@
                 <span data-lang data-en="Changes saved successfully!" data-zh="修改已保存成功！">修改已保存成功！</span>
             </div>
 
-            <!-- 并排：版本和电话 -->
             <div class="admin-form-row">
                 <div class="admin-form-group">
                     <label><i class="fas fa-code-branch"></i> <span data-lang data-en="Version" data-zh="软件版本">软件版本</span></label>
@@ -1983,21 +1983,18 @@
                 </div>
             </div>
 
-            <!-- 下载地址 -->
             <div class="admin-form-group">
                 <label><i class="fas fa-download"></i> <span data-lang data-en="Download URL" data-zh="下载地址">下载地址</span></label>
                 <input type="url" id="adminDownloadUrl" value="https://share.weiyun.com/ESN9mXmp">
                 <div class="hint" data-lang data-en="Software download link" data-zh="软件安装包下载链接">软件安装包下载链接</div>
             </div>
 
-            <!-- 反馈邮箱 -->
             <div class="admin-form-group">
                 <label><i class="fas fa-envelope"></i> <span data-lang data-en="Feedback Email" data-zh="反馈接收邮箱">反馈接收邮箱</span></label>
                 <input type="email" id="adminFeedbackEmail" value="opticalib@outlook.com">
                 <div class="hint" data-lang data-en="Receive user feedback" data-zh="用于接收用户意见反馈">用于接收用户意见反馈</div>
             </div>
 
-            <!-- 微信二维码 -->
             <div class="admin-form-group">
                 <label><i class="fab fa-weixin"></i> <span data-lang data-en="WeChat QR Code" data-zh="微信二维码">微信二维码</span></label>
             </div>
@@ -2015,7 +2012,6 @@
 
             <div class="divider"></div>
 
-            <!-- 统计 -->
             <div class="stats-section">
                 <div class="stat-item">
                     <div class="stat-label" data-lang data-en="Total Visits" data-zh="总访问量">总访问量</div>
@@ -2039,7 +2035,7 @@
             <div class="divider"></div>
 
             <div style="text-align: center;">
-                <button class="btn btn-outline" onclick="adminLogout()" style="padding: 0.5rem 1.5rem;">
+                <button class="btn btn-outline" onclick="adminLogout()" style="padding: 8px 24px;">
                     <i class="fas fa-sign-out-alt"></i> <span data-lang data-en="Logout" data-zh="退出登录">退出登录</span>
                 </button>
             </div>
@@ -2065,24 +2061,19 @@
             localStorage.setItem('opticalib_config', JSON.stringify(config));
         }
 
-        // ============ 初始化配置 ============
         function initializeConfig() {
             const config = getConfig();
-            
             document.getElementById('displayVersion').textContent = config.version;
             document.getElementById('footerVersion').textContent = 'Version ' + config.version;
             document.getElementById('displayPhone').textContent = config.phone;
             document.getElementById('downloadBtn').href = config.downloadUrl;
-            
             const emailEl = document.getElementById('displayEmail');
             emailEl.textContent = config.feedbackEmail;
             emailEl.href = 'mailto:' + config.feedbackEmail;
-            
             if (config.wechatQR && config.wechatQR.startsWith('data:')) {
                 document.getElementById('wechatQRImage').src = config.wechatQR;
             }
         }
-
         initializeConfig();
 
         // ============ 访问计数 ============
@@ -2097,7 +2088,6 @@
         }
         updateVisitorCount();
 
-        // ============ 下载计数 ============
         document.getElementById('downloadBtn').addEventListener('click', function() {
             let downloads = parseInt(localStorage.getItem('downloadCount') || '0') + 1;
             localStorage.setItem('downloadCount', downloads);
@@ -2109,42 +2099,29 @@
         function switchLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('language', lang);
-            
             document.getElementById('langZh').classList.toggle('active', lang === 'zh');
             document.getElementById('langEn').classList.toggle('active', lang === 'en');
-            
-            // 切换所有带 data-lang 属性的元素
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const text = el.getAttribute('data-' + lang);
                 if (text) el.textContent = text;
             });
-            
-            // 切换placeholder
             document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
                 const placeholder = el.getAttribute('data-placeholder-' + lang);
                 if (placeholder) el.placeholder = placeholder;
             });
-
-            // 更新页面标题
             document.title = lang === 'zh' 
                 ? 'OptiCalib - 专业多镜头相机标定软件' 
                 : 'OptiCalib - Professional Multi-Lens Camera Calibration';
-
             document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         }
-        
-        // 初始化语言
         switchLanguage(currentLang);
 
         // ============ 滚动动画 ============
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         // ============ 平滑滚动 ============
@@ -2152,9 +2129,7 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
@@ -2168,20 +2143,13 @@
         });
 
         // ============ 弹窗 ============
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-        }
-
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
         document.querySelectorAll('.modal-overlay').forEach(overlay => {
             overlay.addEventListener('click', function(e) {
                 if (e.target === this) this.classList.remove('active');
             });
         });
-
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
@@ -2192,19 +2160,14 @@
         let isAdminLoggedIn = sessionStorage.getItem('adminLoggedIn') === 'true';
 
         document.getElementById('adminTrigger').addEventListener('click', function() {
-            if (isAdminLoggedIn) {
-                openAdminPanel();
-            } else {
-                openModal('loginModal');
-            }
+            if (isAdminLoggedIn) openAdminPanel();
+            else openModal('loginModal');
         });
 
         document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const user = document.getElementById('adminUser').value;
             const pass = document.getElementById('adminPass').value;
-            
-            // 修改后的密码
             if (user === 'admin' && pass === 'Liu520134ting') {
                 isAdminLoggedIn = true;
                 sessionStorage.setItem('adminLoggedIn', 'true');
@@ -2225,26 +2188,17 @@
 
         function openAdminPanel() {
             const config = getConfig();
-            
             document.getElementById('adminVersion').value = config.version;
             document.getElementById('adminDownloadUrl').value = config.downloadUrl;
             document.getElementById('adminPhone').value = config.phone;
             document.getElementById('adminFeedbackEmail').value = config.feedbackEmail;
-            
-            if (config.wechatQR) {
-                document.getElementById('adminQRPreview').src = config.wechatQR;
-            }
-            
+            if (config.wechatQR) document.getElementById('adminQRPreview').src = config.wechatQR;
             document.getElementById('adminVisitCount').textContent = localStorage.getItem('visitorCount') || '0';
             document.getElementById('adminDownloadCount').textContent = localStorage.getItem('downloadCount') || '0';
-            
-            // 重新应用当前语言到弹窗
             switchLanguage(currentLang);
-            
             openModal('adminPanel');
         }
 
-        // ============ 保存设置 ============
         function showSaveNotice() {
             const notice = document.getElementById('saveNotice');
             notice.classList.add('show');
@@ -2259,12 +2213,8 @@
                 feedbackEmail: document.getElementById('adminFeedbackEmail').value || defaultConfig.feedbackEmail,
                 wechatQR: defaultConfig.wechatQR
             };
-            
             const preview = document.getElementById('adminQRPreview');
-            if (preview.src && preview.src.startsWith('data:')) {
-                config.wechatQR = preview.src;
-            }
-            
+            if (preview.src && preview.src.startsWith('data:')) config.wechatQR = preview.src;
             saveConfig(config);
             initializeConfig();
             showSaveNotice();
@@ -2293,20 +2243,15 @@
             }
         }
 
-        // ============ 反馈表单 ============
         document.getElementById('feedbackForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const config = getConfig();
             const name = document.getElementById('userName').value;
             const email = document.getElementById('userEmail').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
             const mailtoLink = `mailto:${config.feedbackEmail}?subject=${encodeURIComponent('[OptiCalib] ' + subject)}&body=${encodeURIComponent(`${currentLang === 'zh' ? '姓名' : 'Name'}: ${name}\n${currentLang === 'zh' ? '邮箱' : 'Email'}: ${email}\n\n${message}`)}`;
-            
             window.location.href = mailtoLink;
-            
             setTimeout(() => {
                 alert(currentLang === 'zh' ? '感谢您的反馈！正在打开邮件客户端...' : 'Thank you for your feedback! Opening email client...');
                 this.reset();
