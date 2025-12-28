@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25">
+    <meta name="viewport" content="width=1200">
     <title>OptiCalib - 专业多镜头相机标定软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,26 +29,18 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--dark);
+            background: var(--light);
             color: var(--dark);
             line-height: 1.6;
-            min-width: 1200px;
-        }
-
-        /* 页面容器 - 居中显示 */
-        .page-wrapper {
             width: 1200px;
-            margin: 0 auto;
-            background: var(--light);
-            box-shadow: 0 0 60px rgba(0,0,0,0.3);
+            overflow-x: hidden;
         }
 
         /* 导航栏 */
         nav {
             position: fixed;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 1200px;
             height: 66px;
             background: rgba(255, 255, 255, 0.98);
@@ -1371,554 +1363,551 @@
     </style>
 </head>
 <body>
-    <!-- 页面容器 -->
-    <div class="page-wrapper">
-        <!-- 导航栏 -->
-        <nav>
-            <a href="#" class="logo">
-                <div class="logo-icon"><i class="fas fa-camera"></i></div>
-                <span class="logo-text">OptiCalib</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home" data-lang data-en="Home" data-zh="首页">首页</a></li>
-                <li><a href="#features" data-lang data-en="Features" data-zh="功能">功能</a></li>
-                <li><a href="#download" data-lang data-en="Download" data-zh="下载">下载</a></li>
-                <li><a href="#contact" data-lang data-en="Contact" data-zh="联系">联系</a></li>
-                <li><a href="#download" class="nav-download" data-lang data-en="Download Now" data-zh="立即下载">立即下载</a></li>
-            </ul>
-        </nav>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#" class="logo">
+            <div class="logo-icon"><i class="fas fa-camera"></i></div>
+            <span class="logo-text">OptiCalib</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home" data-lang data-en="Home" data-zh="首页">首页</a></li>
+            <li><a href="#features" data-lang data-en="Features" data-zh="功能">功能</a></li>
+            <li><a href="#download" data-lang data-en="Download" data-zh="下载">下载</a></li>
+            <li><a href="#contact" data-lang data-en="Contact" data-zh="联系">联系</a></li>
+            <li><a href="#download" class="nav-download" data-lang data-en="Download Now" data-zh="立即下载">立即下载</a></li>
+        </ul>
+    </nav>
 
-        <!-- Hero -->
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <i class="fas fa-bolt"></i>
-                        <span data-lang data-en="Latest Version" data-zh="最新版本">最新版本</span> <span id="displayVersion">V1.8.2</span>
-                    </div>
-                    <h1><span>OptiCalib</span><br><span data-lang data-en="Multi-Lens Camera Calibration Software" data-zh="多镜头相机标定软件">多镜头相机标定软件</span></h1>
-                    <p class="subtitle" data-lang data-en="Professional multi-camera system calibration solution. Supports single to multi-camera high-precision intrinsic and extrinsic parameter calibration. High automation, easy operation, powerful visual calibration point correction function." data-zh="专业的多相机系统标定解决方案，支持单目到多目相机的高精度内外参标定。自动化程度高，操作简单，强大的标定点可视化修正功能，助力您的计算机视觉研究与开发。">
-                        专业的多相机系统标定解决方案，支持单目到多目相机的高精度内外参标定。自动化程度高，操作简单，强大的标定点可视化修正功能，助力您的计算机视觉研究与开发。
-                    </p>
-                    <div class="hero-features">
-                        <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-lang data-en="Fully Automatic" data-zh="全自动标定">全自动标定</span></div>
-                        <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-lang data-en="High Efficiency" data-zh="高效率处理">高效率处理</span></div>
-                        <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-lang data-en="High Precision" data-zh="高精度结果">高精度结果</span></div>
-                        <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-lang data-en="Visual Correction" data-zh="可视化修正">可视化修正</span></div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="#download" class="btn btn-primary btn-large">
-                            <i class="fab fa-windows"></i> <span data-lang data-en="Download for Windows" data-zh="下载 Windows 版">下载 Windows 版</span>
-                        </a>
-                        <a href="#features" class="btn btn-white">
-                            <i class="fas fa-info-circle"></i> <span data-lang data-en="Learn More" data-zh="了解更多">了解更多</span>
-                        </a>
-                    </div>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i>
+                    <span data-lang data-en="Latest Version" data-zh="最新版本">最新版本</span> <span id="displayVersion">V1.8.2</span>
                 </div>
-                <div class="hero-image">
-                    <div class="software-preview">
-                        <div class="preview-header">
-                            <div class="preview-dot"></div>
-                            <div class="preview-dot"></div>
-                            <div class="preview-dot"></div>
-                            <span class="preview-title">OptiCalib Workflow</span>
-                        </div>
-                        <div class="preview-scroll-container">
-                            <div class="preview-scroll-content">
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">1</div>
-                                        <span class="preview-item-title" data-lang data-en="Create Project" data-zh="新建工程">新建工程</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="Set project name and path, initialize workspace" data-zh="设置工程名和工程路径，初始化标定工作空间">设置工程名和工程路径，初始化标定工作空间</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Created" data-zh="工程已创建">工程已创建</span></div>
+                <h1><span>OptiCalib</span><br><span data-lang data-en="Multi-Lens Camera Calibration Software" data-zh="多镜头相机标定软件">多镜头相机标定软件</span></h1>
+                <p class="subtitle" data-lang data-en="Professional multi-camera system calibration solution. Supports single to multi-camera high-precision intrinsic and extrinsic parameter calibration. High automation, easy operation, powerful visual calibration point correction function." data-zh="专业的多相机系统标定解决方案，支持单目到多目相机的高精度内外参标定。自动化程度高，操作简单，强大的标定点可视化修正功能，助力您的计算机视觉研究与开发。">
+                    专业的多相机系统标定解决方案，支持单目到多目相机的高精度内外参标定。自动化程度高，操作简单，强大的标定点可视化修正功能，助力您的计算机视觉研究与开发。
+                </p>
+                <div class="hero-features">
+                    <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-lang data-en="Fully Automatic" data-zh="全自动标定">全自动标定</span></div>
+                    <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-lang data-en="High Efficiency" data-zh="高效率处理">高效率处理</span></div>
+                    <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-lang data-en="High Precision" data-zh="高精度结果">高精度结果</span></div>
+                    <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-lang data-en="Visual Correction" data-zh="可视化修正">可视化修正</span></div>
+                </div>
+                <div class="btn-group">
+                    <a href="#download" class="btn btn-primary btn-large">
+                        <i class="fab fa-windows"></i> <span data-lang data-en="Download for Windows" data-zh="下载 Windows 版">下载 Windows 版</span>
+                    </a>
+                    <a href="#features" class="btn btn-white">
+                        <i class="fas fa-info-circle"></i> <span data-lang data-en="Learn More" data-zh="了解更多">了解更多</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="software-preview">
+                    <div class="preview-header">
+                        <div class="preview-dot"></div>
+                        <div class="preview-dot"></div>
+                        <div class="preview-dot"></div>
+                        <span class="preview-title">OptiCalib Workflow</span>
+                    </div>
+                    <div class="preview-scroll-container">
+                        <div class="preview-scroll-content">
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">1</div>
+                                    <span class="preview-item-title" data-lang data-en="Create Project" data-zh="新建工程">新建工程</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">2</div>
-                                        <span class="preview-item-title" data-lang data-en="Add Calibration Board" data-zh="添加标定板">添加标定板</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="Support Chessboard, ChArUco, ArUco, Circle Grid" data-zh="支持棋盘格、ChArUco、ArUco、圆点等标定板">支持棋盘格、ChArUco、ArUco、圆点等标定板</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="9x7 Chessboard, 50mm" data-zh="棋盘 9x7，间距50mm">棋盘 9x7，间距50mm</span></div>
+                                <div class="preview-item-desc" data-lang data-en="Set project name and path, initialize workspace" data-zh="设置工程名和工程路径，初始化标定工作空间">设置工程名和工程路径，初始化标定工作空间</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Created" data-zh="工程已创建">工程已创建</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">2</div>
+                                    <span class="preview-item-title" data-lang data-en="Add Calibration Board" data-zh="添加标定板">添加标定板</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">3</div>
-                                        <span class="preview-item-title" data-lang data-en="Set Parameters" data-zh="设置标定参数">设置标定参数</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="Detection algorithm, distortion model (Brown/Fisheye/MEI)" data-zh="检测算法、畸变模型（Brown/鱼眼/MEI模型）">检测算法、畸变模型（Brown/鱼眼/MEI模型）</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Brown 14 params" data-zh="Brown模型 14参数">Brown模型 14参数</span></div>
+                                <div class="preview-item-desc" data-lang data-en="Support Chessboard, ChArUco, ArUco, Circle Grid" data-zh="支持棋盘格、ChArUco、ArUco、圆点等标定板">支持棋盘格、ChArUco、ArUco、圆点等标定板</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="9x7 Chessboard, 50mm" data-zh="棋盘 9x7，间距50mm">棋盘 9x7，间距50mm</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">3</div>
+                                    <span class="preview-item-title" data-lang data-en="Set Parameters" data-zh="设置标定参数">设置标定参数</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">4</div>
-                                        <span class="preview-item-title" data-lang data-en="Load Images" data-zh="加载标定样本">加载标定样本</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="Load local images or capture from camera" data-zh="支持加载本地图像或实时摄像头截图">支持加载本地图像或实时摄像头截图</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="26 images loaded" data-zh="已加载 26 张图像">已加载 26 张图像</span></div>
+                                <div class="preview-item-desc" data-lang data-en="Detection algorithm, distortion model (Brown/Fisheye/MEI)" data-zh="检测算法、畸变模型（Brown/鱼眼/MEI模型）">检测算法、畸变模型（Brown/鱼眼/MEI模型）</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Brown 14 params" data-zh="Brown模型 14参数">Brown模型 14参数</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">4</div>
+                                    <span class="preview-item-title" data-lang data-en="Load Images" data-zh="加载标定样本">加载标定样本</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">5</div>
-                                        <span class="preview-item-title" data-lang data-en="Corner Detection" data-zh="角点检测">角点检测</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="Sub-pixel automatic corner detection" data-zh="亚像素级自动角点检测，支持部分遮挡">亚像素级自动角点检测，支持部分遮挡</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="1,820 corners" data-zh="检测到 1,820 个角点">检测到 1,820 个角点</span></div>
+                                <div class="preview-item-desc" data-lang data-en="Load local images or capture from camera" data-zh="支持加载本地图像或实时摄像头截图">支持加载本地图像或实时摄像头截图</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="26 images loaded" data-zh="已加载 26 张图像">已加载 26 张图像</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">5</div>
+                                    <span class="preview-item-title" data-lang data-en="Corner Detection" data-zh="角点检测">角点检测</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">6</div>
-                                        <span class="preview-item-title" data-lang data-en="Execute Calibration" data-zh="执行标定">执行标定</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="Bundle Adjustment global optimization" data-zh="Bundle Adjustment 全局优化解算">Bundle Adjustment 全局优化解算</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Completed" data-zh="标定完成">标定完成</span></div>
+                                <div class="preview-item-desc" data-lang data-en="Sub-pixel automatic corner detection" data-zh="亚像素级自动角点检测，支持部分遮挡">亚像素级自动角点检测，支持部分遮挡</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="1,820 corners" data-zh="检测到 1,820 个角点">检测到 1,820 个角点</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">6</div>
+                                    <span class="preview-item-title" data-lang data-en="Execute Calibration" data-zh="执行标定">执行标定</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">7</div>
-                                        <span class="preview-item-title" data-lang data-en="Error Analysis" data-zh="误差分析">误差分析</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="5 visualization panels: reprojection, histogram..." data-zh="5种可视化面板：重投影、直方图、三维场景...">5种可视化面板：重投影、直方图、三维场景...</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="RMS: 0.15px" data-zh="RMS误差: 0.15像素">RMS误差: 0.15像素</span></div>
+                                <div class="preview-item-desc" data-lang data-en="Bundle Adjustment global optimization" data-zh="Bundle Adjustment 全局优化解算">Bundle Adjustment 全局优化解算</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Completed" data-zh="标定完成">标定完成</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">7</div>
+                                    <span class="preview-item-title" data-lang data-en="Error Analysis" data-zh="误差分析">误差分析</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">8</div>
-                                        <span class="preview-item-title" data-lang data-en="Interactive Correction" data-zh="交互修正">交互修正</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="6 correction methods available" data-zh="6种修正方法：全局定位、单点修正、批量修正...">6种修正方法：全局定位、单点修正、批量修正...</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Improved" data-zh="精度提升">精度提升</span></div>
+                                <div class="preview-item-desc" data-lang data-en="5 visualization panels: reprojection, histogram..." data-zh="5种可视化面板：重投影、直方图、三维场景...">5种可视化面板：重投影、直方图、三维场景...</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="RMS: 0.15px" data-zh="RMS误差: 0.15像素">RMS误差: 0.15像素</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">8</div>
+                                    <span class="preview-item-title" data-lang data-en="Interactive Correction" data-zh="交互修正">交互修正</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">9</div>
-                                        <span class="preview-item-title" data-lang data-en="Coordinate Alignment" data-zh="基准坐标系对齐">基准坐标系对齐</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="Align extrinsics to reference coordinate" data-zh="将外参数对齐到指定的基准坐标系">将外参数对齐到指定的基准坐标系</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Aligned" data-zh="已对齐到标定板原点">已对齐到标定板原点</span></div>
+                                <div class="preview-item-desc" data-lang data-en="6 correction methods available" data-zh="6种修正方法：全局定位、单点修正、批量修正...">6种修正方法：全局定位、单点修正、批量修正...</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Improved" data-zh="精度提升">精度提升</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">9</div>
+                                    <span class="preview-item-title" data-lang data-en="Coordinate Alignment" data-zh="基准坐标系对齐">基准坐标系对齐</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">10</div>
-                                        <span class="preview-item-title" data-lang data-en="Export Results" data-zh="导出结果">导出结果</span>
-                                    </div>
-                                    <div class="preview-item-desc" data-lang data-en="Export to YAML/JSON/XML, generate report" data-zh="导出YAML/JSON/XML格式，生成精度报告">导出YAML/JSON/XML格式，生成精度报告</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Exported" data-zh="导出完成">导出完成</span></div>
+                                <div class="preview-item-desc" data-lang data-en="Align extrinsics to reference coordinate" data-zh="将外参数对齐到指定的基准坐标系">将外参数对齐到指定的基准坐标系</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Aligned" data-zh="已对齐到标定板原点">已对齐到标定板原点</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">10</div>
+                                    <span class="preview-item-title" data-lang data-en="Export Results" data-zh="导出结果">导出结果</span>
                                 </div>
-                                <!-- 复制用于无缝滚动 -->
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">1</div>
-                                        <span class="preview-item-title">新建工程</span>
-                                    </div>
-                                    <div class="preview-item-desc">设置工程名和工程路径，初始化标定工作空间</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> 工程已创建</div>
+                                <div class="preview-item-desc" data-lang data-en="Export to YAML/JSON/XML, generate report" data-zh="导出YAML/JSON/XML格式，生成精度报告">导出YAML/JSON/XML格式，生成精度报告</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Exported" data-zh="导出完成">导出完成</span></div>
+                            </div>
+                            <!-- 复制用于无缝滚动 -->
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">1</div>
+                                    <span class="preview-item-title">新建工程</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">2</div>
-                                        <span class="preview-item-title">添加标定板</span>
-                                    </div>
-                                    <div class="preview-item-desc">支持棋盘格、ChArUco、ArUco、圆点等标定板</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> 棋盘 9x7，间距50mm</div>
+                                <div class="preview-item-desc">设置工程名和工程路径，初始化标定工作空间</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 工程已创建</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">2</div>
+                                    <span class="preview-item-title">添加标定板</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">3</div>
-                                        <span class="preview-item-title">设置标定参数</span>
-                                    </div>
-                                    <div class="preview-item-desc">检测算法、畸变模型（Brown/鱼眼/MEI模型）</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> Brown模型 14参数</div>
+                                <div class="preview-item-desc">支持棋盘格、ChArUco、ArUco、圆点等标定板</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 棋盘 9x7，间距50mm</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">3</div>
+                                    <span class="preview-item-title">设置标定参数</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">4</div>
-                                        <span class="preview-item-title">加载标定样本</span>
-                                    </div>
-                                    <div class="preview-item-desc">支持加载本地图像或实时摄像头截图</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> 已加载 26 张图像</div>
+                                <div class="preview-item-desc">检测算法、畸变模型（Brown/鱼眼/MEI模型）</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> Brown模型 14参数</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">4</div>
+                                    <span class="preview-item-title">加载标定样本</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">5</div>
-                                        <span class="preview-item-title">角点检测</span>
-                                    </div>
-                                    <div class="preview-item-desc">亚像素级自动角点检测，支持部分遮挡</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> 检测到 1,820 个角点</div>
+                                <div class="preview-item-desc">支持加载本地图像或实时摄像头截图</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 已加载 26 张图像</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">5</div>
+                                    <span class="preview-item-title">角点检测</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">6</div>
-                                        <span class="preview-item-title">执行标定</span>
-                                    </div>
-                                    <div class="preview-item-desc">Bundle Adjustment 全局优化解算</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> 标定完成</div>
+                                <div class="preview-item-desc">亚像素级自动角点检测，支持部分遮挡</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 检测到 1,820 个角点</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">6</div>
+                                    <span class="preview-item-title">执行标定</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">7</div>
-                                        <span class="preview-item-title">误差分析</span>
-                                    </div>
-                                    <div class="preview-item-desc">5种可视化面板：重投影、直方图、三维场景...</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> RMS误差: 0.15像素</div>
+                                <div class="preview-item-desc">Bundle Adjustment 全局优化解算</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 标定完成</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">7</div>
+                                    <span class="preview-item-title">误差分析</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">8</div>
-                                        <span class="preview-item-title">交互修正</span>
-                                    </div>
-                                    <div class="preview-item-desc">6种修正方法：全局定位、单点修正、批量修正...</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> 精度提升</div>
+                                <div class="preview-item-desc">5种可视化面板：重投影、直方图、三维场景...</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> RMS误差: 0.15像素</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">8</div>
+                                    <span class="preview-item-title">交互修正</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">9</div>
-                                        <span class="preview-item-title">基准坐标系对齐</span>
-                                    </div>
-                                    <div class="preview-item-desc">将外参数对齐到指定的基准坐标系</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> 已对齐到标定板原点</div>
+                                <div class="preview-item-desc">6种修正方法：全局定位、单点修正、批量修正...</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 精度提升</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">9</div>
+                                    <span class="preview-item-title">基准坐标系对齐</span>
                                 </div>
-                                <div class="preview-item">
-                                    <div class="preview-item-header">
-                                        <div class="preview-step-num">10</div>
-                                        <span class="preview-item-title">导出结果</span>
-                                    </div>
-                                    <div class="preview-item-desc">导出YAML/JSON/XML格式，生成精度报告</div>
-                                    <div class="preview-item-status"><i class="fas fa-check"></i> 导出完成</div>
+                                <div class="preview-item-desc">将外参数对齐到指定的基准坐标系</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 已对齐到标定板原点</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">10</div>
+                                    <span class="preview-item-title">导出结果</span>
                                 </div>
+                                <div class="preview-item-desc">导出YAML/JSON/XML格式，生成精度报告</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 导出完成</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 软件概述 -->
-        <section class="overview" id="overview">
-            <div class="section-header">
-                <span class="section-tag" data-lang data-en="About" data-zh="软件概述">软件概述</span>
-                <h2 data-lang data-en="What is OptiCalib?" data-zh="OptiCalib 是什么？">OptiCalib 是什么？</h2>
-            </div>
-            <div class="overview-content">
-                <p class="overview-text" data-lang data-en="OptiCalib is a professional multi-lens camera calibration system that supports camera calibration in any scenario. It supports single/multi-lens, single/multi-calibration board, different resolution cameras, and independent/joint calibration. User-friendly, easy to operate, with controllable precision, featuring full automation, high efficiency, and high accuracy." data-zh="OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。">
-                    OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。
-                </p>
-                <div class="overview-highlights">
-                    <div class="highlight-item fade-in">
-                        <i class="fas fa-robot"></i>
-                        <h4 data-lang data-en="Fully Automatic" data-zh="全自动化">全自动化</h4>
-                        <p data-lang data-en="Auto corner detection and calibration" data-zh="自动角点检测与标定">自动角点检测与标定</p>
-                    </div>
-                    <div class="highlight-item fade-in">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <h4 data-lang data-en="High Efficiency" data-zh="高效率">高效率</h4>
-                        <p data-lang data-en="Fast processing, real-time preview" data-zh="快速处理，实时预览">快速处理，实时预览</p>
-                    </div>
-                    <div class="highlight-item fade-in">
-                        <i class="fas fa-crosshairs"></i>
-                        <h4 data-lang data-en="High Precision" data-zh="高精度">高精度</h4>
-                        <p data-lang data-en="Sub-pixel level accuracy" data-zh="亚像素级精度保障">亚像素级精度保障</p>
-                    </div>
-                    <div class="highlight-item fade-in">
-                        <i class="fas fa-mouse-pointer"></i>
-                        <h4 data-lang data-en="Easy to Use" data-zh="易操作">易操作</h4>
-                        <p data-lang data-en="Intuitive GUI interface" data-zh="直观图形化界面">直观图形化界面</p>
-                    </div>
+    <!-- 软件概述 -->
+    <section class="overview" id="overview">
+        <div class="section-header">
+            <span class="section-tag" data-lang data-en="About" data-zh="软件概述">软件概述</span>
+            <h2 data-lang data-en="What is OptiCalib?" data-zh="OptiCalib 是什么？">OptiCalib 是什么？</h2>
+        </div>
+        <div class="overview-content">
+            <p class="overview-text" data-lang data-en="OptiCalib is a professional multi-lens camera calibration system that supports camera calibration in any scenario. It supports single/multi-lens, single/multi-calibration board, different resolution cameras, and independent/joint calibration. User-friendly, easy to operate, with controllable precision, featuring full automation, high efficiency, and high accuracy." data-zh="OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。">
+                OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。
+            </p>
+            <div class="overview-highlights">
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-robot"></i>
+                    <h4 data-lang data-en="Fully Automatic" data-zh="全自动化">全自动化</h4>
+                    <p data-lang data-en="Auto corner detection and calibration" data-zh="自动角点检测与标定">自动角点检测与标定</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h4 data-lang data-en="High Efficiency" data-zh="高效率">高效率</h4>
+                    <p data-lang data-en="Fast processing, real-time preview" data-zh="快速处理，实时预览">快速处理，实时预览</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-crosshairs"></i>
+                    <h4 data-lang data-en="High Precision" data-zh="高精度">高精度</h4>
+                    <p data-lang data-en="Sub-pixel level accuracy" data-zh="亚像素级精度保障">亚像素级精度保障</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <h4 data-lang data-en="Easy to Use" data-zh="易操作">易操作</h4>
+                    <p data-lang data-en="Intuitive GUI interface" data-zh="直观图形化界面">直观图形化界面</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 核心功能 -->
-        <section class="features" id="features">
-            <div class="section-header">
-                <span class="section-tag" data-lang data-en="Core Features" data-zh="核心功能">核心功能</span>
-                <h2 data-lang data-en="Powerful Calibration Features" data-zh="强大的标定功能">强大的标定功能</h2>
-                <p data-lang data-en="Meet various camera calibration needs" data-zh="满足多种相机标定需求">满足多种相机标定需求</p>
+    <!-- 核心功能 -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-tag" data-lang data-en="Core Features" data-zh="核心功能">核心功能</span>
+            <h2 data-lang data-en="Powerful Calibration Features" data-zh="强大的标定功能">强大的标定功能</h2>
+            <p data-lang data-en="Meet various camera calibration needs" data-zh="满足多种相机标定需求">满足多种相机标定需求</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-camera"></i></div>
+                <h3 data-lang data-en="Multi-Camera Support" data-zh="多相机系统支持">多相机系统支持</h3>
+                <p data-lang data-en="Support calibration from monocular to 16+ camera arrays, flexible camera topology configuration." data-zh="支持从单目相机到16+相机阵列的标定，灵活配置相机拓扑结构。">支持从单目相机到16+相机阵列的标定，灵活配置相机拓扑结构。</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-camera"></i></div>
-                    <h3 data-lang data-en="Multi-Camera Support" data-zh="多相机系统支持">多相机系统支持</h3>
-                    <p data-lang data-en="Support calibration from monocular to 16+ camera arrays, flexible camera topology configuration." data-zh="支持从单目相机到16+相机阵列的标定，灵活配置相机拓扑结构。">支持从单目相机到16+相机阵列的标定，灵活配置相机拓扑结构。</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-chess-board"></i></div>
-                    <h3 data-lang data-en="Multiple Calibration Boards" data-zh="多种标定板支持">多种标定板支持</h3>
-                    <p data-lang data-en="Support Chessboard, ChArUco, ArUco, Circle Grid and more board types." data-zh="支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。">支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-eye"></i></div>
-                    <h3 data-lang data-en="Visual Correction" data-zh="可视化修正功能">可视化修正功能</h3>
-                    <p data-lang data-en="Powerful visual calibration point correction with 6 interactive methods." data-zh="强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。">强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
-                    <h3 data-lang data-en="Multiple Distortion Models" data-zh="多种畸变模型">多种畸变模型</h3>
-                    <p data-lang data-en="Support Brown/Conrady, Kannala-Brandt fisheye, MEI omnidirectional model." data-zh="支持Brown/Conrady模型、鱼眼Kannala-Brandt模型、MEI全向模型。">支持Brown/Conrady模型、鱼眼Kannala-Brandt模型、MEI全向模型。</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h3 data-lang data-en="Precision Analysis" data-zh="精度分析工具">精度分析工具</h3>
-                    <p data-lang data-en="5 error visualization panels, overlay analysis, coverage analysis." data-zh="五种误差可视化面板、透视叠加分析、有效区域分析。">五种误差可视化面板、透视叠加分析、有效区域分析。</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-file-export"></i></div>
-                    <h3 data-lang data-en="Multi-Format Export" data-zh="多格式导出">多格式导出</h3>
-                    <p data-lang data-en="Export to YAML, JSON, XML. Compatible with OpenCV, ROS, MATLAB." data-zh="支持YAML、JSON、XML等多种格式导出，兼容OpenCV、ROS。">支持YAML、JSON、XML等多种格式导出，兼容OpenCV、ROS。</p>
-                </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-chess-board"></i></div>
+                <h3 data-lang data-en="Multiple Calibration Boards" data-zh="多种标定板支持">多种标定板支持</h3>
+                <p data-lang data-en="Support Chessboard, ChArUco, ArUco, Circle Grid and more board types." data-zh="支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。">支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。</p>
             </div>
-        </section>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-eye"></i></div>
+                <h3 data-lang data-en="Visual Correction" data-zh="可视化修正功能">可视化修正功能</h3>
+                <p data-lang data-en="Powerful visual calibration point correction with 6 interactive methods." data-zh="强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。">强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+                <h3 data-lang data-en="Multiple Distortion Models" data-zh="多种畸变模型">多种畸变模型</h3>
+                <p data-lang data-en="Support Brown/Conrady, Kannala-Brandt fisheye, MEI omnidirectional model." data-zh="支持Brown/Conrady模型、鱼眼Kannala-Brandt模型、MEI全向模型。">支持Brown/Conrady模型、鱼眼Kannala-Brandt模型、MEI全向模型。</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3 data-lang data-en="Precision Analysis" data-zh="精度分析工具">精度分析工具</h3>
+                <p data-lang data-en="5 error visualization panels, overlay analysis, coverage analysis." data-zh="五种误差可视化面板、透视叠加分析、有效区域分析。">五种误差可视化面板、透视叠加分析、有效区域分析。</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-file-export"></i></div>
+                <h3 data-lang data-en="Multi-Format Export" data-zh="多格式导出">多格式导出</h3>
+                <p data-lang data-en="Export to YAML, JSON, XML. Compatible with OpenCV, ROS, MATLAB." data-zh="支持YAML、JSON、XML等多种格式导出，兼容OpenCV、ROS。">支持YAML、JSON、XML等多种格式导出，兼容OpenCV、ROS。</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- 工作模式 -->
-        <section class="work-modes">
-            <div class="section-header">
-                <span class="section-tag" style="background: rgba(52, 211, 153, 0.2); color: #34d399;" data-lang data-en="Work Modes" data-zh="工作模式">工作模式</span>
-                <h2 data-lang data-en="Four Calibration Modes" data-zh="四种标定模式">四种标定模式</h2>
-                <p data-lang data-en="Flexible combination for different scenarios" data-zh="灵活组合，满足不同标定场景需求">灵活组合，满足不同标定场景需求</p>
+    <!-- 工作模式 -->
+    <section class="work-modes">
+        <div class="section-header">
+            <span class="section-tag" style="background: rgba(52, 211, 153, 0.2); color: #34d399;" data-lang data-en="Work Modes" data-zh="工作模式">工作模式</span>
+            <h2 data-lang data-en="Four Calibration Modes" data-zh="四种标定模式">四种标定模式</h2>
+            <p data-lang data-en="Flexible combination for different scenarios" data-zh="灵活组合，满足不同标定场景需求">灵活组合，满足不同标定场景需求</p>
+        </div>
+        <div class="modes-grid">
+            <div class="mode-card fade-in">
+                <i class="fas fa-camera"></i>
+                <h4 data-lang data-en="Single Lens + Single Board" data-zh="单镜头单标定板">单镜头单标定板</h4>
+                <p data-lang data-en="Basic monocular calibration" data-zh="基础单目相机标定">基础单目相机标定</p>
             </div>
-            <div class="modes-grid">
-                <div class="mode-card fade-in">
-                    <i class="fas fa-camera"></i>
-                    <h4 data-lang data-en="Single Lens + Single Board" data-zh="单镜头单标定板">单镜头单标定板</h4>
-                    <p data-lang data-en="Basic monocular calibration" data-zh="基础单目相机标定">基础单目相机标定</p>
-                </div>
-                <div class="mode-card fade-in">
-                    <i class="fas fa-th-large"></i>
-                    <h4 data-lang data-en="Single Lens + Multi Board" data-zh="单镜头多标定板">单镜头多标定板</h4>
-                    <p data-lang data-en="Multi-board joint calibration" data-zh="多标定板联合标定">多标定板联合标定</p>
-                </div>
-                <div class="mode-card fade-in">
-                    <i class="fas fa-binoculars"></i>
-                    <h4 data-lang data-en="Multi Lens + Single Board" data-zh="多镜头单标定板">多镜头单标定板</h4>
-                    <p data-lang data-en="Stereo/multi camera calibration" data-zh="双目/多目相机标定">双目/多目相机标定</p>
-                </div>
-                <div class="mode-card fade-in">
-                    <i class="fas fa-th"></i>
-                    <h4 data-lang data-en="Multi Lens + Multi Board" data-zh="多镜头多标定板">多镜头多标定板</h4>
-                    <p data-lang data-en="Complex multi-camera system" data-zh="复杂多相机系统标定">复杂多相机系统标定</p>
-                </div>
+            <div class="mode-card fade-in">
+                <i class="fas fa-th-large"></i>
+                <h4 data-lang data-en="Single Lens + Multi Board" data-zh="单镜头多标定板">单镜头多标定板</h4>
+                <p data-lang data-en="Multi-board joint calibration" data-zh="多标定板联合标定">多标定板联合标定</p>
             </div>
-        </section>
+            <div class="mode-card fade-in">
+                <i class="fas fa-binoculars"></i>
+                <h4 data-lang data-en="Multi Lens + Single Board" data-zh="多镜头单标定板">多镜头单标定板</h4>
+                <p data-lang data-en="Stereo/multi camera calibration" data-zh="双目/多目相机标定">双目/多目相机标定</p>
+            </div>
+            <div class="mode-card fade-in">
+                <i class="fas fa-th"></i>
+                <h4 data-lang data-en="Multi Lens + Multi Board" data-zh="多镜头多标定板">多镜头多标定板</h4>
+                <p data-lang data-en="Complex multi-camera system" data-zh="复杂多相机系统标定">复杂多相机系统标定</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- 标定板 -->
-        <section class="calibration-boards">
-            <div class="section-header">
-                <span class="section-tag" data-lang data-en="Calibration Boards" data-zh="标定板类型">标定板类型</span>
-                <h2 data-lang data-en="Supported Calibration Boards" data-zh="支持的标定板">支持的标定板</h2>
+    <!-- 标定板 -->
+    <section class="calibration-boards">
+        <div class="section-header">
+            <span class="section-tag" data-lang data-en="Calibration Boards" data-zh="标定板类型">标定板类型</span>
+            <h2 data-lang data-en="Supported Calibration Boards" data-zh="支持的标定板">支持的标定板</h2>
+        </div>
+        <div class="boards-grid">
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-chess-board"></i></div>
+                <h4 data-lang data-en="Chessboard" data-zh="棋盘格">棋盘格</h4>
             </div>
-            <div class="boards-grid">
-                <div class="board-card fade-in">
-                    <div class="board-icon"><i class="fas fa-chess-board"></i></div>
-                    <h4 data-lang data-en="Chessboard" data-zh="棋盘格">棋盘格</h4>
-                </div>
-                <div class="board-card fade-in">
-                    <div class="board-icon"><i class="fas fa-qrcode"></i></div>
-                    <h4>ChArUco</h4>
-                </div>
-                <div class="board-card fade-in">
-                    <div class="board-icon"><i class="fas fa-barcode"></i></div>
-                    <h4>ArUco</h4>
-                </div>
-                <div class="board-card fade-in">
-                    <div class="board-icon"><i class="fas fa-circle"></i></div>
-                    <h4 data-lang data-en="Symmetric Circles" data-zh="对称圆点">对称圆点</h4>
-                </div>
-                <div class="board-card fade-in">
-                    <div class="board-icon"><i class="fas fa-ellipsis-h"></i></div>
-                    <h4 data-lang data-en="Asymmetric Circles" data-zh="非对称圆点">非对称圆点</h4>
-                </div>
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-qrcode"></i></div>
+                <h4>ChArUco</h4>
             </div>
-        </section>
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-barcode"></i></div>
+                <h4>ArUco</h4>
+            </div>
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-circle"></i></div>
+                <h4 data-lang data-en="Symmetric Circles" data-zh="对称圆点">对称圆点</h4>
+            </div>
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-ellipsis-h"></i></div>
+                <h4 data-lang data-en="Asymmetric Circles" data-zh="非对称圆点">非对称圆点</h4>
+            </div>
+        </div>
+    </section>
 
-        <!-- 畸变模型 -->
-        <section class="distortion-models">
-            <div class="section-header">
-                <span class="section-tag" data-lang data-en="Distortion Models" data-zh="畸变模型">畸变模型</span>
-                <h2 data-lang data-en="Supported Camera Models" data-zh="支持的相机模型">支持的相机模型</h2>
-            </div>
-            <div class="models-container">
-                <div class="model-card fade-in">
-                    <div class="model-icon"><i class="fas fa-dot-circle"></i></div>
-                    <div class="model-info">
-                        <h4 data-lang data-en="Brown/Conrady Model" data-zh="Brown/Conrady 模型">Brown/Conrady 模型</h4>
-                        <p data-lang data-en="18-parameter: radial K1-K6, tangential P1-P2, thin lens S1-S4" data-zh="18参数组合：径向K1-K6、切向P1-P2、薄透镜S1-S4">18参数组合：径向K1-K6、切向P1-P2、薄透镜S1-S4</p>
-                    </div>
-                </div>
-                <div class="model-card fade-in">
-                    <div class="model-icon"><i class="fas fa-fish"></i></div>
-                    <div class="model-info">
-                        <h4 data-lang data-en="Kannala-Brandt Fisheye" data-zh="Kannala-Brandt 鱼眼模型">Kannala-Brandt 鱼眼模型</h4>
-                        <p data-lang data-en="4-parameter fisheye model for ultra-wide-angle cameras" data-zh="4参数鱼眼广角镜头模型，适用于超广角相机">4参数鱼眼广角镜头模型，适用于超广角相机</p>
-                    </div>
-                </div>
-                <div class="model-card fade-in">
-                    <div class="model-icon"><i class="fas fa-globe"></i></div>
-                    <div class="model-info">
-                        <h4 data-lang data-en="MEI Omnidirectional" data-zh="MEI 全向模型">MEI 全向模型</h4>
-                        <p data-lang data-en="9-parameter omnidirectional MEI model, Unified Camera Model" data-zh="9参数鱼眼全向MEI模型，Unified Camera Model">9参数鱼眼全向MEI模型，Unified Camera Model</p>
-                    </div>
-                </div>
-                <div class="model-card fade-in">
-                    <div class="model-icon"><i class="fas fa-layer-group"></i></div>
-                    <div class="model-info">
-                        <h4 data-lang data-en="Thin Prism Model" data-zh="薄棱镜畸变模型">薄棱镜畸变模型</h4>
-                        <p data-lang data-en="Thin Prism model for complex lens distortion correction" data-zh="Thin Prism model，用于复杂镜头畸变校正">Thin Prism model，用于复杂镜头畸变校正</p>
-                    </div>
+    <!-- 畸变模型 -->
+    <section class="distortion-models">
+        <div class="section-header">
+            <span class="section-tag" data-lang data-en="Distortion Models" data-zh="畸变模型">畸变模型</span>
+            <h2 data-lang data-en="Supported Camera Models" data-zh="支持的相机模型">支持的相机模型</h2>
+        </div>
+        <div class="models-container">
+            <div class="model-card fade-in">
+                <div class="model-icon"><i class="fas fa-dot-circle"></i></div>
+                <div class="model-info">
+                    <h4 data-lang data-en="Brown/Conrady Model" data-zh="Brown/Conrady 模型">Brown/Conrady 模型</h4>
+                    <p data-lang data-en="18-parameter: radial K1-K6, tangential P1-P2, thin lens S1-S4" data-zh="18参数组合：径向K1-K6、切向P1-P2、薄透镜S1-S4">18参数组合：径向K1-K6、切向P1-P2、薄透镜S1-S4</p>
                 </div>
             </div>
-        </section>
+            <div class="model-card fade-in">
+                <div class="model-icon"><i class="fas fa-fish"></i></div>
+                <div class="model-info">
+                    <h4 data-lang data-en="Kannala-Brandt Fisheye" data-zh="Kannala-Brandt 鱼眼模型">Kannala-Brandt 鱼眼模型</h4>
+                    <p data-lang data-en="4-parameter fisheye model for ultra-wide-angle cameras" data-zh="4参数鱼眼广角镜头模型，适用于超广角相机">4参数鱼眼广角镜头模型，适用于超广角相机</p>
+                </div>
+            </div>
+            <div class="model-card fade-in">
+                <div class="model-icon"><i class="fas fa-globe"></i></div>
+                <div class="model-info">
+                    <h4 data-lang data-en="MEI Omnidirectional" data-zh="MEI 全向模型">MEI 全向模型</h4>
+                    <p data-lang data-en="9-parameter omnidirectional MEI model, Unified Camera Model" data-zh="9参数鱼眼全向MEI模型，Unified Camera Model">9参数鱼眼全向MEI模型，Unified Camera Model</p>
+                </div>
+            </div>
+            <div class="model-card fade-in">
+                <div class="model-icon"><i class="fas fa-layer-group"></i></div>
+                <div class="model-info">
+                    <h4 data-lang data-en="Thin Prism Model" data-zh="薄棱镜畸变模型">薄棱镜畸变模型</h4>
+                    <p data-lang data-en="Thin Prism model for complex lens distortion correction" data-zh="Thin Prism model，用于复杂镜头畸变校正">Thin Prism model，用于复杂镜头畸变校正</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- 精度分析 -->
-        <section class="accuracy-section">
-            <div class="section-header">
-                <span class="section-tag" data-lang data-en="Precision Analysis" data-zh="精度分析">精度分析</span>
-                <h2 data-lang data-en="Accuracy Analysis Tools" data-zh="精度分析工具">精度分析工具</h2>
+    <!-- 精度分析 -->
+    <section class="accuracy-section">
+        <div class="section-header">
+            <span class="section-tag" data-lang data-en="Precision Analysis" data-zh="精度分析">精度分析</span>
+            <h2 data-lang data-en="Accuracy Analysis Tools" data-zh="精度分析工具">精度分析工具</h2>
+        </div>
+        <div class="accuracy-grid">
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-chart-line"></i>
+                <h4 data-lang data-en="Reprojection Error" data-zh="重投影误差分析">重投影误差分析</h4>
+                <p data-lang data-en="Visualize error distribution" data-zh="可视化误差点分布">可视化误差点分布</p>
             </div>
-            <div class="accuracy-grid">
-                <div class="accuracy-card fade-in">
-                    <i class="fas fa-chart-line"></i>
-                    <h4 data-lang data-en="Reprojection Error" data-zh="重投影误差分析">重投影误差分析</h4>
-                    <p data-lang data-en="Visualize error distribution" data-zh="可视化误差点分布">可视化误差点分布</p>
-                </div>
-                <div class="accuracy-card fade-in">
-                    <i class="fas fa-chart-bar"></i>
-                    <h4 data-lang data-en="Histogram Analysis" data-zh="直方图分析">直方图分析</h4>
-                    <p data-lang data-en="Statistical error analysis" data-zh="误差分布统计">误差分布统计</p>
-                </div>
-                <div class="accuracy-card fade-in">
-                    <i class="fas fa-cube"></i>
-                    <h4 data-lang data-en="3D Scene" data-zh="三维场景">三维场景</h4>
-                    <p data-lang data-en="3D camera pose visualization" data-zh="3D可视化相机位姿">3D可视化相机位姿</p>
-                </div>
-                <div class="accuracy-card fade-in">
-                    <i class="fas fa-arrows-alt-h"></i>
-                    <h4 data-lang data-en="Epipolar Constraint" data-zh="极线约束">极线约束</h4>
-                    <p data-lang data-en="Multi-view constraint check" data-zh="多视图约束检查">多视图约束检查</p>
-                </div>
-                <div class="accuracy-card fade-in">
-                    <i class="fas fa-layer-group"></i>
-                    <h4 data-lang data-en="Overlay Analysis" data-zh="透视叠加">透视叠加</h4>
-                    <p data-lang data-en="Distortion correction alignment" data-zh="畸变校正对齐">畸变校正对齐</p>
-                </div>
-                <div class="accuracy-card fade-in">
-                    <i class="fas fa-bullseye"></i>
-                    <h4 data-lang data-en="Coverage Analysis" data-zh="覆盖分析">覆盖分析</h4>
-                    <p data-lang data-en="Board coverage analysis" data-zh="标定板覆盖率">标定板覆盖率</p>
-                </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-chart-bar"></i>
+                <h4 data-lang data-en="Histogram Analysis" data-zh="直方图分析">直方图分析</h4>
+                <p data-lang data-en="Statistical error analysis" data-zh="误差分布统计">误差分布统计</p>
             </div>
-        </section>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-cube"></i>
+                <h4 data-lang data-en="3D Scene" data-zh="三维场景">三维场景</h4>
+                <p data-lang data-en="3D camera pose visualization" data-zh="3D可视化相机位姿">3D可视化相机位姿</p>
+            </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-arrows-alt-h"></i>
+                <h4 data-lang data-en="Epipolar Constraint" data-zh="极线约束">极线约束</h4>
+                <p data-lang data-en="Multi-view constraint check" data-zh="多视图约束检查">多视图约束检查</p>
+            </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-layer-group"></i>
+                <h4 data-lang data-en="Overlay Analysis" data-zh="透视叠加">透视叠加</h4>
+                <p data-lang data-en="Distortion correction alignment" data-zh="畸变校正对齐">畸变校正对齐</p>
+            </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-bullseye"></i>
+                <h4 data-lang data-en="Coverage Analysis" data-zh="覆盖分析">覆盖分析</h4>
+                <p data-lang data-en="Board coverage analysis" data-zh="标定板覆盖率">标定板覆盖率</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- 下载 -->
-        <section class="download" id="download">
-            <div class="section-header">
-                <span class="section-tag" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" data-lang data-en="Download" data-zh="软件下载">软件下载</span>
-                <h2 data-lang data-en="Get OptiCalib" data-zh="获取 OptiCalib">获取 OptiCalib</h2>
-                <p data-lang data-en="Download and start your camera calibration" data-zh="立即下载，开始标定工作">立即下载，开始标定工作</p>
+    <!-- 下载 -->
+    <section class="download" id="download">
+        <div class="section-header">
+            <span class="section-tag" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" data-lang data-en="Download" data-zh="软件下载">软件下载</span>
+            <h2 data-lang data-en="Get OptiCalib" data-zh="获取 OptiCalib">获取 OptiCalib</h2>
+            <p data-lang data-en="Download and start your camera calibration" data-zh="立即下载，开始标定工作">立即下载，开始标定工作</p>
+        </div>
+        <div class="download-box fade-in">
+            <div class="download-icon">
+                <i class="fab fa-windows"></i>
             </div>
-            <div class="download-box fade-in">
-                <div class="download-icon">
-                    <i class="fab fa-windows"></i>
-                </div>
-                <h3>OptiCalib for Windows</h3>
-                <a href="https://share.weiyun.com/ESN9mXmp" class="download-btn" id="downloadBtn" target="_blank">
-                    <i class="fas fa-download"></i> <span data-lang data-en="Download Installer" data-zh="下载安装包">下载安装包</span>
-                </a>
-                <div class="system-req">
-                    <span><i class="fas fa-check"></i> Windows 10/11</span>
-                    <span><i class="fas fa-check"></i> <span data-lang data-en="64-bit System" data-zh="64位系统">64位系统</span></span>
-                </div>
+            <h3>OptiCalib for Windows</h3>
+            <a href="https://share.weiyun.com/ESN9mXmp" class="download-btn" id="downloadBtn" target="_blank">
+                <i class="fas fa-download"></i> <span data-lang data-en="Download Installer" data-zh="下载安装包">下载安装包</span>
+            </a>
+            <div class="system-req">
+                <span><i class="fas fa-check"></i> Windows 10/11</span>
+                <span><i class="fas fa-check"></i> <span data-lang data-en="64-bit System" data-zh="64位系统">64位系统</span></span>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 联系方式 -->
-        <section class="contact" id="contact">
-            <div class="section-header">
-                <span class="section-tag" data-lang data-en="Contact Us" data-zh="联系我们">联系我们</span>
-                <h2 data-lang data-en="Get in Touch" data-zh="保持联系">保持联系</h2>
-                <p data-lang data-en="Contact us for questions or suggestions" data-zh="如有问题或建议，欢迎联系">如有问题或建议，欢迎联系</p>
+    <!-- 联系方式 -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <span class="section-tag" data-lang data-en="Contact Us" data-zh="联系我们">联系我们</span>
+            <h2 data-lang data-en="Get in Touch" data-zh="保持联系">保持联系</h2>
+            <p data-lang data-en="Contact us for questions or suggestions" data-zh="如有问题或建议，欢迎联系">如有问题或建议，欢迎联系</p>
+        </div>
+        <div class="contact-cards">
+            <div class="contact-card fade-in">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 data-lang data-en="Email" data-zh="邮箱">邮箱</h3>
+                <p data-lang data-en="Technical Support & Feedback" data-zh="技术咨询与反馈">技术咨询与反馈</p>
+                <a href="mailto:opticalib@outlook.com" id="displayEmail">opticalib@outlook.com</a>
             </div>
-            <div class="contact-cards">
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3 data-lang data-en="Email" data-zh="邮箱">邮箱</h3>
-                    <p data-lang data-en="Technical Support & Feedback" data-zh="技术咨询与反馈">技术咨询与反馈</p>
-                    <a href="mailto:opticalib@outlook.com" id="displayEmail">opticalib@outlook.com</a>
+            <div class="contact-card fade-in">
+                <div class="contact-icon" style="background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);">
+                    <i class="fab fa-weixin"></i>
                 </div>
-                <div class="contact-card fade-in">
-                    <div class="contact-icon" style="background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);">
-                        <i class="fab fa-weixin"></i>
+                <h3 data-lang data-en="WeChat" data-zh="微信">微信</h3>
+                <p data-lang data-en="Scan to add friend" data-zh="扫码添加好友">扫码添加好友</p>
+                <div class="wechat-qr">
+                    <img id="wechatQRImage" src="wechat.png" alt="WeChat QR" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; text-align:center; color:#999; font-size:10px; padding:6px; flex-direction:column; align-items:center; justify-content:center; height:100%;">
+                        <i class="fas fa-qrcode" style="font-size:20px; margin-bottom:4px;"></i>
+                        wechat.png
                     </div>
-                    <h3 data-lang data-en="WeChat" data-zh="微信">微信</h3>
-                    <p data-lang data-en="Scan to add friend" data-zh="扫码添加好友">扫码添加好友</p>
-                    <div class="wechat-qr">
-                        <img id="wechatQRImage" src="wechat.png" alt="WeChat QR" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="display:none; text-align:center; color:#999; font-size:10px; padding:6px; flex-direction:column; align-items:center; justify-content:center; height:100%;">
-                            <i class="fas fa-qrcode" style="font-size:20px; margin-bottom:4px;"></i>
-                            wechat.png
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-card fade-in">
-                    <div class="contact-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3 data-lang data-en="Phone" data-zh="电话">电话</h3>
-                    <p data-lang data-en="Technical Cooperation" data-zh="技术合作">技术合作</p>
-                    <span class="contact-value" id="displayPhone">13333899545</span>
                 </div>
             </div>
-        </section>
+            <div class="contact-card fade-in">
+                <div class="contact-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 data-lang data-en="Phone" data-zh="电话">电话</h3>
+                <p data-lang data-en="Technical Cooperation" data-zh="技术合作">技术合作</p>
+                <span class="contact-value" id="displayPhone">13333899545</span>
+            </div>
+        </div>
+    </section>
 
-        <!-- 反馈表单 -->
-        <section class="feedback-section" id="feedback">
-            <div class="section-header">
-                <span class="section-tag" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" data-lang data-en="Feedback" data-zh="意见反馈">意见反馈</span>
-                <h2 data-lang data-en="Send Us a Message" data-zh="发送消息">发送消息</h2>
-                <p data-lang data-en="Your feedback helps us improve" data-zh="您的反馈帮助我们改进">您的反馈帮助我们改进</p>
-            </div>
-            <form class="feedback-form" id="feedbackForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" id="userName" data-placeholder-en="Your Name" data-placeholder-zh="您的姓名" placeholder="您的姓名" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="userEmail" data-placeholder-en="Email Address" data-placeholder-zh="电子邮箱" placeholder="电子邮箱" required>
-                    </div>
+    <!-- 反馈表单 -->
+    <section class="feedback-section" id="feedback">
+        <div class="section-header">
+            <span class="section-tag" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" data-lang data-en="Feedback" data-zh="意见反馈">意见反馈</span>
+            <h2 data-lang data-en="Send Us a Message" data-zh="发送消息">发送消息</h2>
+            <p data-lang data-en="Your feedback helps us improve" data-zh="您的反馈帮助我们改进">您的反馈帮助我们改进</p>
+        </div>
+        <form class="feedback-form" id="feedbackForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="userName" data-placeholder-en="Your Name" data-placeholder-zh="您的姓名" placeholder="您的姓名" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="subject" data-placeholder-en="Subject" data-placeholder-zh="主题" placeholder="主题" required>
+                    <input type="email" id="userEmail" data-placeholder-en="Email Address" data-placeholder-zh="电子邮箱" placeholder="电子邮箱" required>
                 </div>
-                <div class="form-group">
-                    <textarea id="message" data-placeholder-en="Your message or suggestion..." data-placeholder-zh="您的消息或建议..." placeholder="您的消息或建议..." required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i>
-                    <span data-lang data-en="Send Message" data-zh="发送消息">发送消息</span>
-                </button>
-            </form>
-        </section>
+            </div>
+            <div class="form-group">
+                <input type="text" id="subject" data-placeholder-en="Subject" data-placeholder-zh="主题" placeholder="主题" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" data-placeholder-en="Your message or suggestion..." data-placeholder-zh="您的消息或建议..." placeholder="您的消息或建议..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                <span data-lang data-en="Send Message" data-zh="发送消息">发送消息</span>
+            </button>
+        </form>
+    </section>
 
-        <!-- 页脚 -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo-icon"><i class="fas fa-camera"></i></div>
-                    <span>OptiCalib</span>
-                </div>
-                <div class="footer-links">
-                    <a href="#features" data-lang data-en="Features" data-zh="功能">功能</a>
-                    <a href="#download" data-lang data-en="Download" data-zh="下载">下载</a>
-                    <a href="#contact" data-lang data-en="Contact" data-zh="联系">联系</a>
-                    <a href="#feedback" data-lang data-en="Feedback" data-zh="反馈">反馈</a>
-                </div>
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon"><i class="fas fa-camera"></i></div>
+                <span>OptiCalib</span>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 OptiCalib. <span data-lang data-en="All rights reserved." data-zh="保留所有权利。">保留所有权利。</span> | <span id="footerVersion">Version V1.8.2</span></p>
+            <div class="footer-links">
+                <a href="#features" data-lang data-en="Features" data-zh="功能">功能</a>
+                <a href="#download" data-lang data-en="Download" data-zh="下载">下载</a>
+                <a href="#contact" data-lang data-en="Contact" data-zh="联系">联系</a>
+                <a href="#feedback" data-lang data-en="Feedback" data-zh="反馈">反馈</a>
             </div>
-        </footer>
-    </div><!-- end page-wrapper -->
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 OptiCalib. <span data-lang data-en="All rights reserved." data-zh="保留所有权利。">保留所有权利。</span> | <span id="footerVersion">Version V1.8.2</span></p>
+        </div>
+    </footer>
 
     <!-- 访问计数器 -->
     <div class="visitor-counter">
