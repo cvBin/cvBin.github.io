@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>OptiCalib - 专业多镜头相机标定软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,6 +28,7 @@
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* 导航栏 */
@@ -38,7 +39,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 5%;
+            padding: 0.75rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,20 +50,21 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 700;
             text-decoration: none;
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: var(--gradient);
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
+            font-size: 1rem;
         }
 
         .logo-text {
@@ -74,14 +76,16 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
 
@@ -94,6 +98,32 @@
             color: white !important;
             padding: 0.5rem 1.25rem;
             border-radius: 50px;
+        }
+
+        /* 访问计数器 */
+        .visitor-counter {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--gray);
+            background: rgba(37, 99, 235, 0.1);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+        }
+
+        .visitor-counter i {
+            color: var(--primary);
+        }
+
+        /* 移动端菜单按钮 */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
         }
 
         /* 按钮 */
@@ -132,9 +162,20 @@
             transform: translateY(-2px);
         }
 
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
         .btn-large {
-            padding: 1.125rem 2.5rem;
-            font-size: 1.125rem;
+            padding: 1rem 2rem;
+            font-size: 1.05rem;
         }
 
         .btn-group {
@@ -171,7 +212,7 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
             position: relative;
             z-index: 1;
@@ -189,16 +230,16 @@
             color: #34d399;
             padding: 0.5rem 1rem;
             border-radius: 50px;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .hero-text h1 {
-            font-size: 3.25rem;
+            font-size: 2.75rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            line-height: 1.15;
         }
 
         .hero-text h1 span {
@@ -209,10 +250,29 @@
         }
 
         .hero-text .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: rgba(255,255,255,0.8);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.7;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        .hero-feature i {
+            color: #34d399;
         }
 
         .hero-image {
@@ -222,8 +282,8 @@
         /* 软件预览窗口 */
         .software-preview {
             background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
-            border-radius: 20px;
-            padding: 1.5rem;
+            border-radius: 16px;
+            padding: 1.25rem;
             box-shadow: 0 25px 80px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.1);
             overflow: hidden;
@@ -234,13 +294,13 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1rem;
-            padding-bottom: 1rem;
+            padding-bottom: 0.75rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .preview-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
         }
 
@@ -251,20 +311,20 @@
         .preview-title {
             margin-left: auto;
             color: rgba(255,255,255,0.5);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         /* 滚动内容区域 */
         .preview-scroll-container {
-            height: 300px;
+            height: 260px;
             overflow: hidden;
             position: relative;
             background: rgba(0,0,0,0.3);
-            border-radius: 12px;
+            border-radius: 10px;
         }
 
         .preview-scroll-content {
-            animation: scrollUp 15s linear infinite;
+            animation: scrollUp 18s linear infinite;
         }
 
         @keyframes scrollUp {
@@ -277,22 +337,22 @@
         }
 
         .preview-item {
-            padding: 1.25rem;
+            padding: 1rem;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .preview-item-header {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
+            gap: 0.6rem;
+            margin-bottom: 0.5rem;
         }
 
         .preview-item-icon {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(8, 145, 178, 0.3) 100%);
-            border-radius: 8px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -300,95 +360,132 @@
 
         .preview-item-icon i {
             color: #60a5fa;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .preview-item-title {
             color: rgba(255,255,255,0.9);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
         .preview-item-desc {
             color: rgba(255,255,255,0.5);
-            font-size: 0.8rem;
-            line-height: 1.5;
+            font-size: 0.75rem;
         }
 
         .preview-item-status {
             display: inline-flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.3rem;
             background: rgba(16, 185, 129, 0.2);
             color: #34d399;
-            padding: 0.25rem 0.75rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 50px;
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
+            font-size: 0.7rem;
+            margin-top: 0.4rem;
         }
 
-        .preview-code {
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.7);
-            background: rgba(0,0,0,0.3);
-            padding: 0.75rem;
-            border-radius: 6px;
-            margin-top: 0.5rem;
-        }
-
-        .preview-code .keyword { color: #c084fc; }
-        .preview-code .function { color: #60a5fa; }
-        .preview-code .string { color: #34d399; }
-        .preview-code .comment { color: #64748b; }
-
-        /* 功能特性 */
-        .features {
-            padding: 80px 5%;
-            background: white;
+        /* 通用区块 */
+        section {
+            padding: 70px 5%;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-header h2 {
-            font-size: 2.25rem;
-            margin-bottom: 0.75rem;
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
         }
 
         .section-header p {
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .section-tag {
             display: inline-block;
             background: rgba(37, 99, 235, 0.1);
             color: var(--primary);
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 50px;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* 软件概述 */
+        .overview {
+            background: white;
+        }
+
+        .overview-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .overview-text {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .overview-highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .highlight-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* 功能特性 */
+        .features {
+            background: var(--light);
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .feature-card {
-            background: var(--light);
-            border-radius: 16px;
-            padding: 2rem;
+            background: white;
+            border-radius: 14px;
+            padding: 1.75rem;
             transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .feature-card:hover {
@@ -397,35 +494,239 @@
         }
 
         .feature-icon {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon i {
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .feature-card ul {
+            margin-top: 0.75rem;
+            padding-left: 1.1rem;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .feature-card ul li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* 工作模式 */
+        .work-modes {
+            background: var(--dark);
+            color: white;
+        }
+
+        .work-modes .section-header h2 {
+            color: white;
+        }
+
+        .work-modes .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mode-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mode-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        .mode-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .mode-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .mode-card p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* 支持的标定板 */
+        .calibration-boards {
+            background: white;
+        }
+
+        .boards-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.25rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .board-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .board-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .board-icon {
+            width: 60px;
+            height: 60px;
             background: var(--gradient);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.25rem;
+            margin: 0 auto 1rem;
         }
 
-        .feature-icon i {
-            font-size: 1.4rem;
+        .board-icon i {
+            font-size: 1.5rem;
             color: white;
         }
 
-        .feature-card h3 {
-            font-size: 1.15rem;
+        .board-card h4 {
+            font-size: 0.95rem;
+        }
+
+        /* 畸变模型 */
+        .distortion-models {
+            background: var(--light);
+        }
+
+        .models-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .model-card {
+            background: white;
+            border-radius: 14px;
+            padding: 1.75rem;
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            transition: all 0.3s;
+        }
+
+        .model-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .model-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .model-icon i {
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .model-info h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .model-info p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* 精度分析 */
+        .accuracy-section {
+            background: white;
+        }
+
+        .accuracy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .accuracy-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .accuracy-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .accuracy-card i {
+            font-size: 2rem;
+            color: var(--primary);
             margin-bottom: 0.75rem;
         }
 
-        .feature-card p {
+        .accuracy-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .accuracy-card p {
+            font-size: 0.85rem;
             color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
         }
 
         /* 下载区域 */
         .download {
-            padding: 80px 5%;
+            padding: 70px 5%;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
             text-align: center;
@@ -442,44 +743,44 @@
         .download-box {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px;
+            border-radius: 20px;
             padding: 2.5rem;
-            max-width: 500px;
+            max-width: 480px;
             margin: 0 auto;
         }
 
         .download-icon {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             background: var(--gradient);
-            border-radius: 20px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1.25rem;
         }
 
         .download-icon i {
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             color: white;
         }
 
         .download-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
         }
 
         .download-btn {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
-            padding: 1.125rem 2.5rem;
+            padding: 1rem 2.25rem;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             transition: all 0.3s;
             box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
         }
@@ -490,23 +791,22 @@
         }
 
         .system-req {
-            margin-top: 1.75rem;
-            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .system-req span {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            margin: 0 0.75rem;
+            gap: 0.35rem;
+            margin: 0 0.6rem;
         }
 
         /* 联系方式 */
         .contact {
-            padding: 80px 5%;
             background: var(--light);
         }
 
@@ -514,14 +814,14 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            max-width: 1000px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
         .contact-card {
             background: white;
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 14px;
+            padding: 1.75rem;
             text-align: center;
             transition: all 0.3s;
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
@@ -533,62 +833,68 @@
         }
 
         .contact-icon {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.25rem;
+            margin: 0 auto 1rem;
         }
 
         .contact-icon i {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             color: white;
         }
 
         .contact-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
         }
 
         .contact-card p {
             color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
         }
 
         .contact-card a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             word-break: break-all;
-        }
-
-        .contact-card a:hover {
-            text-decoration: underline;
         }
 
         .contact-value {
             color: var(--dark);
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         /* 微信二维码 */
+        .wechat-qr-container {
+            margin-top: 0.75rem;
+        }
+
         .wechat-qr {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             background: var(--light);
-            border-radius: 12px;
-            margin: 0.75rem auto 0;
+            border-radius: 10px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             border: 2px dashed #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .wechat-qr:hover {
+            border-color: var(--primary);
         }
 
         .wechat-qr img {
@@ -600,20 +906,113 @@
         .wechat-qr-placeholder {
             text-align: center;
             color: var(--gray);
-            font-size: 0.75rem;
-            padding: 1rem;
+            font-size: 0.7rem;
+            padding: 0.75rem;
         }
 
         .wechat-qr-placeholder i {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.75rem;
+            margin-bottom: 0.4rem;
             display: block;
             color: #ccc;
         }
 
+        .upload-hint {
+            font-size: 0.7rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* 反馈表单 */
+        .feedback-section {
+            background: var(--dark);
+            color: white;
+            padding: 60px 5%;
+        }
+
+        .feedback-section .section-header h2 {
+            color: white;
+        }
+
+        .feedback-section .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .feedback-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+
         /* 页脚 */
         footer {
-            background: var(--dark);
+            background: #0a0f1a;
             color: rgba(255,255,255,0.6);
             padding: 2rem 5%;
             text-align: center;
@@ -633,22 +1032,22 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             color: white;
         }
 
         .footer-logo .logo-icon {
-            width: 32px;
-            height: 32px;
-            font-size: 0.9rem;
+            width: 28px;
+            height: 28px;
+            font-size: 0.8rem;
         }
 
         .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.9rem;
+            margin-left: 1.25rem;
+            font-size: 0.85rem;
         }
 
         .footer-links a:hover {
@@ -656,17 +1055,52 @@
         }
 
         .footer-bottom {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
             border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+        }
+
+        /* 语言切换 */
+        .language-switcher {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 999;
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
             font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            background: transparent;
+            color: var(--gray);
+        }
+
+        .lang-btn.active {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: var(--light);
         }
 
         /* 回到顶部 */
         #backToTop {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 25px;
+            right: 25px;
             width: 45px;
             height: 45px;
             border-radius: 50%;
@@ -687,31 +1121,255 @@
             visibility: visible;
         }
 
-        /* 响应式 */
-        @media (max-width: 968px) {
+        /* 管理员登录弹窗 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.35rem;
+        }
+
+        .modal-header p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 0.4rem;
+        }
+
+        .modal-form .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .modal-form input {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .modal-form input:focus {
+            border-color: var(--primary);
+        }
+
+        .modal-form .btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .admin-trigger {
+            position: fixed;
+            bottom: 80px;
+            right: 25px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            z-index: 998;
+            opacity: 0.5;
+        }
+
+        .admin-trigger:hover {
+            opacity: 1;
+            background: var(--gradient);
+            color: white;
+        }
+
+        /* 移动端响应式 */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .modes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .boards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .accuracy-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 4%;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .visitor-counter {
+                display: none;
+            }
+
+            .hero {
+                padding: 90px 4% 50px;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
             }
 
             .hero-text h1 {
-                font-size: 2.25rem;
+                font-size: 2rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-features {
+                justify-content: center;
             }
 
             .hero-image {
-                display: none;
+                display: block;
+                max-width: 350px;
+                margin: 0 auto;
             }
 
             .btn-group {
                 justify-content: center;
             }
 
-            .nav-links {
-                display: none;
+            .btn-large {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 50px 4%;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .overview-highlights {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modes-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .boards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .models-container {
+                grid-template-columns: 1fr;
+            }
+
+            .accuracy-grid {
+                grid-template-columns: 1fr;
             }
 
             .contact-cards {
                 grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
             }
 
             .footer-content {
@@ -719,8 +1377,58 @@
                 text-align: center;
             }
 
+            .footer-links {
+                margin-top: 0.5rem;
+            }
+
             .footer-links a {
-                margin: 0 0.75rem;
+                margin: 0 0.6rem;
+            }
+
+            .language-switcher {
+                bottom: 15px;
+                left: 15px;
+            }
+
+            #backToTop {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .admin-trigger {
+                bottom: 65px;
+                right: 15px;
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.75rem;
+            }
+
+            .overview-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .modes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .boards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-box {
+                padding: 1.75rem;
+            }
+
+            .modal {
+                padding: 1.75rem;
+                margin: 1rem;
             }
         }
 
@@ -735,6 +1443,11 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* 隐藏元素 */
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -744,13 +1457,21 @@
             <div class="logo-icon"><i class="fas fa-camera"></i></div>
             <span class="logo-text">OptiCalib</span>
         </a>
-        <ul class="nav-links">
-            <li><a href="#home">首页</a></li>
-            <li><a href="#features">功能</a></li>
-            <li><a href="#download">下载</a></li>
-            <li><a href="#contact">联系</a></li>
-            <li><a href="#download" class="nav-download">立即下载</a></li>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" data-en="Home" data-zh="首页">首页</a></li>
+            <li><a href="#features" data-en="Features" data-zh="功能">功能</a></li>
+            <li><a href="#download" data-en="Download" data-zh="下载">下载</a></li>
+            <li><a href="#contact" data-en="Contact" data-zh="联系">联系</a></li>
+            <li class="visitor-counter">
+                <i class="fas fa-eye"></i>
+                <span id="visitorCount">0</span>
+                <span data-en="views" data-zh="次访问">次访问</span>
+            </li>
+            <li><a href="#download" class="nav-download" data-en="Download Now" data-zh="立即下载">立即下载</a></li>
         </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
 
     <!-- Hero 区域 -->
@@ -759,19 +1480,24 @@
             <div class="hero-text">
                 <div class="hero-badge">
                     <i class="fas fa-bolt"></i>
-                    最新版本 v2.1.0
+                    <span data-en="Latest Version V1.8.2" data-zh="最新版本 V1.8.2">最新版本 V1.8.2</span>
                 </div>
-                <h1><span>OptiCalib</span><br>多镜头相机标定软件</h1>
-                <p class="subtitle">
-                    专业的多相机系统标定解决方案，支持单目到多目相机的高精度内外参标定。
-                    直观的图形界面，简单易用，助力您的计算机视觉研究与开发。
+                <h1><span>OptiCalib</span><br><span data-en="Multi-Lens Camera Calibration" data-zh="多镜头相机标定软件">多镜头相机标定软件</span></h1>
+                <p class="subtitle" data-en="Professional multi-camera system calibration solution. Supports single to multi-camera high-precision intrinsic and extrinsic parameter calibration. Intuitive GUI, easy to use, empowering your computer vision research and development." data-zh="专业的多相机系统标定解决方案，支持单目到多目相机的高精度内外参标定。自动化程度高，操作简单，强大的标定点可视化修正功能，助力您的计算机视觉研究与开发。">
+                    专业的多相机系统标定解决方案，支持单目到多目相机的高精度内外参标定。自动化程度高，操作简单，强大的标定点可视化修正功能，助力您的计算机视觉研究与开发。
                 </p>
+                <div class="hero-features">
+                    <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-en="Fully Automatic" data-zh="全自动标定">全自动标定</span></div>
+                    <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-en="High Efficiency" data-zh="高效率处理">高效率处理</span></div>
+                    <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-en="High Precision" data-zh="高精度结果">高精度结果</span></div>
+                    <div class="hero-feature"><i class="fas fa-check-circle"></i><span data-en="Visual Correction" data-zh="可视化修正">可视化修正</span></div>
+                </div>
                 <div class="btn-group">
                     <a href="#download" class="btn btn-primary btn-large">
-                        <i class="fab fa-windows"></i> 下载 Windows 版
+                        <i class="fab fa-windows"></i> <span data-en="Download Windows" data-zh="下载 Windows 版">下载 Windows 版</span>
                     </a>
                     <a href="#features" class="btn btn-white">
-                        <i class="fas fa-info-circle"></i> 了解更多
+                        <i class="fas fa-info-circle"></i> <span data-en="Learn More" data-zh="了解更多">了解更多</span>
                     </a>
                 </div>
             </div>
@@ -785,58 +1511,54 @@
                     </div>
                     <div class="preview-scroll-container">
                         <div class="preview-scroll-content">
-                            <!-- 第一组内容 -->
+                            <!-- 滚动内容 -->
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-item-icon"><i class="fas fa-folder-open"></i></div>
-                                    <span class="preview-item-title">导入图像</span>
+                                    <span class="preview-item-title" data-en="Load Images" data-zh="导入图像">导入图像</span>
                                 </div>
-                                <div class="preview-item-desc">加载包含标定板的图像序列</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 已加载 24 张图像</div>
+                                <div class="preview-item-desc" data-en="Load image sequences with calibration board" data-zh="加载包含标定板的图像序列">加载包含标定板的图像序列</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="24 images loaded" data-zh="已加载 24 张图像">已加载 24 张图像</span></div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-item-icon"><i class="fas fa-chess-board"></i></div>
-                                    <span class="preview-item-title">角点检测</span>
+                                    <span class="preview-item-title" data-en="Corner Detection" data-zh="角点检测">角点检测</span>
                                 </div>
-                                <div class="preview-item-desc">自动检测棋盘格角点</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 检测到 1,248 个角点</div>
+                                <div class="preview-item-desc" data-en="Auto-detect chessboard corners" data-zh="自动检测棋盘格角点">自动检测棋盘格角点</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="1,248 corners detected" data-zh="检测到 1,248 个角点">检测到 1,248 个角点</span></div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-item-icon"><i class="fas fa-cog"></i></div>
-                                    <span class="preview-item-title">执行标定</span>
+                                    <span class="preview-item-title" data-en="Execute Calibration" data-zh="执行标定">执行标定</span>
                                 </div>
-                                <div class="preview-code">
-                                    <span class="comment"># 相机内参矩阵</span><br>
-                                    K = [[fx, 0, cx],<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0, fy, cy],<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0, 0, 1]]
+                                <div class="preview-item-desc" data-en="Bundle Adjustment optimization" data-zh="Bundle Adjustment 优化解算">Bundle Adjustment 优化解算</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Calibration completed" data-zh="标定完成">标定完成</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-item-icon"><i class="fas fa-chart-line"></i></div>
+                                    <span class="preview-item-title" data-en="Error Analysis" data-zh="误差分析">误差分析</span>
                                 </div>
+                                <div class="preview-item-desc" data-en="Reprojection error visualization" data-zh="重投影误差可视化分析">重投影误差可视化分析</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Analysis complete" data-zh="分析完成">分析完成</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-item-icon"><i class="fas fa-edit"></i></div>
+                                    <span class="preview-item-title" data-en="Interactive Correction" data-zh="交互修正">交互修正</span>
+                                </div>
+                                <div class="preview-item-desc" data-en="Manual correction of calibration points" data-zh="手动修正标定点位置">手动修正标定点位置</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Precision improved" data-zh="精度提升">精度提升</span></div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-item-icon"><i class="fas fa-file-export"></i></div>
-                                    <span class="preview-item-title">导出结果</span>
+                                    <span class="preview-item-title" data-en="Export Results" data-zh="导出结果">导出结果</span>
                                 </div>
-                                <div class="preview-item-desc">保存标定参数到文件</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 已导出 YAML 文件</div>
-                            </div>
-                            <div class="preview-item">
-                                <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-camera"></i></div>
-                                    <span class="preview-item-title">多相机模式</span>
-                                </div>
-                                <div class="preview-item-desc">支持多相机联合标定</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 4 台相机已标定</div>
-                            </div>
-                            <div class="preview-item">
-                                <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-eye"></i></div>
-                                    <span class="preview-item-title">可视化预览</span>
-                                </div>
-                                <div class="preview-item-desc">3D相机位姿可视化展示</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 实时渲染</div>
+                                <div class="preview-item-desc" data-en="Save calibration parameters" data-zh="保存标定参数到文件">保存标定参数到文件</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="YAML exported" data-zh="已导出 YAML 文件">已导出 YAML 文件</span></div>
                             </div>
                             <!-- 复制一组用于无缝滚动 -->
                             <div class="preview-item">
@@ -860,12 +1582,24 @@
                                     <div class="preview-item-icon"><i class="fas fa-cog"></i></div>
                                     <span class="preview-item-title">执行标定</span>
                                 </div>
-                                <div class="preview-code">
-                                    <span class="comment"># 相机内参矩阵</span><br>
-                                    K = [[fx, 0, cx],<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0, fy, cy],<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0, 0, 1]]
+                                <div class="preview-item-desc">Bundle Adjustment 优化解算</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 标定完成</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-item-icon"><i class="fas fa-chart-line"></i></div>
+                                    <span class="preview-item-title">误差分析</span>
                                 </div>
+                                <div class="preview-item-desc">重投影误差可视化分析</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 分析完成</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-item-icon"><i class="fas fa-edit"></i></div>
+                                    <span class="preview-item-title">交互修正</span>
+                                </div>
+                                <div class="preview-item-desc">手动修正标定点位置</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 精度提升</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
@@ -875,22 +1609,6 @@
                                 <div class="preview-item-desc">保存标定参数到文件</div>
                                 <div class="preview-item-status"><i class="fas fa-check"></i> 已导出 YAML 文件</div>
                             </div>
-                            <div class="preview-item">
-                                <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-camera"></i></div>
-                                    <span class="preview-item-title">多相机模式</span>
-                                </div>
-                                <div class="preview-item-desc">支持多相机联合标定</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 4 台相机已标定</div>
-                            </div>
-                            <div class="preview-item">
-                                <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-eye"></i></div>
-                                    <span class="preview-item-title">可视化预览</span>
-                                </div>
-                                <div class="preview-item-desc">3D相机位姿可视化展示</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 实时渲染</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -898,43 +1616,217 @@
         </div>
     </section>
 
-    <!-- 功能特性 -->
+    <!-- 软件概述 -->
+    <section class="overview" id="overview">
+        <div class="section-header">
+            <span class="section-tag" data-en="About" data-zh="软件概述">软件概述</span>
+            <h2 data-en="What is OptiCalib?" data-zh="OptiCalib 是什么？">OptiCalib 是什么？</h2>
+        </div>
+        <div class="overview-content">
+            <p class="overview-text" data-en="OptiCalib is a professional multi-lens camera calibration system that supports camera calibration in any scenario. It supports single/multi-lens, single/multi-calibration board, different resolution cameras, and independent/joint calibration of lens intrinsic and extrinsic parameters. With user-friendly interaction, simple operation, and controllable precision, it features full automation, high efficiency, and high accuracy." data-zh="OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点，让不确定和不可靠的标定结果成为过去。">
+                OptiCalib 多镜头相机标定系统是一款支持任意场景模式下的相机标定系统，支持对单镜头、多镜头、单标定板、多标定板、不同分辨率相机以及镜头内外参数独立标定、联合标定等功能。交互友好、操作简单、精度可控，具有全自动、高效率、高精度等特点。强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点，让不确定和不可靠的标定结果成为过去。
+            </p>
+            <div class="overview-highlights">
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-robot"></i>
+                    <h4 data-en="Fully Automatic" data-zh="全自动化">全自动化</h4>
+                    <p data-en="Auto corner detection and calibration" data-zh="自动角点检测与标定">自动角点检测与标定</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h4 data-en="High Efficiency" data-zh="高效率">高效率</h4>
+                    <p data-en="Fast processing, real-time preview" data-zh="快速处理，实时预览">快速处理，实时预览</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-crosshairs"></i>
+                    <h4 data-en="High Precision" data-zh="高精度">高精度</h4>
+                    <p data-en="Sub-pixel level accuracy" data-zh="亚像素级精度保障">亚像素级精度保障</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <h4 data-en="Easy to Use" data-zh="易操作">易操作</h4>
+                    <p data-en="Intuitive GUI interface" data-zh="直观图形化界面">直观图形化界面</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能 -->
     <section class="features" id="features">
         <div class="section-header">
-            <span class="section-tag">核心功能</span>
-            <h2>强大的标定功能</h2>
-            <p>满足多种相机标定需求</p>
+            <span class="section-tag" data-en="Core Features" data-zh="核心功能">核心功能</span>
+            <h2 data-en="Powerful Calibration Features" data-zh="强大的标定功能">强大的标定功能</h2>
+            <p data-en="Meet various camera calibration needs" data-zh="满足多种相机标定需求">满足多种相机标定需求</p>
         </div>
         <div class="features-grid">
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-camera"></i></div>
-                <h3>多相机支持</h3>
-                <p>支持单目、双目及多目相机系统标定，自动计算相机间的相对位姿关系。</p>
+                <h3 data-en="Multi-Camera Support" data-zh="多相机系统支持">多相机系统支持</h3>
+                <p data-en="Support calibration from monocular to 16+ camera arrays, flexible camera topology configuration, automatic calculation of relative poses between cameras." data-zh="支持从单目相机到16+相机阵列的标定，灵活配置相机拓扑结构，自动计算相机间的相对位姿关系。">支持从单目相机到16+相机阵列的标定，灵活配置相机拓扑结构，自动计算相机间的相对位姿关系。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-chess-board"></i></div>
-                <h3>多种标定板</h3>
-                <p>支持棋盘格、圆点阵列、ChArUco等多种标定板类型，自动检测特征点。</p>
+                <h3 data-en="Multiple Calibration Boards" data-zh="多种标定板支持">多种标定板支持</h3>
+                <p data-en="Support various calibration board types including chessboard, ChArUco, ArUco, and circle grids. Supports single, multiple, and mixed calibration board modes." data-zh="支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。支持单个、多个以及混合标定板模式。">支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。支持单个、多个以及混合标定板模式。</p>
             </div>
             <div class="feature-card fade-in">
-                <div class="feature-icon"><i class="fas fa-desktop"></i></div>
-                <h3>可视化界面</h3>
-                <p>直观的图形用户界面，实时显示检测结果，标定过程一目了然。</p>
+                <div class="feature-icon"><i class="fas fa-eye"></i></div>
+                <h3 data-en="Visual Correction" data-zh="可视化修正功能">可视化修正功能</h3>
+                <p data-en="Powerful calibration point visualization correction, timely detection and correction of precision-affecting calibration points. Six interactive correction methods available." data-zh="强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。提供六种误差交互修正方法。">强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。提供六种误差交互修正方法。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
-                <h3>畸变模型</h3>
-                <p>支持多种畸变模型，适配针孔相机到鱼眼镜头的各类相机。</p>
+                <h3 data-en="Multiple Distortion Models" data-zh="多种畸变模型">多种畸变模型</h3>
+                <p data-en="Support 18-parameter Brown/Conrady model, fisheye Kannala-Brandt model, fisheye omnidirectional MEI model, and thin prism distortion model." data-zh="支持18参数Brown/Conrady模型、鱼眼Kannala-Brandt模型、鱼眼全向MEI模型、薄棱镜畸变模型。">支持18参数Brown/Conrady模型、鱼眼Kannala-Brandt模型、鱼眼全向MEI模型、薄棱镜畸变模型。</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3 data-en="Precision Analysis" data-zh="精度分析工具">精度分析工具</h3>
+                <p data-en="Five error visualization panels, calibration accuracy analysis, perspective overlay analysis, effective area analysis, epipolar constraint analysis." data-zh="五种误差可视化面板、标定精度分析、透视叠加分析、有效区域分析、极线约束分析、标定极值空间分析。">五种误差可视化面板、标定精度分析、透视叠加分析、有效区域分析、极线约束分析、标定极值空间分析。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-file-export"></i></div>
-                <h3>多格式导出</h3>
-                <p>标定结果支持YAML、JSON、XML等多种格式导出，方便集成使用。</p>
+                <h3 data-en="Multi-Format Export" data-zh="多格式导出">多格式导出</h3>
+                <p data-en="Calibration results support YAML, JSON, XML and other formats. Compatible with OpenCV, ROS, MATLAB and other frameworks." data-zh="标定结果支持YAML、JSON、XML等多种格式导出，方便与OpenCV、ROS、MATLAB等框架集成使用。">标定结果支持YAML、JSON、XML等多种格式导出，方便与OpenCV、ROS、MATLAB等框架集成使用。</p>
             </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon"><i class="fas fa-magic"></i></div>
-                <h3>简单易用</h3>
-                <p>导入图像、检测角点、执行标定、导出结果，四步完成标定工作。</p>
+        </div>
+    </section>
+
+    <!-- 四种工作模式 -->
+    <section class="work-modes">
+        <div class="section-header">
+            <span class="section-tag" style="background: rgba(52, 211, 153, 0.2); color: #34d399;" data-en="Work Modes" data-zh="工作模式">工作模式</span>
+            <h2 data-en="Four Calibration Modes" data-zh="四种标定模式">四种标定模式</h2>
+            <p data-en="Flexible combination to meet different calibration scenarios" data-zh="灵活组合，满足不同标定场景需求">灵活组合，满足不同标定场景需求</p>
+        </div>
+        <div class="modes-grid">
+            <div class="mode-card fade-in">
+                <i class="fas fa-camera"></i>
+                <h4 data-en="Single Lens + Single Board" data-zh="单镜头单标定板">单镜头单标定板</h4>
+                <p data-en="Basic monocular camera calibration" data-zh="基础单目相机标定">基础单目相机标定</p>
+            </div>
+            <div class="mode-card fade-in">
+                <i class="fas fa-th-large"></i>
+                <h4 data-en="Single Lens + Multi Board" data-zh="单镜头多标定板">单镜头多标定板</h4>
+                <p data-en="Multi-board joint calibration" data-zh="多标定板联合标定">多标定板联合标定</p>
+            </div>
+            <div class="mode-card fade-in">
+                <i class="fas fa-binoculars"></i>
+                <h4 data-en="Multi Lens + Single Board" data-zh="多镜头单标定板">多镜头单标定板</h4>
+                <p data-en="Stereo camera calibration" data-zh="双目/多目相机标定">双目/多目相机标定</p>
+            </div>
+            <div class="mode-card fade-in">
+                <i class="fas fa-th"></i>
+                <h4 data-en="Multi Lens + Multi Board" data-zh="多镜头多标定板">多镜头多标定板</h4>
+                <p data-en="Complex multi-camera system" data-zh="复杂多相机系统标定">复杂多相机系统标定</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 支持的标定板 -->
+    <section class="calibration-boards">
+        <div class="section-header">
+            <span class="section-tag" data-en="Calibration Boards" data-zh="标定板类型">标定板类型</span>
+            <h2 data-en="Supported Calibration Boards" data-zh="支持的标定板">支持的标定板</h2>
+        </div>
+        <div class="boards-grid">
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-chess-board"></i></div>
+                <h4 data-en="Chessboard" data-zh="棋盘格">棋盘格</h4>
+            </div>
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-qrcode"></i></div>
+                <h4>ChArUco</h4>
+            </div>
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-barcode"></i></div>
+                <h4>ArUco</h4>
+            </div>
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-circle"></i></div>
+                <h4 data-en="Symmetric Circles" data-zh="对称圆点">对称圆点</h4>
+            </div>
+            <div class="board-card fade-in">
+                <div class="board-icon"><i class="fas fa-ellipsis-h"></i></div>
+                <h4 data-en="Asymmetric Circles" data-zh="非对称圆点">非对称圆点</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 畸变模型 -->
+    <section class="distortion-models">
+        <div class="section-header">
+            <span class="section-tag" data-en="Distortion Models" data-zh="畸变模型">畸变模型</span>
+            <h2 data-en="Supported Camera Models" data-zh="支持的相机模型">支持的相机模型</h2>
+        </div>
+        <div class="models-container">
+            <div class="model-card fade-in">
+                <div class="model-icon"><i class="fas fa-dot-circle"></i></div>
+                <div class="model-info">
+                    <h4>Brown/Conrady <span data-en="Model" data-zh="模型">模型</span></h4>
+                    <p data-en="18-parameter combination, including radial distortion K1-K6, tangential distortion P1-P2, thin lens distortion S1-S4, sensor tilt parameters" data-zh="18参数组合，包含径向畸变K1-K6、切向畸变P1-P2、薄透镜畸变S1-S4、传感器倾斜参数">18参数组合，包含径向畸变K1-K6、切向畸变P1-P2、薄透镜畸变S1-S4、传感器倾斜参数</p>
+                </div>
+            </div>
+            <div class="model-card fade-in">
+                <div class="model-icon"><i class="fas fa-fish"></i></div>
+                <div class="model-info">
+                    <h4>Kannala-Brandt <span data-en="Fisheye Model" data-zh="鱼眼模型">鱼眼模型</span></h4>
+                    <p data-en="4-parameter fisheye wide-angle lens model, suitable for ultra-wide-angle camera calibration" data-zh="4参数鱼眼广角镜头模型，适用于超广角相机标定">4参数鱼眼广角镜头模型，适用于超广角相机标定</p>
+                </div>
+            </div>
+            <div class="model-card fade-in">
+                <div class="model-icon"><i class="fas fa-globe"></i></div>
+                <div class="model-info">
+                    <h4>MEI <span data-en="Omnidirectional Model" data-zh="全向模型">全向模型</span></h4>
+                    <p data-en="9-parameter fisheye omnidirectional MEI model (Unified Camera Model)" data-zh="9参数鱼眼全向MEI模型（Unified Camera Model）">9参数鱼眼全向MEI模型（Unified Camera Model）</p>
+                </div>
+            </div>
+            <div class="model-card fade-in">
+                <div class="model-icon"><i class="fas fa-layer-group"></i></div>
+                <div class="model-info">
+                    <h4><span data-en="Thin Prism Model" data-zh="薄棱镜畸变模型">薄棱镜畸变模型</span></h4>
+                    <p data-en="Thin Prism model for complex lens distortion correction" data-zh="Thin Prism model，用于复杂镜头畸变校正">Thin Prism model，用于复杂镜头畸变校正</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 精度分析 -->
+    <section class="accuracy-section">
+        <div class="section-header">
+            <span class="section-tag" data-en="Precision Analysis" data-zh="精度分析">精度分析</span>
+            <h2 data-en="Comprehensive Accuracy Analysis Tools" data-zh="全面的精度分析工具">全面的精度分析工具</h2>
+        </div>
+        <div class="accuracy-grid">
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-chart-scatter"></i>
+                <h4 data-en="Reprojection Error Analysis" data-zh="重投影误差分析">重投影误差分析</h4>
+                <p data-en="Visualize reprojection error distribution" data-zh="可视化重投影误差点分布">可视化重投影误差点分布</p>
+            </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-chart-bar"></i>
+                <h4 data-en="Histogram Analysis" data-zh="直方图误差分析">直方图误差分析</h4>
+                <p data-en="Statistical analysis of error distribution" data-zh="误差分布统计分析">误差分布统计分析</p>
+            </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-cube"></i>
+                <h4 data-en="3D Scene Analysis" data-zh="三维标定场景">三维标定场景</h4>
+                <p data-en="3D visualization of camera poses" data-zh="3D可视化相机位姿">3D可视化相机位姿</p>
+            </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-arrows-alt-h"></i>
+                <h4 data-en="Epipolar Constraint" data-zh="极线约束分析">极线约束分析</h4>
+                <p data-en="Multi-view epipolar constraint check" data-zh="多视图极线约束检查">多视图极线约束检查</p>
+            </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-layer-group"></i>
+                <h4 data-en="Overlay Analysis" data-zh="透视叠加分析">透视叠加分析</h4>
+                <p data-en="Distortion correction alignment effect" data-zh="畸变校正对齐效果">畸变校正对齐效果</p>
+            </div>
+            <div class="accuracy-card fade-in">
+                <i class="fas fa-bullseye"></i>
+                <h4 data-en="Coverage Analysis" data-zh="有效区域分析">有效区域分析</h4>
+                <p data-en="Calibration board coverage analysis" data-zh="标定板覆盖率分析">标定板覆盖率分析</p>
             </div>
         </div>
     </section>
@@ -942,9 +1834,9 @@
     <!-- 下载区域 -->
     <section class="download" id="download">
         <div class="section-header">
-            <span class="section-tag" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">软件下载</span>
-            <h2>获取 OptiCalib</h2>
-            <p>立即下载，开始您的相机标定工作</p>
+            <span class="section-tag" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" data-en="Download" data-zh="软件下载">软件下载</span>
+            <h2 data-en="Get OptiCalib" data-zh="获取 OptiCalib">获取 OptiCalib</h2>
+            <p data-en="Download now and start your camera calibration" data-zh="立即下载，开始您的相机标定工作">立即下载，开始您的相机标定工作</p>
         </div>
         <div class="download-box fade-in">
             <div class="download-icon">
@@ -955,13 +1847,14 @@
             <!-- ⚠️ 请将下面的链接替换为您的实际下载地址 -->
             <a href="https://your-download-link.com/OptiCalib-Setup.exe" 
                class="download-btn" 
+               id="downloadBtn"
                download>
-                <i class="fas fa-download"></i> 下载安装包
+                <i class="fas fa-download"></i> <span data-en="Download Installer" data-zh="下载安装包">下载安装包</span>
             </a>
             
             <div class="system-req">
                 <span><i class="fas fa-check"></i> Windows 10/11</span>
-                <span><i class="fas fa-check"></i> 64位系统</span>
+                <span><i class="fas fa-check"></i> 64<span data-en="-bit System" data-zh="位系统">位系统</span></span>
             </div>
         </div>
     </section>
@@ -969,9 +1862,9 @@
     <!-- 联系方式 -->
     <section class="contact" id="contact">
         <div class="section-header">
-            <span class="section-tag">联系我们</span>
-            <h2>保持联系</h2>
-            <p>如有问题或建议，欢迎联系</p>
+            <span class="section-tag" data-en="Contact Us" data-zh="联系我们">联系我们</span>
+            <h2 data-en="Get in Touch" data-zh="保持联系">保持联系</h2>
+            <p data-en="Contact us for questions or suggestions" data-zh="如有问题或建议，欢迎联系">如有问题或建议，欢迎联系</p>
         </div>
         <div class="contact-cards">
             <!-- 邮箱 -->
@@ -979,10 +1872,9 @@
                 <div class="contact-icon">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <h3>邮箱</h3>
-                <p>技术咨询与反馈</p>
-                <!-- ⚠️ 替换为您的邮箱 -->
-                <a href="mailto:your-email@example.com">your-email@example.com</a>
+                <h3 data-en="Email" data-zh="邮箱">邮箱</h3>
+                <p data-en="Technical Support" data-zh="技术咨询与反馈">技术咨询与反馈</p>
+                <a href="mailto:opticalib@outlook.com">opticalib@outlook.com</a>
             </div>
             
             <!-- 微信 -->
@@ -990,14 +1882,18 @@
                 <div class="contact-icon" style="background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);">
                     <i class="fab fa-weixin"></i>
                 </div>
-                <h3>微信</h3>
-                <p>扫码添加好友</p>
-                <div class="wechat-qr">
-                    <!-- <img src="wechat.png" alt="微信二维码"> -->
-                    <div class="wechat">
-                        <i class="fas fa-qrcode"></i>
-                        请替换为<br>微信二维码
+                <h3 data-en="WeChat" data-zh="微信">微信</h3>
+                <p data-en="Scan to add friend" data-zh="扫码添加好友">扫码添加好友</p>
+                <div class="wechat-qr-container">
+                    <div class="wechat-qr" id="wechatQR" onclick="document.getElementById('qrUpload').click()">
+                        <div class="wechat-qr-placeholder" id="qrPlaceholder">
+                            <i class="fas fa-qrcode"></i>
+                            <span data-en="Click to upload QR" data-zh="点击上传二维码">点击上传二维码</span>
+                        </div>
+                        <img id="qrImage" src="" alt="微信二维码" style="display:none;">
                     </div>
+                    <input type="file" id="qrUpload" accept="image/*" style="display:none;" onchange="loadQRCode(event)">
+                    <p class="upload-hint" data-en="Click to select local image" data-zh="点击选择本地图片">点击选择本地图片</p>
                 </div>
             </div>
             
@@ -1006,12 +1902,41 @@
                 <div class="contact-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
                     <i class="fas fa-phone-alt"></i>
                 </div>
-                <h3>电话</h3>
-                <p>技术合作</p>
+                <h3 data-en="Phone" data-zh="电话">电话</h3>
+                <p data-en="Technical Cooperation" data-zh="技术合作">技术合作</p>
                 <!-- ⚠️ 替换为您的联系电话 -->
                 <span class="contact-value">+86 138-0000-0000</span>
             </div>
         </div>
+    </section>
+
+    <!-- 反馈表单 -->
+    <section class="feedback-section" id="feedback">
+        <div class="section-header">
+            <span class="section-tag" style="background: rgba(16, 185, 129, 0.2); color: #34d399;" data-en="Feedback" data-zh="意见反馈">意见反馈</span>
+            <h2 data-en="Send Us a Message" data-zh="发送消息">发送消息</h2>
+            <p data-en="Your feedback helps us improve" data-zh="您的反馈帮助我们不断改进">您的反馈帮助我们不断改进</p>
+        </div>
+        <form class="feedback-form" id="feedbackForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="userName" placeholder="您的姓名 / Your Name" required data-placeholder-en="Your Name" data-placeholder-zh="您的姓名">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="userEmail" placeholder="电子邮箱 / Email" required data-placeholder-en="Email" data-placeholder-zh="电子邮箱">
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="subject" placeholder="主题 / Subject" required data-placeholder-en="Subject" data-placeholder-zh="主题">
+            </div>
+            <div class="form-group">
+                <textarea id="message" placeholder="您的消息或建议... / Your message..." required data-placeholder-en="Your message or suggestion..." data-placeholder-zh="您的消息或建议..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                <span data-en="Send Message" data-zh="发送消息">发送消息</span>
+            </button>
+        </form>
     </section>
 
     <!-- 页脚 -->
@@ -1022,21 +1947,152 @@
                 <span>OptiCalib</span>
             </div>
             <div class="footer-links">
-                <a href="#features">功能</a>
-                <a href="#download">下载</a>
-                <a href="#contact">联系</a>
+                <a href="#features" data-en="Features" data-zh="功能">功能</a>
+                <a href="#download" data-en="Download" data-zh="下载">下载</a>
+                <a href="#contact" data-en="Contact" data-zh="联系">联系</a>
+                <a href="#feedback" data-en="Feedback" data-zh="反馈">反馈</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 OptiCalib. All rights reserved.</p>
+            <p>© 2025 OptiCalib. All rights reserved. | Version V1.8.2</p>
         </div>
     </footer>
+
+    <!-- 语言切换 -->
+    <div class="language-switcher">
+        <button class="lang-btn active" id="langZh" onclick="switchLanguage('zh')">中文</button>
+        <button class="lang-btn" id="langEn" onclick="switchLanguage('en')">EN</button>
+    </div>
 
     <!-- 回到顶部 -->
     <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
+    <!-- 管理员登录按钮 -->
+    <button class="admin-trigger" id="adminTrigger" title="管理员登录">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <!-- 管理员登录弹窗 -->
+    <div class="modal-overlay" id="adminModal">
+        <div class="modal" style="position:relative;">
+            <button class="modal-close" onclick="closeAdminModal()">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-user-shield"></i>
+                <h3 data-en="Admin Login" data-zh="管理员登录">管理员登录</h3>
+                <p data-en="Enter credentials to manage content" data-zh="输入凭据以管理网站内容">输入凭据以管理网站内容</p>
+            </div>
+            <form class="modal-form" id="adminLoginForm">
+                <div class="form-group">
+                    <input type="text" id="adminUser" placeholder="用户名 / Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="adminPass" placeholder="密码 / Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span data-en="Login" data-zh="登录">登录</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        // 滚动动画
+        // ============ 访问计数器 ============
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitorCount') || 0;
+            count = parseInt(count) + 1;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitorCount').textContent = count.toLocaleString();
+        }
+
+        // 页面加载时更新计数
+        updateVisitorCount();
+
+        // ============ 语言切换 ============
+        let currentLang = localStorage.getItem('language') || 'zh';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // 更新按钮状态
+            document.getElementById('langZh').classList.toggle('active', lang === 'zh');
+            document.getElementById('langEn').classList.toggle('active', lang === 'en');
+            
+            // 更新所有文本
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+            
+            // 更新placeholder
+            document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
+                const placeholder = el.getAttribute('data-placeholder-' + lang);
+                if (placeholder) {
+                    el.placeholder = placeholder;
+                }
+            });
+
+            // 更新HTML lang属性
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        }
+
+        // 初始化语言
+        switchLanguage(currentLang);
+
+        // ============ 微信二维码上传 ============
+        function loadQRCode(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('qrImage');
+                    const placeholder = document.getElementById('qrPlaceholder');
+                    
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                    placeholder.style.display = 'none';
+                    
+                    // 保存到localStorage
+                    localStorage.setItem('wechatQR', e.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // 加载保存的二维码
+        function loadSavedQR() {
+            const savedQR = localStorage.getItem('wechatQR');
+            if (savedQR) {
+                const img = document.getElementById('qrImage');
+                const placeholder = document.getElementById('qrPlaceholder');
+                img.src = savedQR;
+                img.style.display = 'block';
+                placeholder.style.display = 'none';
+            }
+        }
+        loadSavedQR();
+
+        // ============ 移动端菜单 ============
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // 点击导航链接后关闭菜单
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                const menuBtn = document.getElementById('mobileMenuBtn');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // ============ 滚动动画 ============
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1047,7 +2103,7 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // 平滑滚动
+        // ============ 平滑滚动 ============
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1058,13 +2114,79 @@
             });
         });
 
-        // 回到顶部
+        // ============ 回到顶部 ============
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             backToTopBtn.classList.toggle('visible', window.scrollY > 400);
         });
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============ 管理员登录 ============
+        document.getElementById('adminTrigger').addEventListener('click', function() {
+            document.getElementById('adminModal').classList.add('active');
+        });
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.remove('active');
+        }
+
+        document.getElementById('adminModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAdminModal();
+            }
+        });
+
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('adminUser').value;
+            const pass = document.getElementById('adminPass').value;
+            
+            // ⚠️ 这里是简单的演示，实际应使用后端验证
+            if (user === 'admin' && pass === 'opticalib2025') {
+                alert(currentLang === 'zh' ? '登录成功！后台管理功能开发中...' : 'Login successful! Admin panel is under development...');
+                closeAdminModal();
+                // 这里可以跳转到后台管理页面或显示管理面板
+            } else {
+                alert(currentLang === 'zh' ? '用户名或密码错误' : 'Invalid username or password');
+            }
+        });
+
+        // ============ 反馈表单 ============
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // 构建mailto链接
+            const mailtoLink = `mailto:opticalib@outlook.com?subject=${encodeURIComponent('[OptiCalib Feedback] ' + subject)}&body=${encodeURIComponent(`姓名/Name: ${name}\n邮箱/Email: ${email}\n\n消息/Message:\n${message}`)}`;
+            
+            window.location.href = mailtoLink;
+            
+            // 提示用户
+            setTimeout(() => {
+                alert(currentLang === 'zh' ? '感谢您的反馈！正在打开邮件客户端...' : 'Thank you for your feedback! Opening email client...');
+                this.reset();
+            }, 500);
+        });
+
+        // ============ 下载统计 ============
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            let downloads = localStorage.getItem('downloadCount') || 0;
+            downloads = parseInt(downloads) + 1;
+            localStorage.setItem('downloadCount', downloads);
+            console.log('Total downloads:', downloads);
+        });
+
+        // ============ ESC键关闭弹窗 ============
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAdminModal();
+            }
         });
     </script>
 </body>
