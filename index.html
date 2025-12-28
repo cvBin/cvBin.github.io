@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=0.3">
+    <meta name="viewport" content="width=1200">
     <title>OptiCalib - 专业多镜头相机标定软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,8 +23,9 @@
             --gradient: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
         }
 
-        html {
-            overflow-x: auto;
+        html, body {
+            width: 1200px;
+            overflow-x: visible;
         }
 
         body {
@@ -32,20 +33,19 @@
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
-            min-width: 1200px;
-            overflow-x: auto;
         }
 
         /* 导航栏 */
         nav {
             position: fixed;
             top: 0;
-            width: 100%;
-            min-width: 1200px;
+            left: 0;
+            width: 1200px;
+            height: 66px;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 15px 60px;
+            padding: 0 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -163,12 +163,11 @@
             gap: 16px;
         }
 
-        /* Hero 区域 - 固定像素值 */
+        /* Hero 区域 - 固定尺寸 */
         .hero {
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            padding: 100px 60px 60px 60px;
+            width: 1200px;
+            height: 600px;
+            padding-top: 66px;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             position: relative;
             overflow: hidden;
@@ -187,18 +186,19 @@
         }
 
         .hero-content {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            width: 1200px;
+            height: 534px;
+            padding: 40px 60px;
+            display: flex;
+            gap: 40px;
             align-items: center;
             position: relative;
             z-index: 1;
         }
 
         .hero-text {
+            width: 540px;
+            flex-shrink: 0;
             color: white;
         }
 
@@ -208,18 +208,18 @@
             gap: 8px;
             background: rgba(16, 185, 129, 0.2);
             color: #34d399;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .hero-text h1 {
-            font-size: 44px;
+            font-size: 40px;
             font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.15;
+            margin-bottom: 16px;
+            line-height: 1.2;
         }
 
         .hero-text h1 span {
@@ -230,40 +230,44 @@
         }
 
         .hero-text .subtitle {
-            font-size: 18px;
+            font-size: 15px;
             color: rgba(255,255,255,0.8);
-            margin-bottom: 24px;
-            line-height: 1.7;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
 
         .hero-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 32px;
+            gap: 12px 20px;
+            margin-bottom: 24px;
         }
 
         .hero-feature {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             color: rgba(255,255,255,0.8);
             font-size: 14px;
         }
 
         .hero-feature i {
             color: #34d399;
+            font-size: 12px;
         }
 
         .hero-image {
-            position: relative;
+            width: 500px;
+            flex-shrink: 0;
         }
 
-        /* 软件预览窗口 */
+        /* 软件预览窗口 - 固定尺寸 */
         .software-preview {
+            width: 500px;
+            height: 420px;
             background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 12px;
             box-shadow: 0 25px 80px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.1);
             overflow: hidden;
@@ -272,15 +276,15 @@
         .preview-header {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
+            gap: 6px;
+            height: 28px;
+            padding-bottom: 8px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .preview-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
         }
 
@@ -291,15 +295,16 @@
         .preview-title {
             margin-left: auto;
             color: rgba(255,255,255,0.5);
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .preview-scroll-container {
-            height: 320px;
+            height: 360px;
+            margin-top: 8px;
             overflow: hidden;
             position: relative;
             background: rgba(0,0,0,0.3);
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         .preview-scroll-content {
@@ -316,87 +321,87 @@
         }
 
         .preview-item {
-            padding: 16px;
+            padding: 12px 14px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .preview-item-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 8px;
+            margin-bottom: 4px;
         }
 
         .preview-item-title {
             color: rgba(255,255,255,0.9);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
         }
 
         .preview-item-desc {
             color: rgba(255,255,255,0.5);
-            font-size: 12px;
-            line-height: 1.5;
+            font-size: 11px;
+            line-height: 1.4;
         }
 
         .preview-item-status {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             background: rgba(16, 185, 129, 0.2);
             color: #34d399;
-            padding: 3px 10px;
+            padding: 2px 8px;
             border-radius: 50px;
-            font-size: 11px;
-            margin-top: 6px;
+            font-size: 10px;
+            margin-top: 4px;
         }
 
         .preview-step-num {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
+            font-size: 9px;
             color: white;
             font-weight: 600;
             flex-shrink: 0;
         }
 
-        /* 通用区块 - 固定像素值 */
+        /* 通用区块 */
         section {
-            padding: 80px 60px;
-            min-width: 1200px;
+            width: 1200px;
+            padding: 60px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
         }
 
         .section-header h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 30px;
+            margin-bottom: 8px;
         }
 
         .section-header p {
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .section-tag {
             display: inline-block;
             background: rgba(37, 99, 235, 0.1);
             color: var(--primary);
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 50px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         /* 软件概述 */
@@ -411,39 +416,39 @@
         }
 
         .overview-text {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--gray);
             line-height: 1.8;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .overview-highlights {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 32px;
+            gap: 20px;
+            margin-top: 28px;
         }
 
         .highlight-item {
             background: var(--light);
-            padding: 24px;
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
         }
 
         .highlight-item i {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .highlight-item h4 {
-            font-size: 16px;
-            margin-bottom: 6px;
+            font-size: 15px;
+            margin-bottom: 4px;
         }
 
         .highlight-item p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
         }
 
@@ -455,15 +460,15 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 1200px;
+            gap: 20px;
+            max-width: 1080px;
             margin: 0 auto;
         }
 
         .feature-card {
             background: white;
-            border-radius: 14px;
-            padding: 28px;
+            border-radius: 12px;
+            padding: 24px;
             transition: all 0.3s;
             border: 1px solid rgba(0,0,0,0.05);
         }
@@ -474,29 +479,29 @@
         }
 
         .feature-icon {
-            width: 50px;
-            height: 50px;
+            width: 46px;
+            height: 46px;
             background: var(--gradient);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .feature-icon i {
-            font-size: 20px;
+            font-size: 18px;
             color: white;
         }
 
         .feature-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 17px;
+            margin-bottom: 8px;
         }
 
         .feature-card p {
             color: var(--gray);
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.6;
         }
 
@@ -517,15 +522,15 @@
         .modes-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1100px;
+            gap: 16px;
+            max-width: 1080px;
             margin: 0 auto;
         }
 
         .mode-card {
             background: rgba(255,255,255,0.05);
-            border-radius: 14px;
-            padding: 24px;
+            border-radius: 12px;
+            padding: 20px;
             text-align: center;
             transition: all 0.3s;
             border: 1px solid rgba(255,255,255,0.1);
@@ -537,18 +542,18 @@
         }
 
         .mode-card i {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--secondary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .mode-card h4 {
-            font-size: 16px;
-            margin-bottom: 6px;
+            font-size: 15px;
+            margin-bottom: 4px;
         }
 
         .mode-card p {
-            font-size: 13px;
+            font-size: 12px;
             color: rgba(255,255,255,0.6);
         }
 
@@ -560,15 +565,15 @@
         .boards-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            gap: 16px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
         .board-card {
             background: var(--light);
-            border-radius: 12px;
-            padding: 24px 16px;
+            border-radius: 10px;
+            padding: 20px 14px;
             text-align: center;
             transition: all 0.3s;
         }
@@ -579,23 +584,23 @@
         }
 
         .board-icon {
-            width: 60px;
-            height: 60px;
+            width: 54px;
+            height: 54px;
             background: var(--gradient);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
+            margin: 0 auto 12px;
         }
 
         .board-icon i {
-            font-size: 24px;
+            font-size: 22px;
             color: white;
         }
 
         .board-card h4 {
-            font-size: 15px;
+            font-size: 14px;
         }
 
         /* 畸变模型 */
@@ -608,15 +613,15 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            gap: 20px;
         }
 
         .model-card {
             background: white;
-            border-radius: 14px;
-            padding: 28px;
+            border-radius: 12px;
+            padding: 24px;
             display: flex;
-            gap: 20px;
+            gap: 16px;
             align-items: flex-start;
             transition: all 0.3s;
         }
@@ -626,28 +631,28 @@
         }
 
         .model-icon {
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
+            width: 46px;
+            height: 46px;
+            min-width: 46px;
             background: var(--gradient);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .model-icon i {
-            font-size: 20px;
+            font-size: 18px;
             color: white;
         }
 
         .model-info h4 {
-            font-size: 17px;
-            margin-bottom: 6px;
+            font-size: 16px;
+            margin-bottom: 4px;
         }
 
         .model-info p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
         }
 
@@ -659,15 +664,15 @@
         .accuracy-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1100px;
+            gap: 16px;
+            max-width: 1080px;
             margin: 0 auto;
         }
 
         .accuracy-card {
             background: var(--light);
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 10px;
+            padding: 20px;
             text-align: center;
             transition: all 0.3s;
         }
@@ -678,24 +683,24 @@
         }
 
         .accuracy-card i {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .accuracy-card h4 {
-            font-size: 16px;
-            margin-bottom: 6px;
+            font-size: 15px;
+            margin-bottom: 4px;
         }
 
         .accuracy-card p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
         }
 
         /* 下载 */
         .download {
-            padding: 80px 60px;
+            padding: 60px;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
             text-align: center;
@@ -712,39 +717,39 @@
         .download-box {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 480px;
+            border-radius: 16px;
+            padding: 36px;
+            max-width: 440px;
             margin: 0 auto;
         }
 
         .download-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: var(--gradient);
-            border-radius: 18px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 16px;
         }
 
         .download-icon i {
-            font-size: 36px;
+            font-size: 32px;
             color: white;
         }
 
         .download-box h3 {
-            font-size: 22px;
-            margin-bottom: 20px;
+            font-size: 20px;
+            margin-bottom: 16px;
         }
 
         .download-btn {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
-            padding: 16px 36px;
+            padding: 14px 32px;
             border-radius: 50px;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -760,18 +765,18 @@
         }
 
         .system-req {
-            margin-top: 24px;
-            padding-top: 20px;
+            margin-top: 20px;
+            padding-top: 16px;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.5);
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .system-req span {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            margin: 0 10px;
+            gap: 5px;
+            margin: 0 8px;
         }
 
         /* 联系方式 */
@@ -782,15 +787,15 @@
         .contact-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 950px;
+            gap: 20px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .contact-card {
             background: white;
-            border-radius: 14px;
-            padding: 28px;
+            border-radius: 12px;
+            padding: 24px;
             text-align: center;
             transition: all 0.3s;
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
@@ -802,52 +807,52 @@
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
+            width: 54px;
+            height: 54px;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
+            margin: 0 auto 14px;
         }
 
         .contact-icon i {
-            font-size: 22px;
+            font-size: 20px;
             color: white;
         }
 
         .contact-card h3 {
-            font-size: 17px;
-            margin-bottom: 6px;
+            font-size: 16px;
+            margin-bottom: 4px;
         }
 
         .contact-card p {
             color: var(--gray);
-            font-size: 14px;
-            margin-bottom: 10px;
+            font-size: 13px;
+            margin-bottom: 8px;
         }
 
         .contact-card a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 13px;
             word-break: break-all;
         }
 
         .contact-value {
             color: var(--dark);
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .wechat-qr {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             background: var(--light);
-            border-radius: 10px;
-            margin: 12px auto 0;
+            border-radius: 8px;
+            margin: 10px auto 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -865,7 +870,7 @@
         .feedback-section {
             background: var(--dark);
             color: white;
-            padding: 80px 60px;
+            padding: 60px;
         }
 
         .feedback-section .section-header h2 {
@@ -877,30 +882,30 @@
         }
 
         .feedback-form {
-            max-width: 600px;
+            max-width: 560px;
             margin: 0 auto;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 16px;
+            gap: 14px;
+            margin-bottom: 14px;
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 14px 20px;
+            padding: 12px 18px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             background: rgba(255,255,255,0.1);
             color: white;
-            font-size: 15px;
+            font-size: 14px;
             font-family: inherit;
             outline: none;
             transition: all 0.3s;
@@ -918,18 +923,18 @@
         }
 
         .form-group textarea {
-            min-height: 120px;
+            min-height: 100px;
             resize: vertical;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             border: none;
             border-radius: 50px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -946,14 +951,14 @@
 
         /* 页脚 */
         footer {
+            width: 1200px;
             background: #0a0f1a;
             color: rgba(255,255,255,0.6);
-            padding: 32px 60px;
-            min-width: 1200px;
+            padding: 28px 60px;
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 1080px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -964,22 +969,22 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: white;
         }
 
         .footer-logo .logo-icon {
-            width: 28px;
-            height: 28px;
-            font-size: 12px;
+            width: 26px;
+            height: 26px;
+            font-size: 11px;
         }
 
         .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
+            margin-left: 18px;
+            font-size: 13px;
         }
 
         .footer-links a:hover {
@@ -987,26 +992,27 @@
         }
 
         .footer-bottom {
-            margin-top: 20px;
-            padding-top: 20px;
+            margin-top: 18px;
+            padding-top: 18px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
+            font-size: 12px;
             text-align: center;
         }
 
         /* 固定元素 */
+        /* 固定元素 */
         .visitor-counter {
             position: fixed;
-            bottom: 25px;
-            left: 25px;
+            bottom: 20px;
+            left: 20px;
             z-index: 998;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
+            gap: 6px;
+            font-size: 12px;
             color: white;
             background: rgba(15, 23, 42, 0.9);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             backdrop-filter: blur(10px);
@@ -1018,23 +1024,23 @@
 
         .language-switcher {
             position: fixed;
-            bottom: 75px;
-            left: 25px;
+            bottom: 64px;
+            left: 20px;
             z-index: 999;
             display: flex;
-            gap: 8px;
+            gap: 6px;
             background: white;
-            padding: 8px;
+            padding: 6px;
             border-radius: 50px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         .lang-btn {
-            padding: 8px 16px;
+            padding: 6px 14px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             transition: all 0.3s;
             background: transparent;
@@ -1052,16 +1058,16 @@
 
         #backToTop {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 45px;
-            height: 45px;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: var(--gradient);
             color: white;
             border: none;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
             opacity: 0;
             visibility: hidden;
@@ -1076,16 +1082,16 @@
 
         .admin-trigger {
             position: fixed;
-            bottom: 80px;
-            right: 25px;
-            width: 40px;
-            height: 40px;
+            bottom: 70px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: rgba(37, 99, 235, 0.1);
             color: var(--primary);
             border: none;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             transition: all 0.3s;
             z-index: 998;
             opacity: 0.5;
@@ -1118,10 +1124,10 @@
 
         .modal {
             background: white;
-            border-radius: 20px;
-            padding: 32px;
+            border-radius: 16px;
+            padding: 28px;
             width: 90%;
-            max-width: 600px;
+            max-width: 560px;
             box-shadow: 0 25px 80px rgba(0,0,0,0.3);
             animation: modalIn 0.3s ease;
             position: relative;
@@ -1130,7 +1136,7 @@
         }
 
         .modal-small {
-            max-width: 400px;
+            max-width: 380px;
         }
 
         @keyframes modalIn {
@@ -1140,37 +1146,37 @@
 
         .modal-header {
             text-align: center;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .modal-header i {
-            font-size: 40px;
+            font-size: 36px;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .modal-header h3 {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--dark);
         }
 
         .modal-header p {
             color: var(--gray);
-            font-size: 14px;
-            margin-top: 5px;
+            font-size: 13px;
+            margin-top: 4px;
         }
 
         .modal-close {
             position: absolute;
-            top: 16px;
-            right: 16px;
+            top: 14px;
+            right: 14px;
             background: var(--light);
             border: none;
-            font-size: 20px;
+            font-size: 18px;
             cursor: pointer;
             color: var(--gray);
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1187,35 +1193,35 @@
         .admin-form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 16px;
+            gap: 14px;
+            margin-bottom: 14px;
         }
 
         .admin-form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .admin-form-group label {
             display: flex;
             align-items: center;
-            gap: 6px;
-            margin-bottom: 6px;
+            gap: 5px;
+            margin-bottom: 5px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--dark);
         }
 
         .admin-form-group label i {
             color: var(--primary);
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .admin-form-group input {
             width: 100%;
-            padding: 12px 16px;
+            padding: 10px 14px;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 13px;
             font-family: inherit;
             outline: none;
             transition: all 0.3s;
@@ -1228,31 +1234,27 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
-        .admin-form-group input::placeholder {
-            color: #a0aec0;
-        }
-
         .admin-form-group .hint {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--gray);
-            margin-top: 4px;
+            margin-top: 3px;
         }
 
         .qr-section {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 16px;
+            gap: 14px;
+            padding: 14px;
             background: var(--light);
-            border-radius: 10px;
-            margin-bottom: 16px;
+            border-radius: 8px;
+            margin-bottom: 14px;
         }
 
         .qr-preview {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border: 2px solid #e2e8f0;
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
             flex-shrink: 0;
         }
@@ -1263,10 +1265,6 @@
             object-fit: cover;
         }
 
-        .qr-upload {
-            flex: 1;
-        }
-
         .qr-upload input[type="file"] {
             display: none;
         }
@@ -1274,13 +1272,13 @@
         .qr-upload label {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
+            gap: 6px;
+            padding: 8px 14px;
             background: white;
             border: 2px dashed #cbd5e1;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
             transition: all 0.3s;
         }
@@ -1293,11 +1291,11 @@
         .stats-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            padding: 16px;
+            gap: 14px;
+            padding: 14px;
             background: var(--light);
-            border-radius: 10px;
-            margin-bottom: 16px;
+            border-radius: 8px;
+            margin-bottom: 14px;
         }
 
         .stat-item {
@@ -1305,13 +1303,13 @@
         }
 
         .stat-label {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--gray);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .stat-value {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--primary);
         }
@@ -1319,13 +1317,13 @@
         .save-notice {
             background: rgba(16, 185, 129, 0.1);
             color: #059669;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            margin-bottom: 16px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 14px;
             display: none;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             border: 1px solid rgba(16, 185, 129, 0.2);
         }
 
@@ -1335,21 +1333,21 @@
 
         .btn-row {
             display: flex;
-            gap: 12px;
-            margin-top: 16px;
+            gap: 10px;
+            margin-top: 14px;
         }
 
         .btn-row .btn {
             flex: 1;
             justify-content: center;
-            padding: 12px 16px;
-            font-size: 14px;
+            padding: 10px 14px;
+            font-size: 13px;
         }
 
         .divider {
             height: 1px;
             background: #e2e8f0;
-            margin: 20px 0;
+            margin: 16px 0;
         }
 
         .fade-in {
@@ -1501,82 +1499,82 @@
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">1</div>
-                                    <span class="preview-item-title" data-lang data-en="Create Project" data-zh="新建工程">新建工程</span>
+                                    <span class="preview-item-title">新建工程</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="Set project name and path, initialize workspace" data-zh="设置工程名和工程路径，初始化标定工作空间">设置工程名和工程路径，初始化标定工作空间</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Created" data-zh="工程已创建">工程已创建</span></div>
+                                <div class="preview-item-desc">设置工程名和工程路径，初始化标定工作空间</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 工程已创建</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">2</div>
-                                    <span class="preview-item-title" data-lang data-en="Add Calibration Board" data-zh="添加标定板">添加标定板</span>
+                                    <span class="preview-item-title">添加标定板</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="Support Chessboard, ChArUco, ArUco, Circle Grid" data-zh="支持棋盘格、ChArUco、ArUco、圆点等标定板">支持棋盘格、ChArUco、ArUco、圆点等标定板</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="9x7 Chessboard, 50mm" data-zh="棋盘 9x7，间距50mm">棋盘 9x7，间距50mm</span></div>
+                                <div class="preview-item-desc">支持棋盘格、ChArUco、ArUco、圆点等标定板</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 棋盘 9x7，间距50mm</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">3</div>
-                                    <span class="preview-item-title" data-lang data-en="Set Parameters" data-zh="设置标定参数">设置标定参数</span>
+                                    <span class="preview-item-title">设置标定参数</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="Detection algorithm, distortion model (Brown/Fisheye/MEI)" data-zh="检测算法、畸变模型（Brown/鱼眼/MEI模型）">检测算法、畸变模型（Brown/鱼眼/MEI模型）</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Brown 14 params" data-zh="Brown模型 14参数">Brown模型 14参数</span></div>
+                                <div class="preview-item-desc">检测算法、畸变模型（Brown/鱼眼/MEI模型）</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> Brown模型 14参数</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">4</div>
-                                    <span class="preview-item-title" data-lang data-en="Load Images" data-zh="加载标定样本">加载标定样本</span>
+                                    <span class="preview-item-title">加载标定样本</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="Load local images or capture from camera" data-zh="支持加载本地图像或实时摄像头截图">支持加载本地图像或实时摄像头截图</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="26 images loaded" data-zh="已加载 26 张图像">已加载 26 张图像</span></div>
+                                <div class="preview-item-desc">支持加载本地图像或实时摄像头截图</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 已加载 26 张图像</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">5</div>
-                                    <span class="preview-item-title" data-lang data-en="Corner Detection" data-zh="角点检测">角点检测</span>
+                                    <span class="preview-item-title">角点检测</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="Sub-pixel automatic corner detection" data-zh="亚像素级自动角点检测，支持部分遮挡">亚像素级自动角点检测，支持部分遮挡</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="1,820 corners" data-zh="检测到 1,820 个角点">检测到 1,820 个角点</span></div>
+                                <div class="preview-item-desc">亚像素级自动角点检测，支持部分遮挡</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 检测到 1,820 个角点</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">6</div>
-                                    <span class="preview-item-title" data-lang data-en="Execute Calibration" data-zh="执行标定">执行标定</span>
+                                    <span class="preview-item-title">执行标定</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="Bundle Adjustment global optimization" data-zh="Bundle Adjustment 全局优化解算">Bundle Adjustment 全局优化解算</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Completed" data-zh="标定完成">标定完成</span></div>
+                                <div class="preview-item-desc">Bundle Adjustment 全局优化解算</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 标定完成</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">7</div>
-                                    <span class="preview-item-title" data-lang data-en="Error Analysis" data-zh="误差分析">误差分析</span>
+                                    <span class="preview-item-title">误差分析</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="5 visualization panels: reprojection, histogram..." data-zh="5种可视化面板：重投影、直方图、三维场景...">5种可视化面板：重投影、直方图、三维场景...</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="RMS: 0.15px" data-zh="RMS误差: 0.15像素">RMS误差: 0.15像素</span></div>
+                                <div class="preview-item-desc">5种可视化面板：重投影、直方图、三维场景...</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> RMS误差: 0.15像素</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">8</div>
-                                    <span class="preview-item-title" data-lang data-en="Interactive Correction" data-zh="交互修正">交互修正</span>
+                                    <span class="preview-item-title">交互修正</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="6 correction methods available" data-zh="6种修正方法：全局定位、单点修正、批量修正...">6种修正方法：全局定位、单点修正、批量修正...</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Improved" data-zh="精度提升">精度提升</span></div>
+                                <div class="preview-item-desc">6种修正方法：全局定位、单点修正、批量修正...</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 精度提升</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">9</div>
-                                    <span class="preview-item-title" data-lang data-en="Coordinate Alignment" data-zh="基准坐标系对齐">基准坐标系对齐</span>
+                                    <span class="preview-item-title">基准坐标系对齐</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="Align extrinsics to reference coordinate" data-zh="将外参数对齐到指定的基准坐标系">将外参数对齐到指定的基准坐标系</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Aligned" data-zh="已对齐到标定板原点">已对齐到标定板原点</span></div>
+                                <div class="preview-item-desc">将外参数对齐到指定的基准坐标系</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 已对齐到标定板原点</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
                                     <div class="preview-step-num">10</div>
-                                    <span class="preview-item-title" data-lang data-en="Export Results" data-zh="导出结果">导出结果</span>
+                                    <span class="preview-item-title">导出结果</span>
                                 </div>
-                                <div class="preview-item-desc" data-lang data-en="Export to YAML/JSON/XML, generate report" data-zh="导出YAML/JSON/XML格式，生成精度报告">导出YAML/JSON/XML格式，生成精度报告</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-lang data-en="Exported" data-zh="导出完成">导出完成</span></div>
+                                <div class="preview-item-desc">导出YAML/JSON/XML格式，生成精度报告</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 导出完成</div>
                             </div>
                         </div>
                     </div>
@@ -1846,8 +1844,8 @@
                 <p data-lang data-en="Scan to add friend" data-zh="扫码添加好友">扫码添加好友</p>
                 <div class="wechat-qr">
                     <img id="wechatQRImage" src="wechat.png" alt="WeChat QR" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div style="display:none; text-align:center; color:#999; font-size:11px; padding:8px; flex-direction:column; align-items:center; justify-content:center; height:100%;">
-                        <i class="fas fa-qrcode" style="font-size:24px; margin-bottom:5px;"></i>
+                    <div style="display:none; text-align:center; color:#999; font-size:10px; padding:6px; flex-direction:column; align-items:center; justify-content:center; height:100%;">
+                        <i class="fas fa-qrcode" style="font-size:20px; margin-bottom:4px;"></i>
                         wechat.png
                     </div>
                 </div>
@@ -1944,11 +1942,11 @@
             <form id="adminLoginForm">
                 <div class="admin-form-group">
                     <label><i class="fas fa-user"></i> <span data-lang data-en="Username" data-zh="用户名">用户名</span></label>
-                    <input type="text" id="adminUser" data-placeholder-en="Enter username" data-placeholder-zh="请输入用户名" placeholder="请输入用户名" required>
+                    <input type="text" id="adminUser" placeholder="请输入用户名" required>
                 </div>
                 <div class="admin-form-group">
                     <label><i class="fas fa-lock"></i> <span data-lang data-en="Password" data-zh="密码">密码</span></label>
-                    <input type="password" id="adminPass" data-placeholder-en="Enter password" data-placeholder-zh="请输入密码" placeholder="请输入密码" required>
+                    <input type="password" id="adminPass" placeholder="请输入密码" required>
                 </div>
                 <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
                     <i class="fas fa-sign-in-alt"></i> <span data-lang data-en="Login" data-zh="登录">登录</span>
@@ -1992,21 +1990,19 @@
             <div class="admin-form-group">
                 <label><i class="fas fa-envelope"></i> <span data-lang data-en="Feedback Email" data-zh="反馈接收邮箱">反馈接收邮箱</span></label>
                 <input type="email" id="adminFeedbackEmail" value="opticalib@outlook.com">
-                <div class="hint" data-lang data-en="Receive user feedback" data-zh="用于接收用户意见反馈">用于接收用户意见反馈</div>
+                <div class="hint" data-lang data-en="Receive user feedback" data-zh="用于接收用户意见反馈">用于接收用户反馈">用于接收用户意见反馈</div>
             </div>
 
-            <div class="admin-form-group">
-                <label><i class="fab fa-weixin"></i> <span data-lang data-en="WeChat QR Code" data-zh="微信二维码">微信二维码</span></label>
-            </div>
             <div class="qr-section">
                 <div class="qr-preview">
-                    <img id="adminQRPreview" src="wechat.png" alt="Preview" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCI+PHJlY3QgZmlsbD0iI2YxZjVmOSIgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIi8+PHRleHQgeD0iNDAiIHk9IjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjYTBhZWMwIiBmb250LXNpemU9IjEwIj5ObyBJbWFnZTwvdGV4dD48L3N2Zz4='">
+                    <img id="adminQRPreview" src="wechat.png" alt="QR Preview" onerror="this.style.display='none';">
                 </div>
                 <div class="qr-upload">
-                    <input type="file" id="adminQRUpload" accept="image/*" onchange="previewQR(event)">
-                    <label for="adminQRUpload">
-                        <i class="fas fa-cloud-upload-alt"></i> <span data-lang data-en="Upload Image" data-zh="上传新图片">上传新图片</span>
+                    <label for="qrUpload">
+                        <i class="fas fa-upload"></i>
+                        <span data-lang data-en="Upload WeChat QR" data-zh="上传微信二维码">上传微信二维码</span>
                     </label>
+                    <input type="file" id="qrUpload" accept="image/*">
                 </div>
             </div>
 
@@ -2015,248 +2011,283 @@
             <div class="stats-section">
                 <div class="stat-item">
                     <div class="stat-label" data-lang data-en="Total Visits" data-zh="总访问量">总访问量</div>
-                    <div class="stat-value" id="adminVisitCount">0</div>
+                    <div class="stat-value" id="adminVisitorCount">0</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-label" data-lang data-en="Total Downloads" data-zh="总下载量">总下载量</div>
-                    <div class="stat-value" id="adminDownloadCount">0</div>
+                    <div class="stat-label" data-lang data-en="Feedback Count" data-zh="反馈数量">反馈数量</div>
+                    <div class="stat-value" id="adminFeedbackCount">0</div>
                 </div>
             </div>
 
             <div class="btn-row">
-                <button class="btn btn-primary" onclick="saveAllSettings()">
-                    <i class="fas fa-save"></i> <span data-lang data-en="Save Changes" data-zh="保存修改">保存修改</span>
+                <button class="btn btn-primary" onclick="saveAdminSettings()">
+                    <i class="fas fa-save"></i> <span data-lang data-en="Save" data-zh="保存修改">保存修改</span>
                 </button>
-                <button class="btn btn-outline" onclick="resetStatistics()">
-                    <i class="fas fa-redo"></i> <span data-lang data-en="Reset Stats" data-zh="重置统计">重置统计</span>
-                </button>
-            </div>
-
-            <div class="divider"></div>
-
-            <div style="text-align: center;">
-                <button class="btn btn-outline" onclick="adminLogout()" style="padding: 8px 24px;">
+                <button class="btn btn-outline" onclick="adminLogout()">
                     <i class="fas fa-sign-out-alt"></i> <span data-lang data-en="Logout" data-zh="退出登录">退出登录</span>
                 </button>
             </div>
         </div>
     </div>
 
+    <!-- 反馈成功弹窗 -->
+    <div class="modal-overlay" id="feedbackSuccessModal">
+        <div class="modal modal-small">
+            <button class="modal-close" onclick="closeModal('feedbackSuccessModal')">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-check-circle" style="color: #10b981;"></i>
+                <h3 data-lang data-en="Sent Successfully!" data-zh="发送成功！">发送成功！</h3>
+                <p data-lang data-en="Thank you for your feedback, we will reply soon." data-zh="感谢您的反馈，我们会尽快回复。">感谢您的反馈，我们会尽快回复。</p>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="closeModal('feedbackSuccessModal')">
+                <i class="fas fa-check"></i> <span data-lang data-en="OK" data-zh="确定">确定</span>
+            </button>
+        </div>
+    </div>
+
     <script>
-        // ============ 默认配置 ============
-        const defaultConfig = {
+        // ==================== 配置 ====================
+        let siteConfig = {
             version: 'V1.8.2',
-            downloadUrl: 'https://share.weiyun.com/ESN9mXmp',
             phone: '13333899545',
+            email: 'opticalib@outlook.com',
+            downloadUrl: 'https://share.weiyun.com/ESN9mXmp',
             feedbackEmail: 'opticalib@outlook.com',
             wechatQR: 'wechat.png'
         };
 
-        function getConfig() {
-            const saved = localStorage.getItem('opticalib_config');
-            return saved ? { ...defaultConfig, ...JSON.parse(saved) } : defaultConfig;
-        }
+        let visitorCount = 0;
+        let feedbackCount = 0;
+        let currentLang = 'zh';
+        let isLoggedIn = false;
 
-        function saveConfig(config) {
-            localStorage.setItem('opticalib_config', JSON.stringify(config));
-        }
-
-        function initializeConfig() {
-            const config = getConfig();
-            document.getElementById('displayVersion').textContent = config.version;
-            document.getElementById('footerVersion').textContent = 'Version ' + config.version;
-            document.getElementById('displayPhone').textContent = config.phone;
-            document.getElementById('downloadBtn').href = config.downloadUrl;
-            const emailEl = document.getElementById('displayEmail');
-            emailEl.textContent = config.feedbackEmail;
-            emailEl.href = 'mailto:' + config.feedbackEmail;
-            if (config.wechatQR && config.wechatQR.startsWith('data:')) {
-                document.getElementById('wechatQRImage').src = config.wechatQR;
-            }
-        }
-        initializeConfig();
-
-        // ============ 访问计数 ============
-        function updateVisitorCount() {
-            let count = parseInt(localStorage.getItem('visitorCount') || '0');
-            if (!sessionStorage.getItem('visited')) {
-                count++;
-                localStorage.setItem('visitorCount', count);
-                sessionStorage.setItem('visited', 'true');
-            }
-            document.getElementById('visitorCount').textContent = count.toLocaleString();
-        }
-        updateVisitorCount();
-
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-            let downloads = parseInt(localStorage.getItem('downloadCount') || '0') + 1;
-            localStorage.setItem('downloadCount', downloads);
+        // ==================== 初始化 ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            loadConfig();
+            updateVisitorCount();
+            initScrollAnimations();
+            initBackToTop();
+            initAdminTrigger();
+            initForms();
+            applyConfig();
         });
 
-        // ============ 语言切换 ============
-        let currentLang = localStorage.getItem('language') || 'zh';
+        // ==================== 配置管理 ====================
+        function loadConfig() {
+            const saved = localStorage.getItem('opticalib_config');
+            if (saved) {
+                siteConfig = { ...siteConfig, ...JSON.parse(saved) };
+            }
+            visitorCount = parseInt(localStorage.getItem('opticalib_visitors') || '0');
+            feedbackCount = parseInt(localStorage.getItem('opticalib_feedbacks') || '0');
+        }
 
+        function saveConfig() {
+            localStorage.setItem('opticalib_config', JSON.stringify(siteConfig));
+        }
+
+        function applyConfig() {
+            // 版本号
+            document.getElementById('displayVersion').textContent = siteConfig.version;
+            document.getElementById('footerVersion').textContent = 'Version ' + siteConfig.version;
+            
+            // 联系方式
+            document.getElementById('displayEmail').textContent = siteConfig.email;
+            document.getElementById('displayEmail').href = 'mailto:' + siteConfig.email;
+            document.getElementById('displayPhone').textContent = siteConfig.phone;
+            
+            // 下载链接
+            document.getElementById('downloadBtn').href = siteConfig.downloadUrl;
+            
+            // 访问量
+            document.getElementById('visitorCount').textContent = visitorCount;
+            
+            // 微信二维码
+            if (siteConfig.wechatQR) {
+                document.getElementById('wechatQRImage').src = siteConfig.wechatQR;
+            }
+        }
+
+        // ==================== 访问统计 ====================
+        function updateVisitorCount() {
+            const lastVisit = localStorage.getItem('opticalib_last_visit');
+            const today = new Date().toDateString();
+            
+            if (lastVisit !== today) {
+                visitorCount++;
+                localStorage.setItem('opticalib_visitors', visitorCount);
+                localStorage.setItem('opticalib_last_visit', today);
+            }
+            
+            document.getElementById('visitorCount').textContent = visitorCount;
+        }
+
+        // ==================== 语言切换 ====================
         function switchLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem('language', lang);
+            
             document.getElementById('langZh').classList.toggle('active', lang === 'zh');
             document.getElementById('langEn').classList.toggle('active', lang === 'en');
+            
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const text = el.getAttribute('data-' + lang);
                 if (text) el.textContent = text;
             });
+            
             document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
-                const placeholder = el.getAttribute('data-placeholder-' + lang);
-                if (placeholder) el.placeholder = placeholder;
+                el.placeholder = el.getAttribute('data-placeholder-' + lang);
             });
-            document.title = lang === 'zh' 
-                ? 'OptiCalib - 专业多镜头相机标定软件' 
-                : 'OptiCalib - Professional Multi-Lens Camera Calibration';
-            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            
+            localStorage.setItem('opticalib_lang', lang);
         }
-        switchLanguage(currentLang);
 
-        // ============ 滚动动画 ============
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+        // ==================== 滚动动画 ====================
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // ==================== 回到顶部 ====================
+        function initBackToTop() {
+            const btn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                btn.classList.toggle('visible', window.scrollY > 300);
             });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            
+            btn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
 
-        // ============ 平滑滚动 ============
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        // ==================== 管理员功能 ====================
+        function initAdminTrigger() {
+            document.getElementById('adminTrigger').addEventListener('click', () => {
+                if (isLoggedIn) {
+                    openAdminPanel();
+                } else {
+                    openModal('loginModal');
+                }
+            });
+        }
+
+        function initForms() {
+            // 登录表单
+            document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const user = document.getElementById('adminUser').value;
+                const pass = document.getElementById('adminPass').value;
+                
+                if (user === 'admin' && pass === 'opticalib2025') {
+                    isLoggedIn = true;
+                    closeModal('loginModal');
+                    openAdminPanel();
+                } else {
+                    alert(currentLang === 'zh' ? '用户名或密码错误' : 'Invalid credentials');
+                }
             });
-        });
 
-        // ============ 回到顶部 ============
-        const backToTopBtn = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            backToTopBtn.classList.toggle('visible', window.scrollY > 400);
-        });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ============ 弹窗 ============
-        function openModal(id) { document.getElementById(id).classList.add('active'); }
-        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
-        document.querySelectorAll('.modal-overlay').forEach(overlay => {
-            overlay.addEventListener('click', function(e) {
-                if (e.target === this) this.classList.remove('active');
-            });
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
-            }
-        });
-
-        // ============ 管理员登录 ============
-        let isAdminLoggedIn = sessionStorage.getItem('adminLoggedIn') === 'true';
-
-        document.getElementById('adminTrigger').addEventListener('click', function() {
-            if (isAdminLoggedIn) openAdminPanel();
-            else openModal('loginModal');
-        });
-
-        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const user = document.getElementById('adminUser').value;
-            const pass = document.getElementById('adminPass').value;
-            if (user === 'admin' && pass === 'Liu520134ting') {
-                isAdminLoggedIn = true;
-                sessionStorage.setItem('adminLoggedIn', 'true');
-                closeModal('loginModal');
-                openAdminPanel();
+            // 反馈表单
+            document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                feedbackCount++;
+                localStorage.setItem('opticalib_feedbacks', feedbackCount);
+                
                 this.reset();
-            } else {
-                alert(currentLang === 'zh' ? '用户名或密码错误' : 'Invalid username or password');
-            }
-        });
+                openModal('feedbackSuccessModal');
+            });
 
-        function adminLogout() {
-            isAdminLoggedIn = false;
-            sessionStorage.removeItem('adminLoggedIn');
-            closeModal('adminPanel');
-            alert(currentLang === 'zh' ? '已退出登录' : 'Logged out successfully');
+            // 二维码上传
+            document.getElementById('qrUpload').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        siteConfig.wechatQR = e.target.result;
+                        document.getElementById('adminQRPreview').src = e.target.result;
+                        document.getElementById('wechatQRImage').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
         }
 
         function openAdminPanel() {
-            const config = getConfig();
-            document.getElementById('adminVersion').value = config.version;
-            document.getElementById('adminDownloadUrl').value = config.downloadUrl;
-            document.getElementById('adminPhone').value = config.phone;
-            document.getElementById('adminFeedbackEmail').value = config.feedbackEmail;
-            if (config.wechatQR) document.getElementById('adminQRPreview').src = config.wechatQR;
-            document.getElementById('adminVisitCount').textContent = localStorage.getItem('visitorCount') || '0';
-            document.getElementById('adminDownloadCount').textContent = localStorage.getItem('downloadCount') || '0';
-            switchLanguage(currentLang);
+            document.getElementById('adminVersion').value = siteConfig.version;
+            document.getElementById('adminPhone').value = siteConfig.phone;
+            document.getElementById('adminDownloadUrl').value = siteConfig.downloadUrl;
+            document.getElementById('adminFeedbackEmail').value = siteConfig.feedbackEmail;
+            document.getElementById('adminVisitorCount').textContent = visitorCount;
+            document.getElementById('adminFeedbackCount').textContent = feedbackCount;
+            
+            if (siteConfig.wechatQR) {
+                document.getElementById('adminQRPreview').src = siteConfig.wechatQR;
+            }
+            
             openModal('adminPanel');
         }
 
-        function showSaveNotice() {
+        function saveAdminSettings() {
+            siteConfig.version = document.getElementById('adminVersion').value;
+            siteConfig.phone = document.getElementById('adminPhone').value;
+            siteConfig.downloadUrl = document.getElementById('adminDownloadUrl').value;
+            siteConfig.feedbackEmail = document.getElementById('adminFeedbackEmail').value;
+            
+            saveConfig();
+            applyConfig();
+            
             const notice = document.getElementById('saveNotice');
             notice.classList.add('show');
             setTimeout(() => notice.classList.remove('show'), 3000);
         }
 
-        function saveAllSettings() {
-            const config = {
-                version: document.getElementById('adminVersion').value || defaultConfig.version,
-                downloadUrl: document.getElementById('adminDownloadUrl').value || defaultConfig.downloadUrl,
-                phone: document.getElementById('adminPhone').value || defaultConfig.phone,
-                feedbackEmail: document.getElementById('adminFeedbackEmail').value || defaultConfig.feedbackEmail,
-                wechatQR: defaultConfig.wechatQR
-            };
-            const preview = document.getElementById('adminQRPreview');
-            if (preview.src && preview.src.startsWith('data:')) config.wechatQR = preview.src;
-            saveConfig(config);
-            initializeConfig();
-            showSaveNotice();
+        function adminLogout() {
+            isLoggedIn = false;
+            closeModal('adminPanel');
         }
 
-        function previewQR(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('adminQRPreview').src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
+        // ==================== 弹窗控制 ====================
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
         }
 
-        function resetStatistics() {
-            const msg = currentLang === 'zh' ? '确定要重置所有统计数据吗？' : 'Reset all statistics?';
-            if (confirm(msg)) {
-                localStorage.setItem('visitorCount', '0');
-                localStorage.setItem('downloadCount', '0');
-                document.getElementById('adminVisitCount').textContent = '0';
-                document.getElementById('adminDownloadCount').textContent = '0';
-                document.getElementById('visitorCount').textContent = '0';
-                showSaveNotice();
-            }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
         }
 
-        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const config = getConfig();
-            const name = document.getElementById('userName').value;
-            const email = document.getElementById('userEmail').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            const mailtoLink = `mailto:${config.feedbackEmail}?subject=${encodeURIComponent('[OptiCalib] ' + subject)}&body=${encodeURIComponent(`${currentLang === 'zh' ? '姓名' : 'Name'}: ${name}\n${currentLang === 'zh' ? '邮箱' : 'Email'}: ${email}\n\n${message}`)}`;
-            window.location.href = mailtoLink;
-            setTimeout(() => {
-                alert(currentLang === 'zh' ? '感谢您的反馈！正在打开邮件客户端...' : 'Thank you for your feedback! Opening email client...');
-                this.reset();
-            }, 500);
+        // 点击遮罩关闭
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
         });
+
+        // ==================== 平滑滚动 ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // 加载保存的语言设置
+        const savedLang = localStorage.getItem('opticalib_lang');
+        if (savedLang) {
+            switchLanguage(savedLang);
+        }
     </script>
 </body>
 </html>
