@@ -100,22 +100,6 @@
             border-radius: 50px;
         }
 
-        /* 访问计数器 */
-        .visitor-counter {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            color: var(--gray);
-            background: rgba(37, 99, 235, 0.1);
-            padding: 0.35rem 0.75rem;
-            border-radius: 50px;
-        }
-
-        .visitor-counter i {
-            color: var(--primary);
-        }
-
         /* 移动端菜单按钮 */
         .mobile-menu-btn {
             display: none;
@@ -316,7 +300,7 @@
 
         /* 滚动内容区域 */
         .preview-scroll-container {
-            height: 260px;
+            height: 320px;
             overflow: hidden;
             position: relative;
             background: rgba(0,0,0,0.3);
@@ -324,7 +308,7 @@
         }
 
         .preview-scroll-content {
-            animation: scrollUp 18s linear infinite;
+            animation: scrollUp 25s linear infinite;
         }
 
         @keyframes scrollUp {
@@ -372,6 +356,7 @@
         .preview-item-desc {
             color: rgba(255,255,255,0.5);
             font-size: 0.75rem;
+            line-height: 1.5;
         }
 
         .preview-item-status {
@@ -384,6 +369,19 @@
             border-radius: 50px;
             font-size: 0.7rem;
             margin-top: 0.4rem;
+        }
+
+        .preview-step-num {
+            width: 20px;
+            height: 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            color: white;
+            font-weight: 600;
         }
 
         /* 通用区块 */
@@ -518,17 +516,6 @@
             color: var(--gray);
             font-size: 0.9rem;
             line-height: 1.6;
-        }
-
-        .feature-card ul {
-            margin-top: 0.75rem;
-            padding-left: 1.1rem;
-            color: var(--gray);
-            font-size: 0.85rem;
-        }
-
-        .feature-card ul li {
-            margin-bottom: 0.3rem;
         }
 
         /* 工作模式 */
@@ -874,53 +861,23 @@
         }
 
         /* 微信二维码 */
-        .wechat-qr-container {
-            margin-top: 0.75rem;
-        }
-
         .wechat-qr {
             width: 130px;
             height: 130px;
             background: var(--light);
             border-radius: 10px;
-            margin: 0 auto;
+            margin: 0.75rem auto 0;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border: 2px dashed #ddd;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .wechat-qr:hover {
-            border-color: var(--primary);
+            border: 2px solid #e2e8f0;
         }
 
         .wechat-qr img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .wechat-qr-placeholder {
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.7rem;
-            padding: 0.75rem;
-        }
-
-        .wechat-qr-placeholder i {
-            font-size: 1.75rem;
-            margin-bottom: 0.4rem;
-            display: block;
-            color: #ccc;
-        }
-
-        .upload-hint {
-            font-size: 0.7rem;
-            color: var(--gray);
-            margin-top: 0.5rem;
         }
 
         /* 反馈表单 */
@@ -954,12 +911,9 @@
             margin-bottom: 1rem;
         }
 
-        .form-group.full-width {
-            grid-column: span 2;
-        }
-
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 0.875rem 1.25rem;
             border: none;
@@ -1015,7 +969,6 @@
             background: #0a0f1a;
             color: rgba(255,255,255,0.6);
             padding: 2rem 5%;
-            text-align: center;
         }
 
         .footer-content {
@@ -1059,12 +1012,35 @@
             padding-top: 1.25rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.8rem;
+            text-align: center;
+        }
+
+        /* 访问计数器 - 底部左下角 */
+        .visitor-counter {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 998;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: white;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .visitor-counter i {
+            color: #34d399;
         }
 
         /* 语言切换 */
         .language-switcher {
             position: fixed;
-            bottom: 25px;
+            bottom: 75px;
             left: 25px;
             z-index: 999;
             display: flex;
@@ -1121,6 +1097,30 @@
             visibility: visible;
         }
 
+        /* 管理员登录按钮 */
+        .admin-trigger {
+            position: fixed;
+            bottom: 80px;
+            right: 25px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            z-index: 998;
+            opacity: 0.5;
+        }
+
+        .admin-trigger:hover {
+            opacity: 1;
+            background: var(--gradient);
+            color: white;
+        }
+
         /* 管理员登录弹窗 */
         .modal-overlay {
             position: fixed;
@@ -1145,9 +1145,12 @@
             border-radius: 20px;
             padding: 2.5rem;
             width: 90%;
-            max-width: 400px;
+            max-width: 420px;
             box-shadow: 0 25px 80px rgba(0,0,0,0.3);
             animation: modalIn 0.3s ease;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         @keyframes modalIn {
@@ -1186,7 +1189,9 @@
             margin-bottom: 1rem;
         }
 
-        .modal-form input {
+        .modal-form input,
+        .modal-form textarea,
+        .modal-form select {
             width: 100%;
             padding: 0.875rem 1.25rem;
             border: 2px solid #e2e8f0;
@@ -1194,10 +1199,22 @@
             font-size: 0.95rem;
             outline: none;
             transition: all 0.3s;
+            background: white;
+            color: var(--dark);
         }
 
-        .modal-form input:focus {
+        .modal-form input:focus,
+        .modal-form textarea:focus,
+        .modal-form select:focus {
             border-color: var(--primary);
+        }
+
+        .modal-form label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--dark);
         }
 
         .modal-form .btn {
@@ -1215,32 +1232,107 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--gray);
-        }
-
-        .admin-trigger {
-            position: fixed;
-            bottom: 80px;
-            right: 25px;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s;
-            z-index: 998;
-            opacity: 0.5;
         }
 
-        .admin-trigger:hover {
-            opacity: 1;
-            background: var(--gradient);
+        .modal-close:hover {
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        /* 后台管理面板 */
+        .admin-panel {
+            max-width: 500px;
+        }
+
+        .admin-panel .modal-header {
+            margin-bottom: 1rem;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 0.5rem;
+        }
+
+        .admin-tab {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .admin-tab.active {
+            background: var(--primary);
             color: white;
         }
 
-        /* 移动端响应式 */
+        .admin-tab:hover:not(.active) {
+            background: var(--light);
+        }
+
+        .admin-tab-content {
+            display: none;
+        }
+
+        .admin-tab-content.active {
+            display: block;
+        }
+
+        .admin-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .admin-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .admin-section h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admin-section h4 i {
+            color: var(--primary);
+        }
+
+        .save-notice {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .save-notice.show {
+            display: flex;
+        }
+
+        /* 响应式 */
         @media (max-width: 1024px) {
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1283,10 +1375,6 @@
 
             .mobile-menu-btn {
                 display: block;
-            }
-
-            .visitor-counter {
-                display: none;
             }
 
             .hero {
@@ -1368,10 +1456,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .form-group.full-width {
-                grid-column: span 1;
-            }
-
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -1386,8 +1470,15 @@
             }
 
             .language-switcher {
+                bottom: 65px;
+                left: 15px;
+            }
+
+            .visitor-counter {
                 bottom: 15px;
                 left: 15px;
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
             }
 
             #backToTop {
@@ -1443,11 +1534,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* 隐藏元素 */
-        .hidden {
-            display: none !important;
-        }
     </style>
 </head>
 <body>
@@ -1462,11 +1548,6 @@
             <li><a href="#features" data-en="Features" data-zh="功能">功能</a></li>
             <li><a href="#download" data-en="Download" data-zh="下载">下载</a></li>
             <li><a href="#contact" data-en="Contact" data-zh="联系">联系</a></li>
-            <li class="visitor-counter">
-                <i class="fas fa-eye"></i>
-                <span id="visitorCount">0</span>
-                <span data-en="views" data-zh="次访问">次访问</span>
-            </li>
             <li><a href="#download" class="nav-download" data-en="Download Now" data-zh="立即下载">立即下载</a></li>
         </ul>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -1480,7 +1561,7 @@
             <div class="hero-text">
                 <div class="hero-badge">
                     <i class="fas fa-bolt"></i>
-                    <span data-en="Latest Version V1.8.2" data-zh="最新版本 V1.8.2">最新版本 V1.8.2</span>
+                    <span data-en="Latest Version" data-zh="最新版本">最新版本</span> <span id="displayVersion">V1.8.2</span>
                 </div>
                 <h1><span>OptiCalib</span><br><span data-en="Multi-Lens Camera Calibration" data-zh="多镜头相机标定软件">多镜头相机标定软件</span></h1>
                 <p class="subtitle" data-en="Professional multi-camera system calibration solution. Supports single to multi-camera high-precision intrinsic and extrinsic parameter calibration. Intuitive GUI, easy to use, empowering your computer vision research and development." data-zh="专业的多相机系统标定解决方案，支持单目到多目相机的高精度内外参标定。自动化程度高，操作简单，强大的标定点可视化修正功能，助力您的计算机视觉研究与开发。">
@@ -1507,107 +1588,171 @@
                         <div class="preview-dot"></div>
                         <div class="preview-dot"></div>
                         <div class="preview-dot"></div>
-                        <span class="preview-title">OptiCalib</span>
+                        <span class="preview-title">OptiCalib Workflow</span>
                     </div>
                     <div class="preview-scroll-container">
                         <div class="preview-scroll-content">
-                            <!-- 滚动内容 -->
+                            <!-- 工作流程滚动内容 - 基于使用手册 -->
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-folder-open"></i></div>
-                                    <span class="preview-item-title" data-en="Load Images" data-zh="导入图像">导入图像</span>
+                                    <div class="preview-step-num">1</div>
+                                    <span class="preview-item-title" data-en="Create New Project" data-zh="新建工程">新建工程</span>
                                 </div>
-                                <div class="preview-item-desc" data-en="Load image sequences with calibration board" data-zh="加载包含标定板的图像序列">加载包含标定板的图像序列</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="24 images loaded" data-zh="已加载 24 张图像">已加载 24 张图像</span></div>
+                                <div class="preview-item-desc" data-en="Set project name and path, initialize calibration workspace" data-zh="设置工程名和工程路径，初始化标定工作空间">设置工程名和工程路径，初始化标定工作空间</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Project created" data-zh="工程已创建">工程已创建</span></div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-chess-board"></i></div>
+                                    <div class="preview-step-num">2</div>
+                                    <span class="preview-item-title" data-en="Add Calibration Board" data-zh="添加标定板">添加标定板</span>
+                                </div>
+                                <div class="preview-item-desc" data-en="Support Chessboard, ChArUco, ArUco, Circle Grid patterns" data-zh="支持棋盘格、ChArUco、ArUco、圆点等多种标定板">支持棋盘格、ChArUco、ArUco、圆点等多种标定板</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="9x7 Chessboard, 50mm" data-zh="棋盘 9x7，间距50mm">棋盘 9x7，间距50mm</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">3</div>
+                                    <span class="preview-item-title" data-en="Set Calibration Parameters" data-zh="设置标定参数">设置标定参数</span>
+                                </div>
+                                <div class="preview-item-desc" data-en="Detection algorithm, distortion model (Brown/Fisheye/MEI)" data-zh="检测算法、畸变模型（Brown/鱼眼/MEI模型）">检测算法、畸变模型（Brown/鱼眼/MEI模型）</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="14-param Brown model" data-zh="Brown模型 14参数">Brown模型 14参数</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">4</div>
+                                    <span class="preview-item-title" data-en="Load Calibration Images" data-zh="加载标定样本">加载标定样本</span>
+                                </div>
+                                <div class="preview-item-desc" data-en="Load local images or capture from live camera" data-zh="支持加载本地图像或实时摄像头截图">支持加载本地图像或实时摄像头截图</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="26 images loaded" data-zh="已加载 26 张图像">已加载 26 张图像</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">5</div>
                                     <span class="preview-item-title" data-en="Corner Detection" data-zh="角点检测">角点检测</span>
                                 </div>
-                                <div class="preview-item-desc" data-en="Auto-detect chessboard corners" data-zh="自动检测棋盘格角点">自动检测棋盘格角点</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="1,248 corners detected" data-zh="检测到 1,248 个角点">检测到 1,248 个角点</span></div>
+                                <div class="preview-item-desc" data-en="Sub-pixel level automatic corner detection" data-zh="亚像素级自动角点检测，支持部分遮挡">亚像素级自动角点检测，支持部分遮挡</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="1,820 corners detected" data-zh="检测到 1,820 个角点">检测到 1,820 个角点</span></div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-cog"></i></div>
+                                    <div class="preview-step-num">6</div>
                                     <span class="preview-item-title" data-en="Execute Calibration" data-zh="执行标定">执行标定</span>
                                 </div>
-                                <div class="preview-item-desc" data-en="Bundle Adjustment optimization" data-zh="Bundle Adjustment 优化解算">Bundle Adjustment 优化解算</div>
+                                <div class="preview-item-desc" data-en="Bundle Adjustment global optimization" data-zh="Bundle Adjustment 全局优化解算">Bundle Adjustment 全局优化解算</div>
                                 <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Calibration completed" data-zh="标定完成">标定完成</span></div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-chart-line"></i></div>
+                                    <div class="preview-step-num">7</div>
                                     <span class="preview-item-title" data-en="Error Analysis" data-zh="误差分析">误差分析</span>
                                 </div>
-                                <div class="preview-item-desc" data-en="Reprojection error visualization" data-zh="重投影误差可视化分析">重投影误差可视化分析</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Analysis complete" data-zh="分析完成">分析完成</span></div>
+                                <div class="preview-item-desc" data-en="5 visualization panels: reprojection, histogram, 3D scene..." data-zh="5种可视化面板：重投影、直方图、三维场景...">5种可视化面板：重投影、直方图、三维场景...</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="RMS: 0.15 pixels" data-zh="RMS误差: 0.15像素">RMS误差: 0.15像素</span></div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-edit"></i></div>
+                                    <div class="preview-step-num">8</div>
                                     <span class="preview-item-title" data-en="Interactive Correction" data-zh="交互修正">交互修正</span>
                                 </div>
-                                <div class="preview-item-desc" data-en="Manual correction of calibration points" data-zh="手动修正标定点位置">手动修正标定点位置</div>
+                                <div class="preview-item-desc" data-en="6 correction methods: global, single point, batch..." data-zh="6种修正方法：全局定位、单点修正、批量修正...">6种修正方法：全局定位、单点修正、批量修正...</div>
                                 <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Precision improved" data-zh="精度提升">精度提升</span></div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-file-export"></i></div>
+                                    <div class="preview-step-num">9</div>
+                                    <span class="preview-item-title" data-en="Coordinate Alignment" data-zh="基准坐标系对齐">基准坐标系对齐</span>
+                                </div>
+                                <div class="preview-item-desc" data-en="Align extrinsics to specified reference coordinate system" data-zh="将外参数对齐到指定的基准坐标系">将外参数对齐到指定的基准坐标系</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Aligned to board origin" data-zh="已对齐到标定板原点">已对齐到标定板原点</span></div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">10</div>
                                     <span class="preview-item-title" data-en="Export Results" data-zh="导出结果">导出结果</span>
                                 </div>
-                                <div class="preview-item-desc" data-en="Save calibration parameters" data-zh="保存标定参数到文件">保存标定参数到文件</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="YAML exported" data-zh="已导出 YAML 文件">已导出 YAML 文件</span></div>
+                                <div class="preview-item-desc" data-en="Export to YAML/JSON/XML, generate precision report" data-zh="导出YAML/JSON/XML格式，生成精度报告">导出YAML/JSON/XML格式，生成精度报告</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> <span data-en="Export completed" data-zh="导出完成">导出完成</span></div>
                             </div>
                             <!-- 复制一组用于无缝滚动 -->
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-folder-open"></i></div>
-                                    <span class="preview-item-title">导入图像</span>
+                                    <div class="preview-step-num">1</div>
+                                    <span class="preview-item-title">新建工程</span>
                                 </div>
-                                <div class="preview-item-desc">加载包含标定板的图像序列</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 已加载 24 张图像</div>
+                                <div class="preview-item-desc">设置工程名和工程路径，初始化标定工作空间</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 工程已创建</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-chess-board"></i></div>
+                                    <div class="preview-step-num">2</div>
+                                    <span class="preview-item-title">添加标定板</span>
+                                </div>
+                                <div class="preview-item-desc">支持棋盘格、ChArUco、ArUco、圆点等多种标定板</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 棋盘 9x7，间距50mm</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">3</div>
+                                    <span class="preview-item-title">设置标定参数</span>
+                                </div>
+                                <div class="preview-item-desc">检测算法、畸变模型（Brown/鱼眼/MEI模型）</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> Brown模型 14参数</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">4</div>
+                                    <span class="preview-item-title">加载标定样本</span>
+                                </div>
+                                <div class="preview-item-desc">支持加载本地图像或实时摄像头截图</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 已加载 26 张图像</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">5</div>
                                     <span class="preview-item-title">角点检测</span>
                                 </div>
-                                <div class="preview-item-desc">自动检测棋盘格角点</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 检测到 1,248 个角点</div>
+                                <div class="preview-item-desc">亚像素级自动角点检测，支持部分遮挡</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 检测到 1,820 个角点</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-cog"></i></div>
+                                    <div class="preview-step-num">6</div>
                                     <span class="preview-item-title">执行标定</span>
                                 </div>
-                                <div class="preview-item-desc">Bundle Adjustment 优化解算</div>
+                                <div class="preview-item-desc">Bundle Adjustment 全局优化解算</div>
                                 <div class="preview-item-status"><i class="fas fa-check"></i> 标定完成</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-chart-line"></i></div>
+                                    <div class="preview-step-num">7</div>
                                     <span class="preview-item-title">误差分析</span>
                                 </div>
-                                <div class="preview-item-desc">重投影误差可视化分析</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 分析完成</div>
+                                <div class="preview-item-desc">5种可视化面板：重投影、直方图、三维场景...</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> RMS误差: 0.15像素</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-edit"></i></div>
+                                    <div class="preview-step-num">8</div>
                                     <span class="preview-item-title">交互修正</span>
                                 </div>
-                                <div class="preview-item-desc">手动修正标定点位置</div>
+                                <div class="preview-item-desc">6种修正方法：全局定位、单点修正、批量修正...</div>
                                 <div class="preview-item-status"><i class="fas fa-check"></i> 精度提升</div>
                             </div>
                             <div class="preview-item">
                                 <div class="preview-item-header">
-                                    <div class="preview-item-icon"><i class="fas fa-file-export"></i></div>
+                                    <div class="preview-step-num">9</div>
+                                    <span class="preview-item-title">基准坐标系对齐</span>
+                                </div>
+                                <div class="preview-item-desc">将外参数对齐到指定的基准坐标系</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 已对齐到标定板原点</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-item-header">
+                                    <div class="preview-step-num">10</div>
                                     <span class="preview-item-title">导出结果</span>
                                 </div>
-                                <div class="preview-item-desc">保存标定参数到文件</div>
-                                <div class="preview-item-status"><i class="fas fa-check"></i> 已导出 YAML 文件</div>
+                                <div class="preview-item-desc">导出YAML/JSON/XML格式，生成精度报告</div>
+                                <div class="preview-item-status"><i class="fas fa-check"></i> 导出完成</div>
                             </div>
                         </div>
                     </div>
@@ -1667,27 +1812,27 @@
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-chess-board"></i></div>
                 <h3 data-en="Multiple Calibration Boards" data-zh="多种标定板支持">多种标定板支持</h3>
-                <p data-en="Support various calibration board types including chessboard, ChArUco, ArUco, and circle grids. Supports single, multiple, and mixed calibration board modes." data-zh="支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。支持单个、多个以及混合标定板模式。">支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。支持单个、多个以及混合标定板模式。</p>
+                <p data-en="Support various calibration board types including chessboard, ChArUco, ArUco, and circle grids. Supports single, multiple, and mixed calibration board modes." data-zh="支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。支持单个、多个以及混合标定板模式，可导出PDF打印。">支持棋盘格、ChArUco、ArUco、圆点阵列等多种标定板类型。支持单个、多个以及混合标定板模式，可导出PDF打印。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-eye"></i></div>
                 <h3 data-en="Visual Correction" data-zh="可视化修正功能">可视化修正功能</h3>
-                <p data-en="Powerful calibration point visualization correction, timely detection and correction of precision-affecting calibration points. Six interactive correction methods available." data-zh="强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。提供六种误差交互修正方法。">强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。提供六种误差交互修正方法。</p>
+                <p data-en="Powerful calibration point visualization correction, timely detection and correction of precision-affecting calibration points. Six interactive correction methods available." data-zh="强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。提供六种误差交互修正方法：全局定位、单点修正、批量修正等。">强大的标定点可视化修正功能，可及时发现并修正影响精度的标定点。提供六种误差交互修正方法：全局定位、单点修正、批量修正等。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
                 <h3 data-en="Multiple Distortion Models" data-zh="多种畸变模型">多种畸变模型</h3>
-                <p data-en="Support 18-parameter Brown/Conrady model, fisheye Kannala-Brandt model, fisheye omnidirectional MEI model, and thin prism distortion model." data-zh="支持18参数Brown/Conrady模型、鱼眼Kannala-Brandt模型、鱼眼全向MEI模型、薄棱镜畸变模型。">支持18参数Brown/Conrady模型、鱼眼Kannala-Brandt模型、鱼眼全向MEI模型、薄棱镜畸变模型。</p>
+                <p data-en="Support 18-parameter Brown/Conrady model, fisheye Kannala-Brandt model, fisheye omnidirectional MEI model, and thin prism distortion model." data-zh="支持18参数Brown/Conrady模型（K1-K6, P1-P2, S1-S4）、鱼眼Kannala-Brandt 4参数模型、鱼眼全向MEI模型9参数、薄棱镜畸变模型。">支持18参数Brown/Conrady模型（K1-K6, P1-P2, S1-S4）、鱼眼Kannala-Brandt 4参数模型、鱼眼全向MEI模型9参数、薄棱镜畸变模型。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
                 <h3 data-en="Precision Analysis" data-zh="精度分析工具">精度分析工具</h3>
-                <p data-en="Five error visualization panels, calibration accuracy analysis, perspective overlay analysis, effective area analysis, epipolar constraint analysis." data-zh="五种误差可视化面板、标定精度分析、透视叠加分析、有效区域分析、极线约束分析、标定极值空间分析。">五种误差可视化面板、标定精度分析、透视叠加分析、有效区域分析、极线约束分析、标定极值空间分析。</p>
+                <p data-en="Five error visualization panels, calibration accuracy analysis, perspective overlay analysis, effective area analysis, epipolar constraint analysis." data-zh="五种误差可视化面板（重投影误差、直方图、三维场景、极线约束、标定点修正）、透视叠加分析、有效区域分析、标定极值空间分析。">五种误差可视化面板（重投影误差、直方图、三维场景、极线约束、标定点修正）、透视叠加分析、有效区域分析、标定极值空间分析。</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-file-export"></i></div>
                 <h3 data-en="Multi-Format Export" data-zh="多格式导出">多格式导出</h3>
-                <p data-en="Calibration results support YAML, JSON, XML and other formats. Compatible with OpenCV, ROS, MATLAB and other frameworks." data-zh="标定结果支持YAML、JSON、XML等多种格式导出，方便与OpenCV、ROS、MATLAB等框架集成使用。">标定结果支持YAML、JSON、XML等多种格式导出，方便与OpenCV、ROS、MATLAB等框架集成使用。</p>
+                <p data-en="Calibration results support YAML, JSON, XML and other formats. Compatible with OpenCV, ROS, MATLAB and other frameworks." data-zh="标定结果支持YAML、JSON、XML等多种格式导出，方便与OpenCV、ROS、MATLAB等框架集成使用。支持生成精度报告。">标定结果支持YAML、JSON、XML等多种格式导出，方便与OpenCV、ROS、MATLAB等框架集成使用。支持生成精度报告。</p>
             </div>
         </div>
     </section>
@@ -1764,21 +1909,21 @@
                 <div class="model-icon"><i class="fas fa-dot-circle"></i></div>
                 <div class="model-info">
                     <h4>Brown/Conrady <span data-en="Model" data-zh="模型">模型</span></h4>
-                    <p data-en="18-parameter combination, including radial distortion K1-K6, tangential distortion P1-P2, thin lens distortion S1-S4, sensor tilt parameters" data-zh="18参数组合，包含径向畸变K1-K6、切向畸变P1-P2、薄透镜畸变S1-S4、传感器倾斜参数">18参数组合，包含径向畸变K1-K6、切向畸变P1-P2、薄透镜畸变S1-S4、传感器倾斜参数</p>
+                    <p data-en="18-parameter combination: radial K1-K6, tangential P1-P2, thin lens S1-S4, sensor tilt λx λy" data-zh="18参数组合：径向畸变K1-K6、切向畸变P1-P2、薄透镜畸变S1-S4、传感器倾斜参数λx λy">18参数组合：径向畸变K1-K6、切向畸变P1-P2、薄透镜畸变S1-S4、传感器倾斜参数λx λy</p>
                 </div>
             </div>
             <div class="model-card fade-in">
                 <div class="model-icon"><i class="fas fa-fish"></i></div>
                 <div class="model-info">
                     <h4>Kannala-Brandt <span data-en="Fisheye Model" data-zh="鱼眼模型">鱼眼模型</span></h4>
-                    <p data-en="4-parameter fisheye wide-angle lens model, suitable for ultra-wide-angle camera calibration" data-zh="4参数鱼眼广角镜头模型，适用于超广角相机标定">4参数鱼眼广角镜头模型，适用于超广角相机标定</p>
+                    <p data-en="4-parameter fisheye wide-angle lens model (K1, K2, K3, K4), suitable for ultra-wide-angle camera" data-zh="4参数鱼眼广角镜头模型（K1、K2、K3、K4），适用于超广角相机标定">4参数鱼眼广角镜头模型（K1、K2、K3、K4），适用于超广角相机标定</p>
                 </div>
             </div>
             <div class="model-card fade-in">
                 <div class="model-icon"><i class="fas fa-globe"></i></div>
                 <div class="model-info">
                     <h4>MEI <span data-en="Omnidirectional Model" data-zh="全向模型">全向模型</span></h4>
-                    <p data-en="9-parameter fisheye omnidirectional MEI model (Unified Camera Model)" data-zh="9参数鱼眼全向MEI模型（Unified Camera Model）">9参数鱼眼全向MEI模型（Unified Camera Model）</p>
+                    <p data-en="9-parameter omnidirectional MEI model (XI, K1-K6, P1-P2), Unified Camera Model" data-zh="9参数鱼眼全向MEI模型（XI、K1-K6、P1-P2），Unified Camera Model">9参数鱼眼全向MEI模型（XI、K1-K6、P1-P2），Unified Camera Model</p>
                 </div>
             </div>
             <div class="model-card fade-in">
@@ -1800,7 +1945,7 @@
         <div class="accuracy-grid">
             <div class="accuracy-card fade-in">
                 <i class="fas fa-chart-scatter"></i>
-                <h4 data-en="Reprojection Error Analysis" data-zh="重投影误差分析">重投影误差分析</h4>
+                <h4 data-en="Reprojection Error" data-zh="重投影误差分析">重投影误差分析</h4>
                 <p data-en="Visualize reprojection error distribution" data-zh="可视化重投影误差点分布">可视化重投影误差点分布</p>
             </div>
             <div class="accuracy-card fade-in">
@@ -1844,7 +1989,6 @@
             </div>
             <h3>OptiCalib for Windows</h3>
             
-            <!-- ⚠️ 请将下面的链接替换为您的实际下载地址 -->
             <a href="https://your-download-link.com/OptiCalib-Setup.exe" 
                class="download-btn" 
                id="downloadBtn"
@@ -1874,7 +2018,7 @@
                 </div>
                 <h3 data-en="Email" data-zh="邮箱">邮箱</h3>
                 <p data-en="Technical Support" data-zh="技术咨询与反馈">技术咨询与反馈</p>
-                <a href="mailto:opticalib@outlook.com">opticalib@outlook.com</a>
+                <a href="mailto:opticalib@outlook.com" id="displayEmail">opticalib@outlook.com</a>
             </div>
             
             <!-- 微信 -->
@@ -1884,16 +2028,13 @@
                 </div>
                 <h3 data-en="WeChat" data-zh="微信">微信</h3>
                 <p data-en="Scan to add friend" data-zh="扫码添加好友">扫码添加好友</p>
-                <div class="wechat-qr-container">
-                    <div class="wechat-qr" id="wechatQR" onclick="document.getElementById('qrUpload').click()">
-                        <div class="wechat-qr-placeholder" id="qrPlaceholder">
-                            <i class="fas fa-qrcode"></i>
-                            <span data-en="Click to upload QR" data-zh="点击上传二维码">点击上传二维码</span>
-                        </div>
-                        <img id="qrImage" src="" alt="微信二维码" style="display:none;">
+                <div class="wechat-qr">
+                    <!-- 默认加载 wechat.png -->
+                    <img id="wechatQRImage" src="wechat.png" alt="微信二维码" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; text-align:center; color:#999; font-size:0.75rem; padding:1rem;">
+                        <i class="fas fa-qrcode" style="font-size:2rem; margin-bottom:0.5rem; display:block;"></i>
+                        请放置 wechat.png
                     </div>
-                    <input type="file" id="qrUpload" accept="image/*" style="display:none;" onchange="loadQRCode(event)">
-                    <p class="upload-hint" data-en="Click to select local image" data-zh="点击选择本地图片">点击选择本地图片</p>
                 </div>
             </div>
             
@@ -1904,8 +2045,7 @@
                 </div>
                 <h3 data-en="Phone" data-zh="电话">电话</h3>
                 <p data-en="Technical Cooperation" data-zh="技术合作">技术合作</p>
-                <!-- ⚠️ 替换为您的联系电话 -->
-                <span class="contact-value">+86 138-0000-0000</span>
+                <span class="contact-value" id="displayPhone">+86 138-0000-0000</span>
             </div>
         </div>
     </section>
@@ -1954,9 +2094,16 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 OptiCalib. All rights reserved. | Version V1.8.2</p>
+            <p>© 2025 OptiCalib. All rights reserved. | <span id="footerVersion">Version V1.8.2</span></p>
         </div>
     </footer>
+
+    <!-- 访问计数器 - 底部左下角 -->
+    <div class="visitor-counter">
+        <i class="fas fa-eye"></i>
+        <span id="visitorCount">0</span>
+        <span data-en="visits" data-zh="次访问">次访问</span>
+    </div>
 
     <!-- 语言切换 -->
     <div class="language-switcher">
@@ -1973,9 +2120,9 @@
     </button>
 
     <!-- 管理员登录弹窗 -->
-    <div class="modal-overlay" id="adminModal">
-        <div class="modal" style="position:relative;">
-            <button class="modal-close" onclick="closeAdminModal()">&times;</button>
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
             <div class="modal-header">
                 <i class="fas fa-user-shield"></i>
                 <h3 data-en="Admin Login" data-zh="管理员登录">管理员登录</h3>
@@ -1996,17 +2143,173 @@
         </div>
     </div>
 
+    <!-- 后台管理面板 -->
+    <div class="modal-overlay" id="adminPanel">
+        <div class="modal admin-panel">
+            <button class="modal-close" onclick="closeModal('adminPanel')">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-tools"></i>
+                <h3 data-en="Admin Panel" data-zh="后台管理">后台管理</h3>
+            </div>
+
+            <!-- 保存提示 -->
+            <div class="save-notice" id="saveNotice">
+                <i class="fas fa-check-circle"></i>
+                <span data-en="Changes saved successfully!" data-zh="修改已保存成功！">修改已保存成功！</span>
+            </div>
+
+            <!-- 管理选项卡 -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="switchAdminTab('basic')">
+                    <i class="fas fa-info-circle"></i> <span data-en="Basic" data-zh="基本">基本</span>
+                </button>
+                <button class="admin-tab" onclick="switchAdminTab('contact')">
+                    <i class="fas fa-address-book"></i> <span data-en="Contact" data-zh="联系">联系</span>
+                </button>
+                <button class="admin-tab" onclick="switchAdminTab('download')">
+                    <i class="fas fa-download"></i> <span data-en="Download" data-zh="下载">下载</span>
+                </button>
+            </div>
+
+            <!-- 基本信息 -->
+            <div class="admin-tab-content active" id="tab-basic">
+                <div class="admin-section">
+                    <h4><i class="fas fa-code-branch"></i> <span data-en="Software Version" data-zh="软件版本">软件版本</span></h4>
+                    <div class="form-group">
+                        <input type="text" id="adminVersion" placeholder="例如: V1.8.2">
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="saveBasicSettings()">
+                    <i class="fas fa-save"></i> <span data-en="Save Changes" data-zh="保存修改">保存修改</span>
+                </button>
+            </div>
+
+            <!-- 联系信息 -->
+            <div class="admin-tab-content" id="tab-contact">
+                <div class="admin-section">
+                    <h4><i class="fas fa-envelope"></i> <span data-en="Email Address" data-zh="邮箱地址">邮箱地址</span></h4>
+                    <div class="form-group">
+                        <input type="email" id="adminEmail" placeholder="opticalib@outlook.com">
+                    </div>
+                </div>
+                <div class="admin-section">
+                    <h4><i class="fas fa-phone"></i> <span data-en="Phone Number" data-zh="联系电话">联系电话</span></h4>
+                    <div class="form-group">
+                        <input type="text" id="adminPhone" placeholder="+86 138-0000-0000">
+                    </div>
+                </div>
+                <div class="admin-section">
+                    <h4><i class="fab fa-weixin"></i> <span data-en="WeChat QR Code" data-zh="微信二维码">微信二维码</span></h4>
+                    <div class="form-group">
+                        <label data-en="Upload new QR code image:" data-zh="上传新的二维码图片：">上传新的二维码图片：</label>
+                        <input type="file" id="adminQRUpload" accept="image/*" onchange="previewQR(event)">
+                    </div>
+                    <div style="text-align:center; margin-top:0.5rem;">
+                        <img id="adminQRPreview" src="wechat.png" alt="预览" style="max-width:120px; border-radius:8px; border:2px solid #e2e8f0;">
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="saveContactSettings()">
+                    <i class="fas fa-save"></i> <span data-en="Save Changes" data-zh="保存修改">保存修改</span>
+                </button>
+            </div>
+
+            <!-- 下载设置 -->
+            <div class="admin-tab-content" id="tab-download">
+                <div class="admin-section">
+                    <h4><i class="fas fa-link"></i> <span data-en="Download URL" data-zh="下载链接">下载链接</span></h4>
+                    <div class="form-group">
+                        <input type="url" id="adminDownloadUrl" placeholder="https://your-download-link.com/OptiCalib-Setup.exe">
+                    </div>
+                </div>
+                <div class="admin-section">
+                    <h4><i class="fas fa-chart-line"></i> <span data-en="Statistics" data-zh="统计数据">统计数据</span></h4>
+                    <p style="color:var(--gray); font-size:0.9rem;">
+                        <span data-en="Total Visits:" data-zh="总访问量：">总访问量：</span><strong id="adminVisitCount">0</strong><br>
+                        <span data-en="Total Downloads:" data-zh="总下载量：">总下载量：</span><strong id="adminDownloadCount">0</strong>
+                    </p>
+                    <button class="btn btn-outline" onclick="resetStatistics()" style="margin-top:0.75rem; padding:0.5rem 1rem; font-size:0.85rem;">
+                        <i class="fas fa-redo"></i> <span data-en="Reset Statistics" data-zh="重置统计">重置统计</span>
+                    </button>
+                </div>
+                <button class="btn btn-primary" onclick="saveDownloadSettings()">
+                    <i class="fas fa-save"></i> <span data-en="Save Changes" data-zh="保存修改">保存修改</span>
+                </button>
+            </div>
+
+            <!-- 退出登录 -->
+            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--light); text-align:center;">
+                <button class="btn btn-outline" onclick="adminLogout()" style="padding:0.5rem 1.5rem;">
+                    <i class="fas fa-sign-out-alt"></i> <span data-en="Logout" data-zh="退出登录">退出登录</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // ============ 访问计数器 ============
-        function updateVisitorCount() {
-            let count = localStorage.getItem('visitorCount') || 0;
-            count = parseInt(count) + 1;
-            localStorage.setItem('visitorCount', count);
-            document.getElementById('visitorCount').textContent = count.toLocaleString();
+        // ============ 配置数据存储 ============
+        const defaultConfig = {
+            version: 'V1.8.2',
+            email: 'opticalib@outlook.com',
+            phone: '+86 138-0000-0000',
+            downloadUrl: 'https://your-download-link.com/OptiCalib-Setup.exe',
+            wechatQR: 'wechat.png'
+        };
+
+        function getConfig() {
+            const saved = localStorage.getItem('opticalib_config');
+            return saved ? JSON.parse(saved) : defaultConfig;
         }
 
-        // 页面加载时更新计数
+        function saveConfig(config) {
+            localStorage.setItem('opticalib_config', JSON.stringify(config));
+        }
+
+        // ============ 初始化配置 ============
+        function initializeConfig() {
+            const config = getConfig();
+            
+            // 更新版本号
+            document.getElementById('displayVersion').textContent = config.version;
+            document.getElementById('footerVersion').textContent = 'Version ' + config.version;
+            
+            // 更新邮箱
+            const emailEl = document.getElementById('displayEmail');
+            emailEl.textContent = config.email;
+            emailEl.href = 'mailto:' + config.email;
+            
+            // 更新电话
+            document.getElementById('displayPhone').textContent = config.phone;
+            
+            // 更新下载链接
+            document.getElementById('downloadBtn').href = config.downloadUrl;
+            
+            // 更新微信二维码
+            if (config.wechatQR && config.wechatQR !== 'wechat.png') {
+                document.getElementById('wechatQRImage').src = config.wechatQR;
+            }
+        }
+
+        // 页面加载时初始化
+        initializeConfig();
+
+        // ============ 访问计数器 ============
+        function updateVisitorCount() {
+            let count = parseInt(localStorage.getItem('visitorCount') || '0');
+            // 检查是否是新会话
+            if (!sessionStorage.getItem('visited')) {
+                count++;
+                localStorage.setItem('visitorCount', count);
+                sessionStorage.setItem('visited', 'true');
+            }
+            document.getElementById('visitorCount').textContent = count.toLocaleString();
+        }
         updateVisitorCount();
+
+        // ============ 下载计数器 ============
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            let downloads = parseInt(localStorage.getItem('downloadCount') || '0') + 1;
+            localStorage.setItem('downloadCount', downloads);
+        });
 
         // ============ 语言切换 ============
         let currentLang = localStorage.getItem('language') || 'zh';
@@ -2015,65 +2318,22 @@
             currentLang = lang;
             localStorage.setItem('language', lang);
             
-            // 更新按钮状态
             document.getElementById('langZh').classList.toggle('active', lang === 'zh');
             document.getElementById('langEn').classList.toggle('active', lang === 'en');
             
-            // 更新所有文本
             document.querySelectorAll('[data-' + lang + ']').forEach(el => {
                 const text = el.getAttribute('data-' + lang);
-                if (text) {
-                    el.textContent = text;
-                }
+                if (text) el.textContent = text;
             });
             
-            // 更新placeholder
             document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
                 const placeholder = el.getAttribute('data-placeholder-' + lang);
-                if (placeholder) {
-                    el.placeholder = placeholder;
-                }
+                if (placeholder) el.placeholder = placeholder;
             });
 
-            // 更新HTML lang属性
             document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
         }
-
-        // 初始化语言
         switchLanguage(currentLang);
-
-        // ============ 微信二维码上传 ============
-        function loadQRCode(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.getElementById('qrImage');
-                    const placeholder = document.getElementById('qrPlaceholder');
-                    
-                    img.src = e.target.result;
-                    img.style.display = 'block';
-                    placeholder.style.display = 'none';
-                    
-                    // 保存到localStorage
-                    localStorage.setItem('wechatQR', e.target.result);
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // 加载保存的二维码
-        function loadSavedQR() {
-            const savedQR = localStorage.getItem('wechatQR');
-            if (savedQR) {
-                const img = document.getElementById('qrImage');
-                const placeholder = document.getElementById('qrPlaceholder');
-                img.src = savedQR;
-                img.style.display = 'block';
-                placeholder.style.display = 'none';
-            }
-        }
-        loadSavedQR();
 
         // ============ 移动端菜单 ============
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
@@ -2082,7 +2342,6 @@
             this.querySelector('i').classList.toggle('fa-times');
         });
 
-        // 点击导航链接后关闭菜单
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navLinks').classList.remove('active');
@@ -2123,18 +2382,37 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ============ 管理员登录 ============
-        document.getElementById('adminTrigger').addEventListener('click', function() {
-            document.getElementById('adminModal').classList.add('active');
-        });
-
-        function closeAdminModal() {
-            document.getElementById('adminModal').classList.remove('active');
+        // ============ 弹窗控制 ============
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
         }
 
-        document.getElementById('adminModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeAdminModal();
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+            }
+        });
+
+        // ============ 管理员登录 ============
+        let isAdminLoggedIn = sessionStorage.getItem('adminLoggedIn') === 'true';
+
+        document.getElementById('adminTrigger').addEventListener('click', function() {
+            if (isAdminLoggedIn) {
+                openAdminPanel();
+            } else {
+                openModal('loginModal');
             }
         });
 
@@ -2143,15 +2421,115 @@
             const user = document.getElementById('adminUser').value;
             const pass = document.getElementById('adminPass').value;
             
-            // ⚠️ 这里是简单的演示，实际应使用后端验证
+            // 默认账号密码（实际使用请修改）
             if (user === 'admin' && pass === 'opticalib2025') {
-                alert(currentLang === 'zh' ? '登录成功！后台管理功能开发中...' : 'Login successful! Admin panel is under development...');
-                closeAdminModal();
-                // 这里可以跳转到后台管理页面或显示管理面板
+                isAdminLoggedIn = true;
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                closeModal('loginModal');
+                openAdminPanel();
+                this.reset();
             } else {
                 alert(currentLang === 'zh' ? '用户名或密码错误' : 'Invalid username or password');
             }
         });
+
+        function adminLogout() {
+            isAdminLoggedIn = false;
+            sessionStorage.removeItem('adminLoggedIn');
+            closeModal('adminPanel');
+            alert(currentLang === 'zh' ? '已退出登录' : 'Logged out successfully');
+        }
+
+        function openAdminPanel() {
+            const config = getConfig();
+            
+            // 填充当前配置
+            document.getElementById('adminVersion').value = config.version;
+            document.getElementById('adminEmail').value = config.email;
+            document.getElementById('adminPhone').value = config.phone;
+            document.getElementById('adminDownloadUrl').value = config.downloadUrl;
+            
+            // 统计数据
+            document.getElementById('adminVisitCount').textContent = localStorage.getItem('visitorCount') || '0';
+            document.getElementById('adminDownloadCount').textContent = localStorage.getItem('downloadCount') || '0';
+            
+            // 二维码预览
+            if (config.wechatQR) {
+                document.getElementById('adminQRPreview').src = config.wechatQR;
+            }
+            
+            openModal('adminPanel');
+        }
+
+        // ============ 管理选项卡切换 ============
+        function switchAdminTab(tab) {
+            document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+            
+            event.target.closest('.admin-tab').classList.add('active');
+            document.getElementById('tab-' + tab).classList.add('active');
+        }
+
+        // ============ 保存设置 ============
+        function showSaveNotice() {
+            const notice = document.getElementById('saveNotice');
+            notice.classList.add('show');
+            setTimeout(() => notice.classList.remove('show'), 3000);
+        }
+
+        function saveBasicSettings() {
+            const config = getConfig();
+            config.version = document.getElementById('adminVersion').value || config.version;
+            saveConfig(config);
+            initializeConfig();
+            showSaveNotice();
+        }
+
+        function saveContactSettings() {
+            const config = getConfig();
+            config.email = document.getElementById('adminEmail').value || config.email;
+            config.phone = document.getElementById('adminPhone').value || config.phone;
+            
+            // 如果有新上传的二维码
+            const preview = document.getElementById('adminQRPreview');
+            if (preview.src && preview.src.startsWith('data:')) {
+                config.wechatQR = preview.src;
+            }
+            
+            saveConfig(config);
+            initializeConfig();
+            showSaveNotice();
+        }
+
+        function saveDownloadSettings() {
+            const config = getConfig();
+            config.downloadUrl = document.getElementById('adminDownloadUrl').value || config.downloadUrl;
+            saveConfig(config);
+            initializeConfig();
+            showSaveNotice();
+        }
+
+        function previewQR(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('adminQRPreview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function resetStatistics() {
+            if (confirm(currentLang === 'zh' ? '确定要重置所有统计数据吗？' : 'Are you sure you want to reset all statistics?')) {
+                localStorage.setItem('visitorCount', '0');
+                localStorage.setItem('downloadCount', '0');
+                document.getElementById('adminVisitCount').textContent = '0';
+                document.getElementById('adminDownloadCount').textContent = '0';
+                document.getElementById('visitorCount').textContent = '0';
+                showSaveNotice();
+            }
+        }
 
         // ============ 反馈表单 ============
         document.getElementById('feedbackForm').addEventListener('submit', function(e) {
@@ -2162,31 +2540,15 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // 构建mailto链接
-            const mailtoLink = `mailto:opticalib@outlook.com?subject=${encodeURIComponent('[OptiCalib Feedback] ' + subject)}&body=${encodeURIComponent(`姓名/Name: ${name}\n邮箱/Email: ${email}\n\n消息/Message:\n${message}`)}`;
+            const config = getConfig();
+            const mailtoLink = `mailto:${config.email}?subject=${encodeURIComponent('[OptiCalib Feedback] ' + subject)}&body=${encodeURIComponent(`姓名/Name: ${name}\n邮箱/Email: ${email}\n\n消息/Message:\n${message}`)}`;
             
             window.location.href = mailtoLink;
             
-            // 提示用户
             setTimeout(() => {
                 alert(currentLang === 'zh' ? '感谢您的反馈！正在打开邮件客户端...' : 'Thank you for your feedback! Opening email client...');
                 this.reset();
             }, 500);
-        });
-
-        // ============ 下载统计 ============
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-            let downloads = localStorage.getItem('downloadCount') || 0;
-            downloads = parseInt(downloads) + 1;
-            localStorage.setItem('downloadCount', downloads);
-            console.log('Total downloads:', downloads);
-        });
-
-        // ============ ESC键关闭弹窗 ============
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeAdminModal();
-            }
         });
     </script>
 </body>
