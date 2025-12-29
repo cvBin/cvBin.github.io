@@ -2119,28 +2119,28 @@
             }
         }
 
-        // ==================== 访问统计 ====================
-// ==================== 访问统计 ====================
+// ==================== 访问统计（全局计数）====================
 function updateVisitorCount() {
-    // 从 localStorage 获取当前访问次数
-    let count = localStorage.getItem('opticalib_visitor_count');
+    // 使用 CountAPI 进行全局计数
+    // 命名空间和key可以自定义，建议使用您的网站名称
+    const namespace = 'opticalib-website';
+    const key = 'visits';
     
-    if (count === null) {
-        // 首次访问，初始化为 1
-        count = 1;
-    } else {
-        // 每次刷新/访问都增加计数
-        count = parseInt(count) + 1;
-    }
-    
-    // 保存新的访问次数到 localStorage
-    localStorage.setItem('opticalib_visitor_count', count);
-    
-    // 更新全局变量
-    visitorCount = count;
-    
-    // 更新页面显示
-    document.getElementById('visitorCount').textContent = visitorCount;
+    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+        .then(response => response.json())
+        .then(data => {
+            visitorCount = data.value;
+            document.getElementById('visitorCount').textContent = visitorCount;
+            // 同时更新管理面板中的计数
+            if (document.getElementById('adminVisitorCount')) {
+                document.getElementById('adminVisitorCount').textContent = visitorCount;
+            }
+        })
+        .catch(error => {
+            console.error('访问计数器错误:', error);
+            // API失败时显示备用值
+            document.getElementById('visitorCount').textContent = '--';
+        });
 }
 
         // ==================== 语言切换 ====================
@@ -2310,32 +2310,7 @@ function updateVisitorCount() {
             switchLanguage(savedLang);
         }
     </script>
-<script>
-// ==================== 移动端自适应缩放 ====================
-function adjustViewport() {
-    var designWidth = 1200; // 设计稿宽度
-    var screenWidth = window.screen.width;
-    var viewportMeta = document.querySelector('meta[name="viewport"]');
-    
-    if (screenWidth < designWidth) {
-        // 移动端：按比例缩放
-        var scale = screenWidth / designWidth;
-        viewportMeta.setAttribute('content', 
-            'width=' + designWidth + ', initial-scale=' + scale + 
-            ', maximum-scale=' + scale + ', user-scalable=no');
-    } else {
-        // PC端：正常显示
-        viewportMeta.setAttribute('content', 
-            'width=device-width, initial-scale=1.0');
-    }
-}
 
-// 页面加载和屏幕旋转时调整
-adjustViewport();
-window.addEventListener('orientationchange', function() {
-    setTimeout(adjustViewport, 100);
-});
-</script>
 
 </body>
 </html>
