@@ -2120,18 +2120,28 @@
         }
 
         // ==================== 访问统计 ====================
-        function updateVisitorCount() {
-            const lastVisit = localStorage.getItem('opticalib_last_visit');
-            const today = new Date().toDateString();
-            
-            if (lastVisit !== today) {
-                visitorCount++;
-                localStorage.setItem('opticalib_visitors', visitorCount);
-                localStorage.setItem('opticalib_last_visit', today);
-            }
-            
-            document.getElementById('visitorCount').textContent = visitorCount;
-        }
+// ==================== 访问统计 ====================
+function updateVisitorCount() {
+    // 从 localStorage 获取当前访问次数
+    let count = localStorage.getItem('opticalib_visitor_count');
+    
+    if (count === null) {
+        // 首次访问，初始化为 1
+        count = 1;
+    } else {
+        // 每次刷新/访问都增加计数
+        count = parseInt(count) + 1;
+    }
+    
+    // 保存新的访问次数到 localStorage
+    localStorage.setItem('opticalib_visitor_count', count);
+    
+    // 更新全局变量
+    visitorCount = count;
+    
+    // 更新页面显示
+    document.getElementById('visitorCount').textContent = visitorCount;
+}
 
         // ==================== 语言切换 ====================
         function switchLanguage(lang) {
