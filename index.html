@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
     <title>OptiCalib - 专业多镜头相机标定软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -2300,5 +2300,32 @@
             switchLanguage(savedLang);
         }
     </script>
+<script>
+// ==================== 移动端自适应缩放 ====================
+function adjustViewport() {
+    var designWidth = 1200; // 设计稿宽度
+    var screenWidth = window.screen.width;
+    var viewportMeta = document.querySelector('meta[name="viewport"]');
+    
+    if (screenWidth < designWidth) {
+        // 移动端：按比例缩放
+        var scale = screenWidth / designWidth;
+        viewportMeta.setAttribute('content', 
+            'width=' + designWidth + ', initial-scale=' + scale + 
+            ', maximum-scale=' + scale + ', user-scalable=no');
+    } else {
+        // PC端：正常显示
+        viewportMeta.setAttribute('content', 
+            'width=device-width, initial-scale=1.0');
+    }
+}
+
+// 页面加载和屏幕旋转时调整
+adjustViewport();
+window.addEventListener('orientationchange', function() {
+    setTimeout(adjustViewport, 100);
+});
+</script>
+
 </body>
 </html>
