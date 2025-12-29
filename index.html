@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta name="viewport" content="width=1200">
     <title>OptiCalib - 专业多镜头相机标定软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -2321,10 +2321,11 @@ function adjustViewport() {
 }
 
 // 页面加载和屏幕旋转时调整
-adjustViewport();
+ //adjustViewport();
 window.addEventListener('orientationchange', function() {
     setTimeout(adjustViewport, 100);
 });
+
 </script>
 
 </body>
