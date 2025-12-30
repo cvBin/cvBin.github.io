@@ -1920,12 +1920,14 @@
         </footer>
     </div><!-- end page-wrapper -->
 
-    <!-- 访问计数器 -->
-    <div class="visitor-counter">
-        <i class="fas fa-eye"></i>
-        <span id="visitorCount">0</span>
-        <span data-lang data-en="visits" data-zh="次访问">次访问</span>
-    </div>
+<!-- 访问计数器 - 使用不蒜子统计 -->
+<div class="visitor-counter">
+    <i class="fas fa-eye"></i>
+    <span id="busuanzi_container_site_pv">
+        <span id="busuanzi_value_site_pv">--</span>
+    </span>
+    <span data-lang data-en="visits" data-zh="次访问">次访问</span>
+</div>
 
     <!-- 语言切换 -->
     <div class="language-switcher">
@@ -2020,10 +2022,12 @@
             <div class="divider"></div>
 
             <div class="stats-section">
-                <div class="stat-item">
-                    <div class="stat-label" data-lang data-en="Total Visits" data-zh="总访问量">总访问量</div>
-                    <div class="stat-value" id="adminVisitorCount">0</div>
-                </div>
+<div class="stat-item">
+    <div class="stat-label" data-lang data-en="Total Visits" data-zh="总访问量">总访问量</div>
+    <div class="stat-value" id="adminVisitorCount">
+        <span id="busuanzi_value_site_pv_admin">--</span>
+    </div>
+</div>
                 <div class="stat-item">
                     <div class="stat-label" data-lang data-en="Feedback Count" data-zh="反馈数量">反馈数量</div>
                     <div class="stat-value" id="adminFeedbackCount">0</div>
@@ -2067,7 +2071,7 @@
             wechatQR: 'wechat.png'
         };
 
-        let visitorCount = 0;
+      //  let visitorCount = 0;
         let feedbackCount = 0;
         let currentLang = 'zh';
         let isLoggedIn = false;
@@ -2110,8 +2114,8 @@
             // 下载链接
             document.getElementById('downloadBtn').href = siteConfig.downloadUrl;
             
-            // 访问量
-            document.getElementById('visitorCount').textContent = visitorCount;
+// 访问量 - 由不蒜子自动更新，无需手动设置
+// document.getElementById('visitorCount').textContent = visitorCount;
             
             // 微信二维码
             if (siteConfig.wechatQR) {
@@ -2120,18 +2124,28 @@
         }
 
         // ==================== 访问统计 ====================
-        function updateVisitorCount() {
-            const lastVisit = localStorage.getItem('opticalib_last_visit');
-            const today = new Date().toDateString();
-            
-            if (lastVisit !== today) {
-                visitorCount++;
-                localStorage.setItem('opticalib_visitors', visitorCount);
-                localStorage.setItem('opticalib_last_visit', today);
-            }
-            
-            document.getElementById('visitorCount').textContent = visitorCount;
+// ==================== 访问统计 - 使用不蒜子 ====================
+function updateVisitorCount() {
+    // 不蒜子会自动更新 busuanzi_value_site_pv 的内容
+    // 同步到管理面板显示
+    const syncVisitorCount = () => {
+        const pvElement = document.getElementById('busuanzi_value_site_pv');
+        const adminElement = document.getElementById('busuanzi_value_site_pv_admin');
+        if (pvElement && adminElement) {
+            adminElement.textContent = pvElement.textContent;
         }
+    };
+    
+    // 延迟执行，等待不蒜子加载完成
+    setTimeout(syncVisitorCount, 1500);
+    
+    // 监听变化，持续同步
+    const observer = new MutationObserver(syncVisitorCount);
+    const targetNode = document.getElementById('busuanzi_value_site_pv');
+    if (targetNode) {
+        observer.observe(targetNode, { childList: true, characterData: true, subtree: true });
+    }
+}
 
         // ==================== 语言切换 ====================
         function switchLanguage(lang) {
@@ -2338,6 +2352,7 @@ function adjustViewport() {
 //});
 
 </script>
-
+<!-- 不蒜子统计脚本 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
