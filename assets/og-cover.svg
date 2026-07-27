@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#10365c"/></linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff"/><stop offset=".55" stop-color="#7ee9ff"/><stop offset="1" stop-color="#bcb1ff"/></linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#79cfff" stroke-opacity=".12"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1020" cy="90" r="330" fill="#3478f6" opacity=".15"/>
+  <circle cx="190" cy="620" r="280" fill="#42d9ff" opacity=".1"/>
+  <g transform="translate(90 92)">
+    <path d="M40 0 78 22v44L40 88 2 66V22L40 0Z" fill="none" stroke="#7ee9ff" stroke-width="5"/>
+    <circle cx="40" cy="40" r="15" fill="none" stroke="#7ee9ff" stroke-width="5"/>
+    <path d="M9 74 40 56l31 18" fill="none" stroke="#7ee9ff" stroke-width="5"/>
+  </g>
+  <text x="90" y="245" fill="#42d9ff" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">OPTICALIB V1.9.7</text>
+  <text x="90" y="335" fill="url(#txt)" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="68" font-weight="800">多镜头相机标定系统</text>
+  <text x="90" y="405" fill="#a9b9cb" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30">可视 · 可控 · 可验证的相机标定工程流程</text>
+  <g transform="translate(800 230)">
+    <rect x="0" y="0" width="170" height="110" rx="18" fill="#17324c" stroke="#42d9ff" stroke-opacity=".3"/>
+    <circle cx="85" cy="55" r="33" fill="#07111f" stroke="#2d6586" stroke-width="8"/>
+    <circle cx="85" cy="55" r="12" fill="#42d9ff" opacity=".7"/>
+    <rect x="200" y="105" width="200" height="150" rx="14" fill="#f2f8fc"/>
+    <path d="M200 105h200v150H200z" fill="url(#grid)"/>
+    <path d="M150 78 258 152M150 78 325 190" stroke="#42d9ff" stroke-opacity=".45" stroke-dasharray="8 8"/>
+  </g>
+</svg>
